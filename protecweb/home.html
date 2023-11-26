@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="it">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Arte Per Tutti</title> 
+    <meta name="keywords" content=", 
+    Opere d'arte, arte accessibile, AAA, opere, quadri, arredamento">
+    <meta name="description" content="sito di opere d'arte da comprare e mettere in casa, opere d'arte con descrizioni">
+
+    <link rel="stylesheet" href="style.css" media="screen">
+    <link rel="stylesheet" href="print.css" media="print">
+    <link rel="stylesheet" href="mini.css" media="screen and (max-width:600px)">
+
+</head>
+<body>
+    <header>
+        <h1>Il nostro sito</h1>
+    </header>
+    <nav id="menu">
+        <ul>
+            <li lang="en">Home</li>            
+            <li><a href="galleria.html">Galleria</a></li>    
+            <li><a href="artisti.html">Artisti</a></li>       
+            <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+    </nav>
+
+    <nav id="breadcrumb">
+        <p>Ti trovi in: <span lang="en">Home</span></p>
+    </nav>
+  
+     <div>
+        <h2>Benvenuto nel nostro sito!</h2>
+        <p>Qui puoi trovare <strong>opere d'arte</strong> di tanti artisti emergenti o affermati .</p>
+        <p>Se sei un <strong>artista</strong> e vuoi collaborare con noi, contattaci!</p>
+     </div>
+
+     <div class="carosello" id="primoContenuto">
+        <a class="nascosto" href="#welcomeInfo">Salta il carosello</a>
+        
+        <div class="slides" onscroll="aggiornaCarosello(event)">
+            <div>
+                <img width="1850" height="700" src="" alt="Paolo Sbringato" />
+            </div>
+            <div>
+                <img width="1850" height="700" src="" alt="Salotto iper futurista"/>
+            </div>
+            <div>
+                <img width="1850" height="700" src="" alt="Salotto preistorico" />
+            </div>
+        </div>
+        
+        <button class="caroselloPrev" type="button" aria-label="Slide precedente" onclick="prevCarosello(event)">&#10094;</button>
+        <button class="caroselloNext" type="button" aria-label="Slide successiva" onclick="nextCarosello(event)">&#10095;</button>
+        
+        <ol class="caroselloDots">
+            <li>
+                <button type="button" disabled aria-label="Vai alla slide 1" onclick="dotsCarosello(event, 1)">1</button>
+            </li>
+            <li>
+                <button type="button" aria-label="Vai alla slide 2" onclick="dotsCarosello(event, 2)">2</button>
+            </li>
+            <li>
+                <button type="button" aria-label="Vai alla slide 3" onclick="dotsCarosello(event, 3)">3</button>
+            </li>
+        </ol>
+    </div>   
+     
+
+    <a href="galleria.html">
+        <button>Vai alle nostre Opere</button>
+    </a>
+
+
+
+    <div>
+        a <br> 
+        a <br>a <br>a <br>a <br>a <br>a <br>a <br>a <br>a <br>a <br>a <br>a <br>a    
+a <br>a <br>a <br>a <br>a <br>a <br>a <br>a <br>a <br>a <br>a <br>a <br>a <br>
+        <br>
+        
+    </div>
+
+  
+
+    <div>
+        <h2>Perchè lo facciamo</h2>
+        <p>
+            La creazione di un sito di opere d'arte accessibile mira a garantire
+            l'uguaglianza di accesso culturale per tutti, indipendentemente dalle 
+            differenze fisiche, sensoriali o cognitive.
+        </p>
+        <p>L'obiettivo è eliminare
+            le barriere che potrebbero impedire a persone con disabilità di apprezzare e
+            godere delle meraviglie dell'arte.
+        
+        Offrendo un'esperienza accessibile, si promuove un 
+            ambiente inclusivo e rispettoso delle diverse prospettive e abilità, contribuendo così
+            a una società più equa e solidale
+        </p>
+       
+    </div>
+
+       
+    <button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top">Top</button>
+
+    <script>
+        // Function to scroll to the top of the page
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scrolling to top
+        }
+
+        // Show the button when user scrolls down
+        window.onscroll = function() {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            var scrollTopBtn = document.getElementById("scrollTopBtn");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollTopBtn.style.display = "block";
+            } else {
+                scrollTopBtn.style.display = "none";
+            }
+        }
+    </script>
+
+<footer>
+    <div class="footerone">
+        <p>AAA - Avanguardia Artistica Accessibile &amp; <span lang="en">All rights reserved</span></p>
+
+        <div id="logofooter">
+            <ul>
+                <li><span lang="en">Email: </span><a href="mailto:infoAAA@gmail.com">infoAAA@gmail.com</a></li>
+                <li><a href="" title="Privacy Policy">Privacy Policy</a></li> <!-- link alla privacy policy -->
+            </ul>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
+
+
+
