@@ -5,8 +5,7 @@
 
     <meta charset="UTF-8">
     <title>Arte Per Tutti</title> 
-    <meta name="keywords" content=", 
-    Opere d'arte, arte accessibile, AAA, opere, quadri, arredamento">
+    <meta name="keywords" content="Opere d'arte, arte accessibile, AAA, opere, quadri, arredamento">
     <meta name="description" content="sito di opere d'arte da comprare e mettere in casa, opere d'arte con descrizioni">
 
     <link rel="stylesheet" href="style.css" media="screen">
@@ -15,63 +14,61 @@
 
 </head>
 <body>
-    <header>
-        <h1>I nostri collaboratori</h1>
-    </header>
-    <nav id="menu">
-        <ul>
-            <li lang="en"><a href="home.html">Home</a></li>            
-            <li><a href="galleria.html">Galleria</a></li>    
-            <li>Artisti</li>       
-            <li><a href="contatti.html">Contatti</a></li>
-        </ul>
-    </nav>
-
+    <div id="container">
+        <nav>
+            <ul>
+                <li lang="en"><a href="home.html">Home</a></li>
+                <li><a href="galleria.html">Galleria</a></li>
+                <li id="selected">Artisti</li>
+                <li><a href="contatti.html">Contatti</a></li>
+            </ul>
+        </nav>
+    </div>
     <nav id="breadcrumb">
-        <p>Ti trovi in: <span lang="en">Artisti</span></p>
+        <p>Ti trovi in: Artisti</p>
     </nav>
-
-
-    <footer>
-        <div class="footerone">
-            <p>AAA - Avanguardia Artistica Accessibile &amp; <span lang="en">All rights reserved</span></p>
-    
-            <div id="logofooter">
-                <ul>
-                    <li><span lang="en">Email: </span><a href="mailto:infoAAA@gmail.com">infoAAA@gmail.com</a></li>
-                    <li><a href="" title="Privacy Policy">Privacy Policy</a></li> <!-- link alla privacy policy -->
-                </ul>
-            </div>
-    
-            <div class="contact-form">
-                <h3>Contact Us</h3>
-                <form>
-                    <div>
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div>
-                        <label for="surname">Surname:</label>
-                        <input type="text" id="surname" name="surname" required>
-                    </div>
-                    <div>
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div>
-                        <label for="object">Object:</label>
-                        <input type="text" id="object" name="object" required>
-                    </div>
-                    <div>
-                        <label for="description">Description:</label>
-                        <textarea id="description" name="description" required></textarea>
-                    </div>
-                    <div>
-                        <button type="submit">Submit</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </footer>
+    <main>
+        <ul id="artisti" class="card-columns">
+            <li class="card">
+                <a href="artista1.link" id="Artista1"></a>
+                <div class="card-body">
+                    <h1>Artista 1</h1>
+                    <p>Artista di strada strafatto ammerda, se metto piu informazioni qua si sposta tutto pero zio pera</p>
+                </div>
+            </li>
+            <li class="card">
+                <a href="artista1.link" id="Artista2"></a>
+                <div class="card-body">
+                    <h1>Artista 2</h1>
+                    <p>Artista che nel tempo libero fa la battona</p>
+                </div>
+            </li>
+            <li class="card">
+                <a href="artista3.link" id="Artista3"></a>
+                <div class="card-body">
+                    <h1>Artista 3</h1>
+                    <p><!--L'ho lasciato vuoto per vedere come si comporta senza una descrizione--></p>
+                </div>
+            </li>
+            <li class="card">
+                <a href="artista4.link" id="Artista4"></a>
+                <div class="card-body">
+                    <h1>Artista 4</h1>
+                    <p>Boh probabilmente tuo padre, quindi se uno ha piu testo quello affianco diventa tutto sbolso molto interessante crista madonna puttana vacca ma come minchia funziona</p>
+                </div>
+            </li>
+        </ul>
+    </main>
 </body>
+        <footer> 
+            <hr>
+            <div class="footerContent">
+            <p>AAA - Avanguardia Artistica Accessibile &amp; <span lang="en">All rights reserved</span></p>
+            <ul class="no-bullets">
+                <li><span lang="en">Email: </span><a href="mailto:infoAAA@gmail.com">infoAAA@gmail.com</a></li>
+                <li><a href="" title="Privacy Policy">Privacy Policy</a></li> GNU
+            </ul>
+            </div>
+        </footer>
+
 </html>
