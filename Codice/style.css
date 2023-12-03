@@ -245,3 +245,24 @@ ul.no-bullets {
     padding: 0; /* Remove padding */
     margin: 0; /* Remove margins */
 }
+
+
+/****************************************************/
+
+.opere{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1em;
+    list-style-type: none;
+}
+
+.opere li img {
+  flex-grow: 1 1 auto;
+  object-fit: cover;
+  max-width: 100%;
+  height: 15em;
+  vertical-align: middle;
+  border-radius: 5px;
+  border: 1px solid blue; /*blu fa schifo ma fa vedere che c'è il bordo*/
+}
