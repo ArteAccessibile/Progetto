@@ -199,22 +199,22 @@ h1{
 }
 
 #Artista1{
-  background-image: url("img/artisti/1.jpg");
+  background-image: url("/img/artisti/1.jpg");
   border-radius: 5%;
 }
 
 #Artista2{
-  background-image: url("img/artisti/2.jpg");
+  background-image: url("/img/artisti/2.jpg");
   border-radius: 5%;
 }
 
 #Artista3{
-  background-image: url("img/artisti/3.jpg");
+  background-image: url("/img/artisti/3.jpg");
   border-radius: 5%;
 }
 
 #Artista4{
-  background-image: url("img/artisti/4.jpg");
+  background-image: url("/img/artisti/4.jpg");
   border-radius: 5%;
 }
 .card {

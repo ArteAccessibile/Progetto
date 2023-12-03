@@ -85,3 +85,23 @@
     a:focus {
         outline: 2px solid #000; /* per accessibilità */
     }
+
+    #artisti li {
+        width: 100%;
+        padding: 1.0em;
+      }
+      
+      .card {
+        width: 100%;
+        margin: 0.5em;
+        margin-bottom: 5em;
+      }
+      
+      .card-body {
+        max-height: none;
+        overflow: visible;
+      }
+      
+      .footerContent {
+        width: 100%;
+      }
