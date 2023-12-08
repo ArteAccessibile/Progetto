@@ -24,6 +24,18 @@ body {
     width: 60%;
     margin: 5% auto;
 }
+
+#homecontent{
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 2em;
+}
+
+#homecontent > h2{
+  padding-bottom: 1em;
+}
+
 #logo {
   line-height:60px;
   font-size:30px;
@@ -44,6 +56,7 @@ body {
   
 /*   min-width:60%; */
 }
+
 #container > nav > ul > li {
   line-height:60px;
   margin: 0 0px;
@@ -91,6 +104,49 @@ body {
 
 #accountflexbox :hover {
   color: #ff7b0f;
+}
+
+.nascosto{
+  visibility: hidden;
+}
+
+.car{
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  height: 400px;
+  position:relative /*per mettere le immagini in stack*/
+}
+
+.immaginecarosello{
+  object-fit: cover;
+  position:absolute; /*per mettere le immagini in stack*/
+  border-radius: 2em;
+  -webkit-border-radius:2em; /* Safari & Chrome */
+  -moz-border-radius:2em; /* Firefox */
+  width: 800px;
+  height: 400px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.indicecarosello{
+  border-radius: 100%;
+  width: 1em;
+  height: 1em;
+  margin: 0.5em;
+  background-color: #fff6c1;
+  border: 1px solid #ff7b0f;
+}
+
+.indicecarosello:hover{
+  background-color: #ff7b0f;
+}
+
+#playercarosello{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }
 
 #breadcrumb{

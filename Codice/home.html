@@ -50,10 +50,21 @@
         <p>Ti trovi in: <a href="home.html"><span lang="en">Home</span></a></li>&gt; <span lang="en">Home</span></p>
     </nav>
   
-     <div>
-        <h2>Benvenuto nel nostro sito!</h2>
+     <div id="homecontent">
+        <h2>La Nostra Galleria</h2>
         <p>Qui puoi trovare <strong>opere d'arte</strong> di tanti artisti emergenti o affermati .</p>
         <p>Se sei un <strong>artista</strong> e vuoi collaborare con noi, contattaci!</p>
+     </div>
+
+     <div class="car">
+            <img class="immaginecarosello" id="primocarosello" src="../img/gattogamberetto.jpg" alt="Paolo Sbringato" />
+            <img class="nascosto" id="secondocarosello" src="../img/gattocroissant.jpg" alt="Paolo Sbringato" />
+            <img class="nascosto" id="terzocarosello" src="../img/gattoburger.jpg" alt="Paolo Sbringato" />
+     </div>
+     <div id="playercarosello">
+        <div class="indicecarosello" onclick="switchImageCarosello(1)"></div>
+        <div class="indicecarosello" onclick="switchImageCarosello(2)"></div>
+        <div class="indicecarosello" onclick="switchImageCarosello(3)"></div>
      </div>
 
      <div class="carosello" id="primoContenuto">
@@ -61,7 +72,7 @@
         
         <div class="slides" onscroll="aggiornaCarosello(event)">
             <div>
-                <img width="1850" height="700" src="" alt="Paolo Sbringato" />
+                <img  width="1850" height="700" src="" alt="Paolo Sbringato" />
             </div>
             <div>
                 <img width="1850" height="700" src="" alt="Salotto iper futurista"/>
@@ -91,17 +102,6 @@
     <a href="galleria.html">
         <button>Vai alle nostre Opere</button>
     </a>
-
-
-
-    <div>
-        a <br> 
-        a <br>a <br>a <br>a <br>a <br>a <br>a <br>a <br>a <br>a <br>a <br>a <br>a    
-a <br>a <br>a <br>a <br>a <br>a <br>a <br>a <br>a <br>a <br>a <br>a <br>a <br>
-        <br>
-        
-    </div>
-
   
 
     <div>
@@ -142,6 +142,26 @@ a <br>a <br>a <br>a <br>a <br>a <br>a <br>a <br>a <br>a <br>a <br>a <br>a <br>
                 scrollTopBtn.style.display = "block";
             } else {
                 scrollTopBtn.style.display = "none";
+            }
+        }
+
+        function switchImageCarosello(index){
+            switch(index){
+                case 1:
+                    document.getElementById("primocarosello").className = "immaginecarosello"
+                    document.getElementById("secondocarosello").className = "nascosto"
+                    document.getElementById("terzocarosello").className = "nascosto"
+                    break;
+                case 2:
+                    document.getElementById("primocarosello").className = "nascosto"
+                    document.getElementById("secondocarosello").className = "immaginecarosello"
+                    document.getElementById("terzocarosello").className = "nascosto"
+                    break;
+                case 3:
+                    document.getElementById("primocarosello").className = "nascosto"
+                    document.getElementById("secondocarosello").className = "nascosto"
+                    document.getElementById("terzocarosello").className = "immaginecarosello"
+                    break;
             }
         }
     </script>
