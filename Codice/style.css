@@ -36,6 +36,39 @@ body {
   padding-bottom: 1em;
 }
 
+#homecontent > a > p{
+  padding-top: 1em;
+  position:static;
+  color: blue;
+  text-decoration: underline;
+  transition: transform .2s; /* Animation */
+}
+
+#homecontent > a > p:hover{
+  transform: scale(1.1)
+}
+
+#homechi{
+  text-align: left;
+  padding: 2em 0 0 2em;
+  width: 70%;
+}
+
+#homechi > h2{
+  padding-bottom: 1em;
+
+}
+
+#homeperche{
+  text-align: right;
+  padding: 2em 2em 0 0;
+}
+
+#homeperche > h2{
+  padding-bottom: 1em;
+
+}
+
 #logo {
   line-height:60px;
   font-size:30px;
