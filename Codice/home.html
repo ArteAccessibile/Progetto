@@ -44,20 +44,25 @@
                 <li><a href="contatti.html">Contatti</a></li>
             </ul>
         </nav>
-    </div>
+    </div> 
 
     <nav id="breadcrumb">
         <p>Ti trovi in: <a href="home.html"><span lang="en">Home</span></a></li>&gt; <span lang="en">Home</span></p>
     </nav>
      <div class="car">
             <img class="immaginecarosello" id="primocarosello" src="../img/gattogamberetto.jpg" alt="Paolo Sbringato" />
-            <img class="nascosto" id="secondocarosello" src="../img/gattocroissant.jpg" alt="Paolo Sbringato" />
-            <img class="nascosto" id="terzocarosello" src="../img/gattoburger.jpg" alt="Paolo Sbringato" />
+            <img class="immaginecarosello" id="secondocarosello" src="../img/gattocroissant.jpg" alt="Paolo Sbringato" />
+            <img class="immaginecarosello" id="terzocarosello" src="../img/gattoburger.jpg" alt="Paolo Sbringato" />
+            <div class="contenitorebottonicar">
+                <div class="bottonecar" id="btnindietro"> ndrio </div>
+                <div class="bottonecar" id="btnavanti"> vanti </div>
+            </div>
+
      </div>
-     <div id="playercarosello">
-        <div class="indicecarosello" onclick="switchImageCarosello(1)"></div>
-        <div class="indicecarosello" onclick="switchImageCarosello(2)"></div>
-        <div class="indicecarosello" onclick="switchImageCarosello(3)"></div>
+     <div class="playercarosello">
+        <div class="indicecarosello"></div>
+        <div class="indicecarosello"></div>
+        <div class="indicecarosello"></div>
      </div>
        
      <div id="homecontent">
@@ -67,7 +72,22 @@
         <a href="galleria.html"><p>Vai Alle Nostre Opere </p> </a>
      </div>
 
-     <div id="homechi">
+     <div id="homeabout">
+        <h2>Perchè lo facciamo</h2>
+        <p>
+            La creazione di un sito di opere d'arte accessibile mira a garantire
+            l'uguaglianza di accesso culturale per tutti, indipendentemente dalle 
+            differenze fisiche, sensoriali o cognitive.
+        </p>
+        <p>L'obiettivo è eliminare
+            le barriere che potrebbero impedire a persone con disabilità di apprezzare e
+            godere delle meraviglie dell'arte.
+        
+        Offrendo un'esperienza accessibile, si promuove un 
+            ambiente inclusivo e rispettoso delle diverse prospettive e abilità, contribuendo così
+            a una società più equa e solidale
+        </p>
+        
         <h2> Chi Siamo</h2>
         <p>
             Rap futuristico (Ah!)
@@ -90,25 +110,6 @@
             Speperefistico C-D
             Rap futuristico
         </p>
-       
-    </div>
-
-     <div id="homeperche">
-        <h2>Perchè lo facciamo</h2>
-        <p>
-            La creazione di un sito di opere d'arte accessibile mira a garantire
-            l'uguaglianza di accesso culturale per tutti, indipendentemente dalle 
-            differenze fisiche, sensoriali o cognitive.
-        </p>
-        <p>L'obiettivo è eliminare
-            le barriere che potrebbero impedire a persone con disabilità di apprezzare e
-            godere delle meraviglie dell'arte.
-        
-        Offrendo un'esperienza accessibile, si promuove un 
-            ambiente inclusivo e rispettoso delle diverse prospettive e abilità, contribuendo così
-            a una società più equa e solidale
-        </p>
-       
     </div>
 
 
@@ -150,6 +151,7 @@
        
     <button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top">Top</button>
 
+    <script src="js/carosello.js"></script>
     <script>
         // Function to scroll to the top of the page
         function scrollToTop() {
@@ -167,26 +169,6 @@
                 scrollTopBtn.style.display = "block";
             } else {
                 scrollTopBtn.style.display = "none";
-            }
-        }
-
-        function switchImageCarosello(index){
-            switch(index){
-                case 1:
-                    document.getElementById("primocarosello").className = "immaginecarosello"
-                    document.getElementById("secondocarosello").className = "nascosto"
-                    document.getElementById("terzocarosello").className = "nascosto"
-                    break;
-                case 2:
-                    document.getElementById("primocarosello").className = "nascosto"
-                    document.getElementById("secondocarosello").className = "immaginecarosello"
-                    document.getElementById("terzocarosello").className = "nascosto"
-                    break;
-                case 3:
-                    document.getElementById("primocarosello").className = "nascosto"
-                    document.getElementById("secondocarosello").className = "nascosto"
-                    document.getElementById("terzocarosello").className = "immaginecarosello"
-                    break;
             }
         }
     </script>

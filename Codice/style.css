@@ -29,7 +29,7 @@ body {
   text-align: center;
   align-items: center;
   width: 100%;
-  padding: 2em;
+  padding-top: 2em;
 }
 
 #homecontent > h2{
@@ -48,24 +48,14 @@ body {
   transform: scale(1.1)
 }
 
-#homechi{
+#homeabout{
   text-align: left;
-  padding: 2em 0 0 2em;
+  padding-left: 2em; 
   width: 70%;
 }
 
-#homechi > h2{
-  padding-bottom: 1em;
-
-}
-
-#homeperche{
-  text-align: right;
-  padding: 2em 2em 0 0;
-}
-
-#homeperche > h2{
-  padding-bottom: 1em;
+#homeabout > h2{
+  padding: 2em 0 1em 0;
 
 }
 
@@ -143,11 +133,15 @@ body {
   visibility: hidden;
 }
 
+.visibile{
+  visibility: visible;
+}
+
 .car{
-  padding: 1em;
+  padding: 1em 0 1em 0;
   display: flex;
   justify-content: center;
-  height: 400px;
+  height: 350px;
   position:relative /*per mettere le immagini in stack*/
 }
 
@@ -157,8 +151,28 @@ body {
   border-radius: 2em;
   -webkit-border-radius:2em; /* Safari & Chrome */
   -moz-border-radius:2em; /* Firefox */
-  width: 800px;
-  height: 400px;
+  width: 700px;
+  height: 350px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.contenitorebottonicar{
+  display: flex;
+  justify-content: space-between;
+  align-self:center;
+  position:absolute;
+  width: 700px;
+}
+
+.bottonecar{
+  margin: 0 1em 0 1em;
+  background-color: #fff6c1;
+  border: 1px solid #ff7b0f;
+  border-radius: 100%;
+  -webkit-border-radius:100%; /* Safari & Chrome */
+  -moz-border-radius:100%; /* Firefox */
+  width: 2.5em;
+  height: 2.5em;;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -175,7 +189,7 @@ body {
   background-color: #ff7b0f;
 }
 
-#playercarosello{
+.playercarosello{
   width: 100%;
   display: flex;
   justify-content: center;
