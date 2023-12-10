@@ -185,6 +185,10 @@ body {
   border: 1px solid #ff7b0f;
 }
 
+.indiceattivocar{
+  background-color: #ff7b0f;
+}
+
 .indicecarosello:hover{
   background-color: #ff7b0f;
 }

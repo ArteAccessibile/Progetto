@@ -1,4 +1,3 @@
-
 const car = document.querySelector('.car');
 const immaginiCarosello = car.querySelectorAll(".immaginecarosello");
 
@@ -9,19 +8,32 @@ const btnIndietro = document.getElementById("btnindietro");
 const btnAvanti = document.getElementById("btnavanti");
 let currentIndex = 0;
 
-function mostraImmagine(index) {
-    immaginiCarosello.forEach((item, i) => {
-        item.classList.add('nascosto');
+
+function aggiornaIndice(index) {
+    dots.forEach((item, i) => {
         if (i === index) {
+            item.classList.add('indiceattivocar');
+        } else {
+         item.classList.remove('indiceattivocar');
+    }
+  });
+}
+
+function mostraImmagine(index) {
+    immaginiCarosello.forEach((item, j) => {
+        item.classList.add('nascosto');
+        if (j === index) {
             item.classList.add('visibile');
             item.classList.remove('nascosto');
         } else {
          item.classList.remove('visibile');
     }
   });
+  aggiornaIndice(index);
 }
 
 function dotClicked(dot){
+    currentIndex=dot.currentTarget.index;
     mostraImmagine(dot.currentTarget.index);
 }
 
