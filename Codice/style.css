@@ -413,3 +413,59 @@ vertical-align: middle;
 border-radius: 5px;
 border: 1px solid blue; /*blu fa schifo ma fa vedere che c'è il bordo*/
 }
+
+/****************************************************/
+
+.artist-container {
+  display: flex; /* Use flexbox for the container */
+  justify-content: space-between; /* Space between items */
+  align-items: center; /* Center items vertically */
+  margin: 2em; /* Add margin as needed */
+}
+
+/*.artist-image{
+  margin-left: 2em;
+  width: 30%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.artist-info{
+  margin-left: 2em;
+  width: 40%;
+  height: 100%;
+  object-fit: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.artist-info h3{
+  font-size: 2em;
+  color: rgb(0, 0, 0);
+}
+*/
+.artist-image {
+  width: 40%;
+  height: auto; /* Allow the height to adjust according to the image */
+  border-radius: 5%;
+  margin-right: 2em; /* Adjust margin as needed */
+}
+
+.artist-info {
+  width: 60%;
+}
+
+
+/* Additional styles for artist-info */
+.artist-info h3, .artist-info p,  .artist-description p {
+  margin-bottom: 0.4em;
+}
+
+.artist-works{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1em;
+  list-style-type: none;
+}
