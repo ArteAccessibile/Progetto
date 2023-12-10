@@ -54,21 +54,20 @@
             <img class="immaginecarosello" id="secondocarosello" src="../img/gattocroissant.jpg" alt="Paolo Sbringato" />
             <img class="immaginecarosello" id="terzocarosello" src="../img/gattoburger.jpg" alt="Paolo Sbringato" />
             <div class="contenitorebottonicar">
-                <div class="bottonecar" id="btnindietro"> ndrio </div>
-                <div class="bottonecar" id="btnavanti"> vanti </div>
+                <div class="bottonecar" id="btnindietro"> &lt; </div>
+                <div class="bottonecar" id="btnavanti"> &gt; </div>
             </div>
-
      </div>
-     <div class="playercarosello">
-        <div class="indicecarosello"></div>
-        <div class="indicecarosello"></div>
-        <div class="indicecarosello"></div>
-     </div>
+     <ol class="playercarosello">
+        <li class="indicecarosello"></li>
+        <li class="indicecarosello"></li>
+        <li class="indicecarosello"></li>
+     </ol>
        
      <div id="homecontent">
         <h2>La Nostra Galleria</h2>
         <p>Qui puoi trovare <strong>opere d'arte</strong> di tanti artisti emergenti o affermati .</p>
-        <p>Se sei un <strong>artista</strong> e vuoi collaborare con noi, contattaci!</p>
+        <p>Se sei un <strong>artista</strong> e vuoi collaborare con noi, <a href="contatti.html"><strong>contattaci!</strong></a></p>
         <a href="galleria.html"><p>Vai Alle Nostre Opere </p> </a>
      </div>
 
@@ -111,44 +110,8 @@
             Rap futuristico
         </p>
     </div>
-
-
-     <div class="carosello" id="primoContenuto">
-        <a class="nascosto" href="#welcomeInfo">Salta il carosello</a>
-        
-        <div class="slides" onscroll="aggiornaCarosello(event)">
-            <div>
-                <img  width="1850" height="700" src="" alt="Paolo Sbringato" />
-            </div>
-            <div>
-                <img width="1850" height="700" src="" alt="Salotto iper futurista"/>
-            </div>
-            <div>
-                <img width="1850" height="700" src="" alt="Salotto preistorico" />
-            </div>
-        </div>
-        
-        <button class="caroselloPrev" type="button" aria-label="Slide precedente" onclick="prevCarosello(event)">&#10094;</button>
-        <button class="caroselloNext" type="button" aria-label="Slide successiva" onclick="nextCarosello(event)">&#10095;</button>
-        
-        <ol class="caroselloDots">
-            <li>
-                <button type="button" disabled aria-label="Vai alla slide 1" onclick="dotsCarosello(event, 1)">1</button>
-            </li>
-            <li>
-                <button type="button" aria-label="Vai alla slide 2" onclick="dotsCarosello(event, 2)">2</button>
-            </li>
-            <li>
-                <button type="button" aria-label="Vai alla slide 3" onclick="dotsCarosello(event, 3)">3</button>
-            </li>
-        </ol>
-    </div>   
-     
-
-    <a href="galleria.html">
-        <button>Vai alle nostre Opere</button>
-    </a>
        
+    <div class="bottonetop"> <img src="../img/topArrow.png"> </img> da finire</div>
     <button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top">Top</button>
 
     <script src="js/carosello.js"></script>

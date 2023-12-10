@@ -6,10 +6,11 @@ body {
   background-color:#defeca;
   font-family: 'Raleway', sans-serif;
 }
+
 #container {
   position: relative;
   width:80%;
-  margin:5% auto;
+  margin: 1em auto;
   background-color:#fff6c1;
   box-shadow: -2px -2px 5px #ff7b0f,2px -2px 5px #ff7b0f;
 }
@@ -25,11 +26,26 @@ body {
     margin: 5% auto;
 }
 
-#homecontent{
+#homecontent{  /* TODO FARLA DIVENTARE CLASSE NO ID */
   text-align: center;
   align-items: center;
-  width: 100%;
-  padding-top: 2em;
+  margin: auto; 
+  padding: 1em;
+  width: 40%;
+  margin-top: 2em;
+  transition: transform .2s; /* Animation */
+  border-radius: 2em;
+  -webkit-border-radius:2em; /* Safari & Chrome */
+  -moz-border-radius:2em; /* Firefox */
+}
+
+#homecontent:hover{
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#homecontent > p > a{
+  text-decoration: underline;
 }
 
 #homecontent > h2{
@@ -38,14 +54,7 @@ body {
 
 #homecontent > a > p{
   padding-top: 1em;
-  position:static;
-  color: blue;
   text-decoration: underline;
-  transition: transform .2s; /* Animation */
-}
-
-#homecontent > a > p:hover{
-  transform: scale(1.1)
 }
 
 #homeabout{
@@ -165,15 +174,25 @@ body {
 }
 
 .bottonecar{
+  cursor: pointer;
+  text-align: center;
   margin: 0 1em 0 1em;
   background-color: #fff6c1;
+  color:  #ff7b0f;
+  font-weight: bold;
   border: 1px solid #ff7b0f;
   border-radius: 100%;
   -webkit-border-radius:100%; /* Safari & Chrome */
   -moz-border-radius:100%; /* Firefox */
   width: 2.5em;
-  height: 2.5em;;
+  height: 2.5em;
+  line-height: 2.5em; /*per centrare il testo verticalmente*/
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.bottonecar:hover{
+  background-color:  #ff7b0f;
+  color: #fff6c1;
 }
 
 .indicecarosello{
@@ -200,12 +219,38 @@ body {
   flex-direction: row;
 }
 
+.playercarosello > li{
+  list-style-type: none;
+}
+
+.bottonetop{
+  height: 2.5em;
+  width: 2.5em;
+  border-radius: 100%;
+  background-color: #fff6c1;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 5em auto ;
+}
+
+.bottonetop > img{
+  padding-top: 0.5em;
+  display: block;
+  margin: auto;
+}
+
+.bottonetop > :hover{
+  padding-top: 0.5em;
+  display: block;
+  margin: auto;
+}
+
 #breadcrumb{
   padding: 1em 0.5em;
   background-color: #fff6c1;
   border-bottom: 2px solid #ff7b0f;
   border-top: 2px solid #ff7b0f;
   margin: 4em 0 20px 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
 }
 
 #breadcrumb p{
