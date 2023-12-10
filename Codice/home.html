@@ -64,14 +64,14 @@
         <li class="indicecarosello"></li>
      </ol>
        
-     <div id="homecontent">
+     <div class="homecontent">
         <h2>La Nostra Galleria</h2>
         <p>Qui puoi trovare <strong>opere d'arte</strong> di tanti artisti emergenti o affermati .</p>
         <p>Se sei un <strong>artista</strong> e vuoi collaborare con noi, <a href="contatti.html"><strong>contattaci!</strong></a></p>
         <a href="galleria.html"><p>Vai Alle Nostre Opere </p> </a>
      </div>
 
-     <div id="homeabout">
+     <div class="homecontent">
         <h2>Perchè lo facciamo</h2>
         <p>
             La creazione di un sito di opere d'arte accessibile mira a garantire
@@ -86,7 +86,9 @@
             ambiente inclusivo e rispettoso delle diverse prospettive e abilità, contribuendo così
             a una società più equa e solidale
         </p>
-        
+    </div>
+
+    <div class="homecontent">
         <h2> Chi Siamo</h2>
         <p>
             Rap futuristico (Ah!)
@@ -111,31 +113,10 @@
         </p>
     </div>
        
-    <div class="bottonetop"> <img src="../img/topArrow.png"> </img> da finire</div>
-    <button onclick="scrollToTop()" id="scrollTopBtn" title="Go to top">Top</button>
+    <div class="bottonetop"> <img src="../img/topArrow.png"> </img></div>
 
     <script src="js/carosello.js"></script>
-    <script>
-        // Function to scroll to the top of the page
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scrolling to top
-        }
-
-        // Show the button when user scrolls down
-        window.onscroll = function() {
-            scrollFunction();
-        };
-
-        function scrollFunction() {
-            var scrollTopBtn = document.getElementById("scrollTopBtn");
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                scrollTopBtn.style.display = "block";
-            } else {
-                scrollTopBtn.style.display = "none";
-            }
-        }
-    </script>
-
+    <script src="js/bottonetop.js"></script>
 <footer>
     <div class="footerone">
         <p>AAA - Avanguardia Artistica Accessibile &amp; <span lang="en">All rights reserved</span></p>

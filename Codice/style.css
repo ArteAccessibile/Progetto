@@ -26,10 +26,10 @@ body {
     margin: 5% auto;
 }
 
-#homecontent{  /* TODO FARLA DIVENTARE CLASSE NO ID */
+.homecontent{  /* TODO FARLA DIVENTARE CLASSE NO ID */
   text-align: center;
   align-items: center;
-  margin: auto; 
+  margin: 2em auto; 
   padding: 1em;
   width: 40%;
   margin-top: 2em;
@@ -39,33 +39,22 @@ body {
   -moz-border-radius:2em; /* Firefox */
 }
 
-#homecontent:hover{
+.homecontent:hover{
   transform: scale(1.1);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-#homecontent > p > a{
+.homecontent > p > a{
   text-decoration: underline;
 }
 
-#homecontent > h2{
+.homecontent > h2{
   padding-bottom: 1em;
 }
 
-#homecontent > a > p{
+.homecontent > a > p{
   padding-top: 1em;
   text-decoration: underline;
-}
-
-#homeabout{
-  text-align: left;
-  padding-left: 2em; 
-  width: 70%;
-}
-
-#homeabout > h2{
-  padding: 2em 0 1em 0;
-
 }
 
 #logo {
@@ -228,8 +217,9 @@ body {
   width: 2.5em;
   border-radius: 100%;
   background-color: #fff6c1;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
   margin: 5em auto ;
+  transition: transform .2s; /* Animation */
 }
 
 .bottonetop > img{
@@ -238,10 +228,9 @@ body {
   margin: auto;
 }
 
-.bottonetop > :hover{
-  padding-top: 0.5em;
-  display: block;
-  margin: auto;
+.bottonetop:hover{
+  transform: scale(1.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #breadcrumb{
