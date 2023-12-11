@@ -449,13 +449,15 @@ ul.no-bullets {
 }
 
 /****************************************************/
-
+/*        OPERE       */
 .opere{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 1em;
   list-style-type: none;
+  max-width: 1024px;
+  margin: 0 auto;
 }
 
 .opere li img {
@@ -465,7 +467,17 @@ max-width: 100%;
 height: 15em;
 vertical-align: middle;
 border-radius: 5px;
-border: 1px solid blue; /*blu fa schifo ma fa vedere che c'è il bordo*/
+border: 12px solid transparent; /*blu fa schifo ma fa vedere che c'è il bordo*/
+
+}
+
+.containerOpere img{
+
+width: 200px;
+height: 200px;
+object-fit: cover;
+;
+
 }
 
 /** ACCOUNT **/
