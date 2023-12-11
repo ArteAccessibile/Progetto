@@ -10,7 +10,7 @@ body {
 #container {
   position: relative;
   width:80%;
-  margin: 1em auto;
+  margin: 2em auto;
   background-color:#fff6c1;
   box-shadow: -2px -2px 5px #ff7b0f,2px -2px 5px #ff7b0f;
 }
@@ -106,25 +106,37 @@ body {
   list-style-type: none;
   display: flex;
   align-items: center;
-  padding: 1em 0 0 2em;
+  margin: 1em 0 0 2em;
+  padding: 0.5;
+}
+
+.nostylea{
+  text-decoration: none;
+  color: black;
 }
 
 #accountflexbox {
+  cursor: pointer;
+  border-radius: 1em;
   list-style-type: none;
   display: flex;
   align-items: center;
-  padding: 1em 2em 0 0;
+  margin: 1em 2em 0 0;
+  padding: 0.5em;
+  transition: transform .2s; /* Animation */
+}
+
+#accountflexbox:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transform: scale(1.1);
 }
 
 #accountflexbox > li > h2 {
+  cursor: pointer;
   padding-left: 0.2em;
   font-size: 1.2em;
   font-weight: bold;
   text-decoration: underline;
-}
-
-#accountflexbox :hover {
-  color: #ff7b0f;
 }
 
 .nascosto{
@@ -144,6 +156,7 @@ body {
 }
 
 .immaginecarosello{
+  cursor: pointer;
   object-fit: cover;
   position:absolute; /*per mettere le immagini in stack*/
   border-radius: 2em;
@@ -213,6 +226,7 @@ body {
 }
 
 .bottonetop{
+  cursor: pointer;
   height: 2.5em;
   width: 2.5em;
   border-radius: 100%;
