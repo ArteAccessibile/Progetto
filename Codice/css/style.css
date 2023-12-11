@@ -149,7 +149,7 @@ body {
 
 .car{
   width: 100%;
-  margin: auto;
+  margin: 3em auto;
   display: flex;
   justify-content: center;
   height: 350px;
@@ -250,6 +250,10 @@ body {
 }
 
 #breadcrumb{
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  z-index: 1;
+  top: 0;
   padding: 1em 0.5em;
   background-color: #fff6c1;
   border-bottom: 2px solid #ff7b0f;
@@ -463,6 +467,34 @@ vertical-align: middle;
 border-radius: 5px;
 border: 1px solid blue; /*blu fa schifo ma fa vedere che c'è il bordo*/
 }
+
+/** ACCOUNT **/
+
+.bottoneindietro{
+  margin: 1em 0 0 1em;
+  cursor: pointer;
+  transition: transform .2s; /* Animation */
+  border-radius: 0.5em;
+  height: 2.7em;
+  width: 3em;
+}
+
+.bottoneindietro > img{
+  height: 2.7em;
+  width: 3em;
+}
+
+.bottoneindietro:hover{
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#sezioneaccount{
+  text-align: left;
+  margin: 1em 0 0 1em;
+}
+
+/*************/
 
 /****************************************************/
 
