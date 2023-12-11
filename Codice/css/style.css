@@ -148,7 +148,8 @@ body {
 }
 
 .car{
-  padding: 1em 0 1em 0;
+  width: 100%;
+  margin: auto;
   display: flex;
   justify-content: center;
   height: 350px;
@@ -216,6 +217,7 @@ body {
 
 .playercarosello{
   width: 100%;
+  margin-top: 1em;
   display: flex;
   justify-content: center;
   flex-direction: row;
