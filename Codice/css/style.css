@@ -503,10 +503,85 @@ object-fit: cover;
 
 #sezioneaccount{
   text-align: left;
-  margin: 1em 0 0 1em;
+  margin: 1em 0 3em 1em;
+
 }
 
-/*************/
+#sezioneaccount > h2{
+  margin-left: 0.8em;
+  font-size: 1.1em;
+}
+
+#sezioneaccount > h2 > strong{
+  font-size: 1.1em;
+  color: #ff7b0f
+}
+
+#sezioneaccount > ul{
+  margin: 0.5em 0 0 2em;
+}
+
+#sezioneaccount > ul > li{
+  padding-top: 0.2em;
+}
+
+#sezioneaccount > ul > li > a{
+  text-decoration: underline;
+}
+
+/**preferiti**/
+#sezionePreferiti{
+  margin: 1em 1em 3em 1em;
+}
+
+#sezionePreferiti > h2{
+  margin-left: 0.8em;
+  font-size: 1.1em;
+}
+
+#sezionePreferiti > h2 > strong{
+  font-size: 1.1em;
+  color: #ff7b0f
+}
+
+.preferiti-container{
+  padding: 1em;
+  display:  flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.preferito{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 1em;
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.preferito > li > img{
+  height: 8em;
+  width: 11em;
+  margin: 1em;
+  object-fit: cover;
+  border-radius: 0.5em;
+  box-shadow: 0 0 0 0, 0 0 0 0;
+}
+
+.descrizione-preferito{
+  list-style: none;
+  margin-right: 1em;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.descrizione-preferito > li{
+  margin: 0.5em  
+}
+
+.descrizione-preferito > li > p{
+  margin-left: 0.2em  
+}
 
 /****************************************************/
 
