@@ -1,123 +1,263 @@
 /* Mini CSS for Mobile Devices with screen width below 600px */
 @media only screen and (max-width: 600px) {
-    body {
-        background-color: #defeca;
-        font-family: 'Raleway', sans-serif;
+  body {
+      background-color: #defeca;
+      font-family: 'Raleway', sans-serif;
+  }
+
+  #container {
+      display: none;
+      width: 90%; 
+      margin: 10% auto; 
+  }
+
+  #container > nav {
+      display: block; 
+      max-height: none; 
+  }
+
+  #content {
+      width: 90%; 
+  }
+
+  #logo {
+      font-size: 24px; 
+      padding: 0 20px; 
+      width: 100%; 
+      text-align: center; 
+  }
+
+  #container > nav > ul {
+      flex-direction: column; 
+      position: static; 
+      padding: 0; 
+      right: 0; 
+  }
+
+  #container > nav > ul > li {
+      width: 100%; 
+      text-align: left; 
+  }
+
+  #container > nav > ul > li > a {
+      padding: 10px; 
+      
+  }
+
+  #breadcrumb, #breadcrumb p {
+    display: none;
+      width: 90%; 
+      margin: 10px auto; 
+  }
+
+ 
+
+  .footerContent {
+      width: 100%; 
+  }
+
+  .opere {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 1em 2em 2em 2em;  
+  }
+
+  .opere p{
+      display: none;
+  }
+
+  .opere li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+  
+   .opere li > img {
+      height: 450px;
+      width: auto;
+      object-fit: contain; /* non taglia le immagini */
+   }
+  
+   .opere h2 {
+      color: chocolate;
+   }
+  }
+
+  a:focus {
+      outline: 2px solid #000; /* per accessibilità */
+  }
+
+  #artisti li {
+      width: 100%;
+      padding: 1.0em;
     }
- 
-    #container {
-        width: 90%; 
-        margin: 10% auto; 
+    
+    .card {
+      width: 100%;
+      margin: 0.5em;
+      margin-bottom: 5em;
     }
- 
-    #container > nav {
-        display: block; 
-        max-height: none; 
+    
+    .card-body {
+      max-height: none;
+      overflow: visible;
     }
- 
-    #content {
-        width: 90%; 
-    }
- 
-    #logo {
-        font-size: 24px; 
-        padding: 0 20px; 
-        width: 100%; 
-        text-align: center; 
-    }
- 
-    #container > nav > ul {
-        flex-direction: column; 
-        position: static; 
-        padding: 0; 
-        right: 0; 
-    }
- 
-    #container > nav > ul > li {
-        width: 100%; 
-        text-align: left; 
-    }
- 
-    #container > nav > ul > li > a {
-        padding: 10px; 
-        
-    }
- 
-    #breadcrumb, #breadcrumb p {
-        width: 90%; 
-        margin: 10px auto; 
-    }
- 
-   
- 
+    
     .footerContent {
-        width: 100%; 
-    }
- 
-    .opere {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 1em 2em 2em 2em;  
+      width: 100%;
     }
 
-    .opere p{
-        display: none;
+    /* HOME */
+    .homecontent{
+      width: 80%;
     }
 
-    .opere li {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-     }
-    
-     .opere li > img {
-        height: 450px;
-        width: auto;
-        object-fit: contain; /* non taglia le immagini */
-     }
-    
-     .opere h2 {
-        color: chocolate;
-     }
-    }
- 
-    a:focus {
-        outline: 2px solid #000; /* per accessibilità */
+    .immaginecarosello{
+      width: 100%;
+      border-radius: 0em;
+      -webkit-border-radius:0em; /* Safari & Chrome */
+      -moz-border-radius:0em; /* Firefox */
     }
 
-    #artisti li {
-        width: 100%;
-        padding: 1.0em;
-      }
-      
-      .card {
-        width: 100%;
-        margin: 0.5em;
-        margin-bottom: 5em;
-      }
-      
-      .card-body {
-        max-height: none;
-        overflow: visible;
-      }
-      
-      .footerContent {
-        width: 100%;
-      }
+    .contenitorebottonicar{
+      width: 100%;
+    }
 
-      /* HOME */
-      .homecontent{
-        width: 80%;
-      }
+/*   test menu mobile*/
+body {
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: #1E1E23;
+  opacity:1;
+  font-family: 'work sans', sans serif;
+  font-size: 1.5em;
+  font-weight: 400;
+  transition: 200ms;
+}
+a:hover {
+  opacity:0.5;
+}
+ul {
+  padding: 0;
+  list-style-type: none;
+}
 
-      .immaginecarosello{
-        width: 100%;
-        border-radius: 0em;
-        -webkit-border-radius:0em; /* Safari & Chrome */
-        -moz-border-radius:0em; /* Firefox */
-      }
 
-      .contenitorebottonicar{
-        width: 100%;
-      }
+
+.containerMini {
+  margin-top: 50px; 
+  Display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contentino {
+  border: 1px solid #36383F;
+  border-radius: 20px;
+  width: 94%;
+  height: 91%;
+  background-color: #F5F6FA;
+  overflow: hidden;
+}
+nav {
+  background-color: #1E1E23;
+  height: 30em;
+}
+
+
+#menuToggle {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 25px;
+  left: 25px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input
+{
+  display: flex;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+
+#menuToggle span
+{
+  display: flex;
+  width: 29px;
+  height: 2px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #ffffff;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 5px 0px;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-3px, -1px);
+  background: #36383F;
+}
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu
+{
+  position: absolute;
+  width: 180px;
+  height: 400px;
+  box-shadow: 0 0 10px #85888C;
+  margin: -50px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  background-color: #F5F6FA;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  transition-delay: 2s;
+}
+
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}

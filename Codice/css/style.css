@@ -7,6 +7,11 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
+
+.containerMini{
+  display: none;
+}
+
 #container {
   position: relative;
   width:80%;
@@ -259,13 +264,15 @@ body {
   border-bottom: 2px solid #ff7b0f;
   border-top: 2px solid #ff7b0f;
   margin: 4em 0 20px 0;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  
 }
 
 #breadcrumb p{
   max-width: 1024px;
   margin: auto;
 }
+
 
 #odd{
     position:relative;
@@ -292,7 +299,7 @@ body {
   display:none;
 }
 a {
-  text-decoration:none;
+  text-decoration:underline;
 
 }
 
