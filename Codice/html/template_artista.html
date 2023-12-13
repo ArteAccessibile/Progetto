@@ -48,11 +48,11 @@
         <nav id="breadcrumb">
             <p>Ti trovi in: <a href="home.html"><span lang="en">Home </span></a> &gt; Artisti</p>
         </nav>
-    </body>
-
+    <main>
+        
     <div class="artist-container">
-        <div class="artist-image">
-            <img src="../../immagini/artisti/1.jpg" alt="">
+        <div>
+            <img id="artist-image"src="../../immagini/artisti/3.jpg" alt="">
         </div>
     
         <div class= "artist-info">
@@ -63,21 +63,23 @@
             
         </div>
     </div>
-    <div class="artist-description">
+    <div id="artist-description">
                 <p>
                     <strong>Description:</strong>
                     Artista di strada strafatto ammerda, se metto piu informazioni qua si sposta tutto pero zio pera.
                   </p>
     </div>
-        <div class= "artist-works">
+        <div>
             <h4>Opere</h4>
-            <ul>
-                <li><a href="opera1.link" id="gattomirtillo">Mirto</a></li>
+            <ul class= "artist-works">
+                <li><a href="template_opera.html" id="gattomirtillo"></a></li>
                 <li><a href="opera2.link" id="gattobaguette">Bague</a></li>
                 <li><a href="opera3.link" id="gattoburger">Burgir</a></li>
                 <li><a href="opera4.link" id="gattocroissant">Crocs</a></li>
-        
+            </ul>
         </div>
+    </main>
+    <div class="bottonetop"> <img src="../../immagini/topArrow.png" alt="Torna su"></div>
     <footer> 
         <hr>
         <div class="footerContent">
@@ -87,5 +89,7 @@
             <li><a href="" title="Privacy Policy">Privacy Policy</a></li> GNU
         </ul>
         </div>
-    </footer>
+    </footer>  
+    <script src="/js/bottonetop.js"></script>
+</body>
 </html>
