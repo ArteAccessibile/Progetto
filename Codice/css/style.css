@@ -442,12 +442,7 @@ h1{
     overflow: hidden;
 }
 
-.footerContent{
-    width: 60%;
-    margin: auto;
-    padding: 20px 0;
-    text-align: center;
-}
+
 
 ul.no-bullets {
     list-style-type: none; /* Remove bullets */
@@ -510,10 +505,85 @@ object-fit: cover;
 
 #sezioneaccount{
   text-align: left;
-  margin: 1em 0 0 1em;
+  margin: 1em 0 3em 1em;
+
 }
 
-/*************/
+#sezioneaccount > h2{
+  margin-left: 0.8em;
+  font-size: 1.1em;
+}
+
+#sezioneaccount > h2 > strong{
+  font-size: 1.1em;
+  color: #ff7b0f
+}
+
+#sezioneaccount > ul{
+  margin: 0.5em 0 0 2em;
+}
+
+#sezioneaccount > ul > li{
+  padding-top: 0.2em;
+}
+
+#sezioneaccount > ul > li > a{
+  text-decoration: underline;
+}
+
+/**preferiti**/
+#sezionePreferiti{
+  margin: 1em 1em 3em 1em;
+}
+
+#sezionePreferiti > h2{
+  margin-left: 0.8em;
+  font-size: 1.1em;
+}
+
+#sezionePreferiti > h2 > strong{
+  font-size: 1.1em;
+  color: #ff7b0f
+}
+
+.preferiti-container{
+  padding: 1em;
+  display:  flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.preferito{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 1em;
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.preferito > li > img{
+  height: 8em;
+  width: 11em;
+  margin: 1em;
+  object-fit: cover;
+  border-radius: 0.5em;
+  box-shadow: 0 0 0 0, 0 0 0 0;
+}
+
+.descrizione-preferito{
+  list-style: none;
+  margin-right: 1em;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.descrizione-preferito > li{
+  margin: 0.5em  
+}
+
+.descrizione-preferito > li > p{
+  margin-left: 0.2em  
+}
 
 /****************************************************/
 
@@ -522,6 +592,7 @@ object-fit: cover;
   justify-content: space-between; /* Space between items */
   align-items: center; /* Center items vertically */
   margin: 2em; /* Add margin as needed */
+  max-width: 1024px;
 }
 
 /*.artist-image{
@@ -546,8 +617,8 @@ object-fit: cover;
   color: rgb(0, 0, 0);
 }
 */
-.artist-image {
-  width: 40%;
+#artist-image {
+  max-width: 300px;
   height: auto; /* Allow the height to adjust according to the image */
   border-radius: 5%;
   margin-right: 2em; /* Adjust margin as needed */
@@ -557,16 +628,65 @@ object-fit: cover;
   width: 60%;
 }
 
+#artist-description{
+  margin-left: 2em;
+}
 
 /* Additional styles for artist-info */
 .artist-info h3, .artist-info p,  .artist-description p {
   margin-bottom: 0.4em;
 }
 
-.artist-works{
+h4{
+  font-size: 1.4em;
+  color: rgb(0, 0, 0);
+  margin-left: 1.5em;
+  margin-top: 0.5em;
+
+}
+
+ul.artist-works{
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: space-evenly;
   gap: 1em;
   list-style-type: none;
+}
+
+.artist-works li{
+  display: inline-block;
+  width: 25%;
+  padding: 1em;
+}
+
+
+.artist-works li a {
+  display: block;
+  background-size: cover;
+  background-position: center;
+  aspect-ratio: 1/1; /* Added aspect ratio */
+}
+
+#gattomirtillo{
+  background-image: url("/immagini/gattomirtillo.jpg");
+  border-radius: 5%;
+}
+
+.footerContent{
+    width: 60%;
+    margin: auto;
+    padding: 20px 0;
+    text-align: center;
+}
+
+#opera-image {
+  max-width: 100%; /* Set the maximum width to 100% of its container */
+  max-height: 600px;
+  height: auto; /* Allow the height to adjust according to the width */
+  display: block; /* Remove extra space below the image */
+  margin: auto; /* Center the image horizontally */
+}
+
+#opera-info{
+  margin: 2em;
 }
