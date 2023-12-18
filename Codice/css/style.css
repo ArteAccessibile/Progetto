@@ -398,7 +398,7 @@ h1{
 }
 
 #Artista1{
-  background-image: url("/img/artisti/1.jpg");
+  background-image: url("/immagini/artisti/1.jpg");
   border-radius: 5%;
 }
 
@@ -725,4 +725,24 @@ ul.artist-works{
 
 .navbar{
   display: none;
+}
+
+.error-505 {
+  background-color: #d9534f; /* Cambia il colore di sfondo per l'errore 505 */
+  color: #fff; /* Cambia il colore del testo per l'errore 505 */
+  font-size: 16px;
+}
+
+.error-container {
+  text-align: center;
+  padding: 50px;
+}
+
+.error-title {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.error-message {
+  font-size: 1.2em;
 }
