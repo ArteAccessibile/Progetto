@@ -575,8 +575,10 @@ border: 12px solid transparent; /*blu fa schifo ma fa vedere che c'è il bordo*/
 }
 
 .preferiti-container{
+  justify-content: center;
   padding: 1em;
   display:  flex;
+  flex-direction: row;
   flex-wrap: wrap;
   list-style: none;
 }
@@ -587,6 +589,7 @@ border: 12px solid transparent; /*blu fa schifo ma fa vedere che c'è il bordo*/
   display: flex;
   align-items: center;
   list-style: none;
+  margin: 0.3em;
 }
 
 .preferito > li > img{
