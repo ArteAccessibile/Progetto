@@ -1,14 +1,17 @@
 <?php
+namespace DB;
 class DBAccess {
-    private $connection;
+    private const HOST_DB = "localhost";
+        private const DATABASE_NAME = "fgiacomuTest";
+        private const USERNAME = "testUtente"; // da cambiare alla consegna
+        private const PASSWORD = "password";
 
-    public function __construct($host, $username, $password, $database) {
-        $this->connection = new mysqli($host, $username, $password, $database);
+        private $connection;
 
-        if ($this->connection->connect_error) {
-            die("Connection failed: " . $this->connection->connect_error);
+        public function openDBConnection(){
+            $this -> connection = mysqli_connect(self::HOST_DB, self::USERNAME, self::PASSWORD, self::DATABASE_NAME);
+            return mysqli_connect_errno()==0;
         }
-    }
 
     public function getOperas() {
         $query = "SELECT titolo FROM opera"; // Selecting name of the opera from the 'opera' table
