@@ -575,8 +575,10 @@ border: 12px solid transparent; /*blu fa schifo ma fa vedere che c'è il bordo*/
 }
 
 .preferiti-container{
+  justify-content: center;
   padding: 1em;
   display:  flex;
+  flex-direction: row;
   flex-wrap: wrap;
   list-style: none;
 }
@@ -587,6 +589,7 @@ border: 12px solid transparent; /*blu fa schifo ma fa vedere che c'è il bordo*/
   display: flex;
   align-items: center;
   list-style: none;
+  margin: 0.3em;
 }
 
 .preferito > li > img{
@@ -732,6 +735,25 @@ ul.artist-works{
   color: black; /* Cambia il colore del testo per l'errore 505 */
   font-size: 16px;
 }
+
+.error-404 {
+  text-align: center;
+}
+
+.error-404 > h1 {
+  color: #ff7b0f;
+  font-size: 6em;
+}
+
+.error-404 > p {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.error-404 > a {
+  font-size: 1.3em;
+}
+
 
 .error-container {
   text-align: center;
