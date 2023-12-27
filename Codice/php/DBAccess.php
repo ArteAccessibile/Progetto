@@ -35,22 +35,26 @@ class DBAccess {
          }
          
     
-    public function getOperaById($operaId) {
-        $query = "SELECT * FROM opera WHERE id = ?"; // Selecting all columns from the 'opera' table where the id matches the given id
-        $statement = $this->connection->prepare($query);
-        $statement->bind_param("i", $operaId); // Binding the id parameter to the query
-        $statement->execute();
-        
-        $result = $statement->get_result();
-     
-        if ($result->num_rows > 0) {
-            $opera = $result->fetch_assoc(); // Fetching the opera details as an associative array
-        } else {
-            $opera = null;
-        }
-     
-        return $opera;
-     }
+         public function getOperaById($operaId) {
+            $query = "SELECT * FROM opera WHERE id = ?"; // Selecting all columns from the 'opera' table where the id matches the given id
+            $statement = $this->connection->prepare($query);
+            $statement->bind_param("i", $operaId); // Binding the id parameter to the query
+            $statement->execute();
+            
+            $result = $statement->get_result();
+          
+            if ($result->num_rows > 0) {
+                $opera = $result->fetch_assoc(); // Fetching the opera details as an associative array
+                $name = $opera['titolo'];
+                $file_path = "../../immagini/" . str_replace(" ", "", strtolower($name)) . ".jpg"; // Generating the file path based on the opera's name
+                $opera['file_path'] = $file_path; // Adding the file path to the $opera array
+            } else {
+                $opera = null;
+            }
+          
+            return $opera;
+         }
+         
      
     
      
