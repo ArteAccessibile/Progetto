@@ -8,7 +8,7 @@ error_reporting(E_ALL);
 
 setlocale(LC_ALL, 'it_IT');
 
-$paginaHTML = file_get_contents("galleriatemplate.html");
+$paginaHTML = file_get_contents("../html/galleriatemplate.html");
 $stringaOpere = "";
 $listaOpere = "";
 
@@ -25,7 +25,7 @@ if ($connectionOk) {
             $opera_name = $opera['titolo'];
 
             // Creating the list with opera names and respective image file paths
-            $stringaOpere .= "<li><a href='$file_path'>$opera_name</a></li>";
+            $stringaOpere .= "<li><a href='example.com'>$opera_name</a></li> <img src='$file_path' alt='$file_path'>";
         }
     } else {
         $stringaOpere .= "<li>Non sono presenti opere</li>";

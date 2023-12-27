@@ -22,7 +22,7 @@ class DBAccess {
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $name = $row['titolo'];
-                $file_path = "immagini/" . str_replace(" ", "_", strtolower($name)) . ".jpg"; // Generating the file path based on the opera's name
+                $file_path = "../../immagini/" . str_replace(" ", "", strtolower($name)) . ".jpg"; // Generating the file path based on the opera's name
                 $operas[] = array('titolo' => $name, 'file_path' => $file_path); // Adding each opera's name and file path to the $operas array
             }
         }
