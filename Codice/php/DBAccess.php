@@ -56,7 +56,38 @@ class DBAccess {
          }
          
      
-    
+         public function getArtists() {
+            $query = "SELECT id, nome, cognome, email, descrizione FROM artisti"; // Selecting all columns from the 'artisti' table
+            $result = $this->connection->query($query);
+           
+            $artists = array();
+           
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $artists[] = $row; // Adding each artist's details to the $artists array
+                }
+            }
+           
+            return $artists;
+         }
+         
+         public function getArtistById($artistId) {
+            $query = "SELECT * FROM artisti WHERE id = ?"; // Selecting all columns from the 'artisti' table where the id matches the given id
+            $statement = $this->connection->prepare($query);
+            $statement->bind_param("i", $artistId); // Binding the id parameter to the query
+            $statement->execute();
+           
+            $result = $statement->get_result();
+           
+            if ($result->num_rows > 0) {
+                $artist = $result->fetch_assoc(); // Fetching the artist details as an associative array
+            } else {
+                $artist = null;
+            }
+           
+            return $artist;
+         }
+         
      
     public function closeConnection() {
         $this->connection->close();
