@@ -1,8 +1,8 @@
 
-USE fgiacomutest; --cambiare con il nome del database 
+USE fgiacomutest; 
+-- cambiare con il nome del database 
 
 DROP TABLE if EXISTS utente;
-
 DROP TABLE if EXISTS opera;
 DROP TABLE if EXISTS preferito;
 DROP TABLE if EXISTS artista;

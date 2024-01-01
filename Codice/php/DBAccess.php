@@ -57,7 +57,7 @@ class DBAccess {
          
      
          public function getArtists() {
-            $query = "SELECT id, nome, cognome, email, descrizione FROM artisti"; // Selecting all columns from the 'artisti' table
+            $query = "SELECT * FROM artista"; // Selecting all columns from the 'artista' table
             $result = $this->connection->query($query);
            
             $artists = array();
@@ -69,12 +69,12 @@ class DBAccess {
             }
            
             return $artists;
-         }
-         
-         public function getArtistById($artistId) {
-            $query = "SELECT * FROM artisti WHERE id = ?"; // Selecting all columns from the 'artisti' table where the id matches the given id
+          }
+          
+          public function getArtistByUser($userEmail) {
+            $query = "SELECT * FROM artista WHERE utente = ?"; // Selecting all columns from the 'artista' table where the user email matches the given email
             $statement = $this->connection->prepare($query);
-            $statement->bind_param("i", $artistId); // Binding the id parameter to the query
+            $statement->bind_param("s", $userEmail); // Binding the user email parameter to the query
             $statement->execute();
            
             $result = $statement->get_result();
@@ -86,7 +86,8 @@ class DBAccess {
             }
            
             return $artist;
-         }
+          }
+          
          
      
     public function closeConnection() {
