@@ -16,12 +16,16 @@ if ($connectionOk) {
           $artistaName = $artista['pseudonimo'];
           $artistaDescription = $artista['descrizione'];
           $artistaString .= "<li class=\"card\">
-              <a href=\"{$artistaLink}\" id=\"Artista{$artista['utente']}\"></a>
               <div class=\"card-body\">
-                <h1>{$artistaName}</h1>
-                <p>{$artistaDescription}</p>
+                  <a href=\"{$artistaLink}\" id=\"Artista{$artista['utente']}\">
+                      <img src=\"../../immagini/artisti/{$artista['pseudonimo']}.jpg\" alt=\"Artist Image\">
+                  </a>
+                  <h1>{$artistaName}</h1>
+                  <p>{$artistaDescription}</p>
               </div>
-          </li>";
+            </li>";
+
+       
       }
       // Insert the list items into the <ul> tag
       $paginaHTML = str_replace("{artist-list}", $artistaString, file_get_contents("../html/artistitemplate.html"));
