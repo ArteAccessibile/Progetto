@@ -112,7 +112,7 @@ body {
   display: flex;
   align-items: center;
   margin: 1em 0 0 2em;
-  padding: 0.5;
+  padding: 0.5em;
 }
 
 .nostylea{
@@ -463,7 +463,7 @@ ul.no-bullets {
 }
 
 .opere li img {
-flex-grow: 1 1 auto;
+flex-grow: 1;
 object-fit: cover;
 max-width: 100%;
 height: 15em;
@@ -500,7 +500,7 @@ object-fit: cover;
 }
 
 .containerMini li img {
-  flex-grow: 1 1 auto;
+  flex-grow: 1;
   object-fit: cover;
   max-width: 100%;
   height: 15em;
@@ -620,35 +620,6 @@ object-fit: cover;
 /*                     ARTISTI       */
 /****************************************************/
 
-/*#componenti{
-    margin:auto;
-    width:95%;
-    max-width: 1024px;
-    padding-top: 1em;
-    padding-bottom: 2em;
-}
-
-#componenti>dt{
-    background-color: var(--headColor);
-    color: var(--txtColor);
-    border:1px solid black;
-    padding:0.5em;
-    font-size: 1.1em;
-}
-
-#componenti>dd{
-    background-color: var(--bgColor);
-    border: 1px solid black;
-    border-top: none;
-    padding: 0.5em;
-    margin-bottom: 1em;
-}
-
-#componenti>dd img{
-    width:15%;
-    float: left;
-    margin-right: 1em;
-}*/
 .artist-container dt, .artist-container dd {
   display: block;
  }
@@ -676,39 +647,57 @@ object-fit: cover;
   margin-bottom: 1em;
 }
 
-.artist-container>dd img{
-  width:15%;
-  float: left;
-  margin-right: 1em;
-}*/
 
 .artist-container dt{
-  float: left;
-  font-weight: bold;
+  display: block;
+ }
+ 
+.artist-container {
+    margin:auto;
+    width:95%;
+    max-width: 1024px;
+    padding-top: 1em;
+    padding-bottom: 2em;
 }
 
-/*.artist-image{
-  margin-left: 2em;
-  width: 30%;
-  height: 100%;
-  object-fit: cover;
+.artist-container>dt{
+  background-color: var(--headColor);
+  color: var(--txtColor);
+  border:1px solid black;
+  padding:0.5em;
+  font-size: 1.1em;
 }
-
-.artist-info{
-  margin-left: 2em;
-  width: 40%;
-  height: 100%;
-  object-fit: cover;
+.artist-container>dd{
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  background-color: var(--bgColor);
+  border: 1px solid black;
+  border-top: none;
+  padding: 0.5em;
+  margin-bottom: 1em;
 }
 
-.artist-info h3{
-  font-size: 2em;
-  color: rgb(0, 0, 0);
+.artist-container>dd img {
+ max-width: 300px; /* Adjust as needed */
+ max-height: 300px; /* Adjust as needed */
+ width: auto;
+ height: auto;
+ float: left;
+ margin-right: 1em;
+ border: 1px solid black; /* Apply the border directly to the image */
 }
-*/
+
+ 
+
+#artist-image {
+  max-width: 300px;
+  height: auto; /* Allow the height to adjust according to the image */
+  border-radius: 5%;
+  margin-right: 2em; /* Adjust margin as needed */
+}
+
+
+
+
 #artist-image {
   max-width: 300px;
   height: auto; /* Allow the height to adjust according to the image */
@@ -720,9 +709,7 @@ object-fit: cover;
   width: 60%;
 }
 
-#artist-description{
-  margin-left: 2em;
-}
+
 
 /* Additional styles for artist-info */
 .artist-info h3, .artist-info p,  .artist-description p {
@@ -759,10 +746,6 @@ ul.artist-works{
   aspect-ratio: 1/1; /* Added aspect ratio */
 }
 
-#gattomirtillo{
-  background-image: url("/immagini/gattomirtillo.jpg");
-  border-radius: 5%;
-}
 
 .footerContent{
     border-top: 1px solid black;

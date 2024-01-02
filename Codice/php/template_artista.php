@@ -16,6 +16,7 @@ if ($connectionOk) {
    
    // Pass the artist details to the artistitemplate.html file
    $paginaHTML = file_get_contents("../html/template_artista.html");
+   $paginaHTML = str_replace("{artista_image}", "../../immagini/artisti/{$artist['pseudonimo']}.jpg", $paginaHTML);
    $paginaHTML = str_replace("{name}", $artist['pseudonimo'], $paginaHTML);
    $paginaHTML = str_replace("{surname}", $artist['email_contatto'], $paginaHTML);
    $paginaHTML = str_replace("{mail}", $artist['email_contatto'], $paginaHTML);
