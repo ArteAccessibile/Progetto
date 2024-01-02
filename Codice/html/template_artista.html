@@ -52,25 +52,25 @@
         </nav>
     <main>
         
-        <div class="artist-container">
-            <div>
-                <img id="artist-image" src="{artista_image}" alt="">
-            </div>
-        
-            <div class= "artist-info">
-                <h3>{name}</h3>
-                <p><strong><span lang="en">Surname</span>: </strong>{surname}</p>
-                <p><strong>Email:</strong>{mail}</p>
-            </div>
-            <div id="artist-description">
-                {descriptionArtist}
-            </div>
-            <div>
+        <dl class="artist-container">
+            <dt> <h3>{name}</h3> </dt> <dd><img id="artist-image" src="{artista_image}" alt=""></dd>
+            
+            <dt><strong><span lang="en">Surname</span></strong></dt>
+              <dd>{surname} </dd>
+            <dt><strong><span lang="en">Email</span></strong></dt>
+                <dd>{mail}</dd>
+            
+            <dt id="artist-description"> </dt>
+               <dd>{descriptionArtist}</dd> 
+            
+            <dt>
                 <h4>Opere</h4>
-                {listaOpere}
-                
-            </div>
-        </div>  
+              
+            </dt>
+                <dd>
+                    {listaOpere}
+                </dd>
+        </dl>  
     </main>
 
     <div class="bottonetop"> <img src="../../immagini/topArrow.png" alt="Torna su"></div>

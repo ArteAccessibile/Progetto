@@ -88,7 +88,28 @@ class DBAccess {
             return $artist;
           }
           
+          public function getImagesByArtist($artistId) {
+            $query = "SELECT titolo FROM opera WHERE artista = ? LIMIT 3"; // Selecting only the opera titles from the 'opera' table where the artist matches the given id
+            $statement = $this->connection->prepare($query);
+            $statement->bind_param("s", $artistId); // Binding the artist id parameter to the query
+            $statement->execute();
+            
+            $result = $statement->get_result();
+            
+            $images = array();
+            
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $title = $row['titolo'];
+                    $file_path = "../../immagini/" . str_replace(" ", "", strtolower($title)) . ".jpg"; // Generating the file path based on the opera's title
+                    $images[] = $file_path; // Adding each image's file path to the $images array
+                }
+            }
+            
+            return $images;
+         }
          
+           
      
     public function closeConnection() {
         $this->connection->close();

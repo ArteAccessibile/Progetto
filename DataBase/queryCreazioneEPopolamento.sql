@@ -13,13 +13,15 @@ CREATE TABLE utente (
     psw char(64) NOT NULL,
     nome varchar(20) NOT NULL,
     cognome varchar(20) NOT NULL,
-    data_nascita date NOT NULL
+    data_nascita date NOT NULL,
+    role ENUM('utente', 'admin') NOT NULL DEFAULT 'utente'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Inserisci valori nella tabella utente
 INSERT INTO utente (email, psw, nome, cognome, data_nascita) VALUES
 ('email1@example.com', 'password1', 'Nome1', 'Cognome1', '1990-01-01'),
-('email2@example.com', 'password2', 'Nome2', 'Cognome2', '1995-02-02');
+('email2@example.com', 'password2', 'Nome2', 'Cognome2', '1995-02-02'),
+('admin@gmail.com','admin','admin','admin','2001-12-23');
 
 -- Crea la tabella artista
 CREATE TABLE artista (
