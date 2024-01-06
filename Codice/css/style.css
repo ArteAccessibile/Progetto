@@ -537,16 +537,6 @@ border: 12px solid transparent; /*blu fa schifo ma fa vedere che c'è il bordo*/
 
 }
 
-#sezioneaccount > h2{
-  margin-left: 0.8em;
-  font-size: 1.1em;
-}
-
-#sezioneaccount > h2 > strong{
-  font-size: 1.1em;
-  color: #ff7b0f
-}
-
 #sezioneaccount > ul{
   margin: 0.5em 0 0 2em;
 }
@@ -564,12 +554,12 @@ border: 12px solid transparent; /*blu fa schifo ma fa vedere che c'è il bordo*/
   margin: 1em 1em 3em 1em;
 }
 
-#sezionePreferiti > h2{
+.logged_has{
   margin-left: 0.8em;
   font-size: 1.1em;
 }
 
-#sezionePreferiti > h2 > strong{
+.logged_has > strong{
   font-size: 1.1em;
   color: #ff7b0f
 }
@@ -614,6 +604,45 @@ border: 12px solid transparent; /*blu fa schifo ma fa vedere che c'è il bordo*/
 
 .descrizione-preferito > li > p{
   margin-left: 0.2em  
+}
+
+/* sezione account artista */
+
+.account_section{
+  margin: 2em 4em 4em 4em;
+  border-radius: 2em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.account_data_section{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.account_data_section > ul{
+  margin: 0 0 0 1em;
+  list-style: none;
+}
+
+.account_data_section > ul > li{
+  margin-bottom: 0.2em;
+}
+
+.account_section > h2{
+  padding: 1em;
+}
+
+.account_desc_section{
+  margin: 0 2em 0 2em;
+}
+
+.avatar_image{
+  width: 10em;
+  height: 10em;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 1em;
 }
 
 /****************************************************/

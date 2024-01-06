@@ -210,5 +210,10 @@ nav {
   color: white;
 }
 
+/* account */
+.account_data_section{
+  justify-content: center;
+}
+
 
 
