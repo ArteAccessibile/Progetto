@@ -38,7 +38,7 @@
         <div id="container">
             <nav>
                 <ul>
-                    <li> <span lang="en"><a href="../html/home.html">Home</a></span></li>
+                    <li lang="en"><a href="../html/home.html">Home</a></li>
                     <li><a href="../php/galleria.php">Galleria</a></li>
                     <li id="selected">Artisti</li>
                     <li><a href="../html/contatti.html">Contatti</a></li>
@@ -46,29 +46,13 @@
             </nav>
         </div>
         <nav id="breadcrumb">
-            <p>Ti trovi in: <a href="../html/home.html"><span lang="en">Home </span></a> &gt;
-                <a href="../php/artisti.php">Artisti</a> &gt; {name}
-            </p>
+            <p>Ti trovi in: <a href="../html/home.html"><span lang="en">Home </span></a> &gt; Artisti</p>
         </nav>
-    <main>
-        
-        <dl class="artist-container">
-            <dt> {name} </dt>
-                <dd><img id="artist-image" src="{artista_image}" alt=""></dd>
-            <dt><strong><span lang="en">Surname</span></strong></dt>
-              <dd>{surname} </dd>
-            <dt><strong><span lang="en">Email</span></strong></dt>
-                <dd>{mail}</dd>
-            
-            <dt><strong>Descrizione</strong> </dt>
-               <dd>{descriptionArtist}</dd> 
-            
-            <dt>Opere</dt>
-                <dd>
-                    {listaOpere}
-                </dd>
-        </dl>  
-    </main>
+        <main>
+            <ul id="artisti">
+                {artist-list}   
+            </ul>
+        </main>
 
     <div class="bottonetop"> <img src="../../immagini/topArrow.png" alt="Torna su"></div>
     <footer> 
@@ -84,14 +68,14 @@
 
     <div class="navbar">
         <ul>
-                <li> <span lang="en"><a href="../html/home.html">Home</a></span></li>
-                <li> <a href="../php/galleria.php">Galleria</a></li>                
-                <li id="selectedMini"><a href="../php/artisti.php">Artisti</a></li>
-                <li><a href="contatti.html">Contatti</a></li>
+            <li> <span lang="en"><a href="../html/home.html">Home</a></li>
+            <li> <a href="../php/galleria.php">Galleria</a></li>                
+            <li id="selectedMini"><a href="../php/artisti.php">Artisti</a></li>
+            <li><a href="contatti.html">Contatti</a></li>
     
         </ul>
-    </div>
+</div>
 
-    <script src="../js/bottonetop.js"></script>
+    <script src="/js/bottonetop.js"></script>
 </body>
 </html>
