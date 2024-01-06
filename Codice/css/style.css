@@ -651,6 +651,44 @@ object-fit: cover;
   margin: 1em;
 }
 
+#opere_artista_section{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 0 2em 0 2em;
+}
+
+.opera_artista_card{
+  list-style: none;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin: 1em;
+  height: 12em;
+  width: 8em;
+  text-align: center;
+  border-radius: 1em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: transform .2s; 
+}
+
+.opera_artista_card:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.opera_artista_card > p{
+  margin-top: 0.2em;
+}
+
+.opera_artista_card > img{
+  height: 8em;
+  width: 8em;
+  border-radius: 1em 1em 0 0;
+  object-fit: cover;
+}
+
 /****************************************************/
 /*                     ARTISTI       */
 /****************************************************/
