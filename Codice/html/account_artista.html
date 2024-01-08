@@ -16,8 +16,18 @@
 </head>
 <body>
     <header>
-        <div class="bottoneindietro">
-            <img src="../../immagini/back_arrow.png" alt="">
+        <div class="arrow_back_header">
+            <div class="bottoneindietro">
+                <img src="../../immagini/back_arrow.png" alt="">
+            </div>
+            <ol id="logoflexbox">
+                <li>
+                    <img src="../../immagini/logo.png" width="40" height="40" alt="">
+                </li>
+                <li>
+                        <h1> Arte Per Tutti </h1>
+                </li>
+            </ol>
         </div>
     </header>
 
@@ -27,7 +37,7 @@
 
     <main>
         <h2 class="logged_has"> Sei loggato come: <strong>ombrettatimangia@unipd.it</strong> </h2>
-        <div class="account_section">
+        <div class="rounded_main_container">
             <h2> Il tuo account </h2>
             <section class="account_data_section">
                 <img class="avatar_image" src="../../immagini/gattobaguette.jpg" width="300" height="300">
@@ -64,6 +74,9 @@
                     </li>
                 </ul>
             </section>
+            <section id="new_opera_section">
+                <button type=button class="rised_button" id="btnnewopera"> Carica una nuova opera </button>
+            </section>
         </div>
     </main>
     <footer>
@@ -79,6 +92,7 @@
         </div>  
 </footer>  
     <script src="../js/bottoneindietro.js"></script>
+    <script src="../js/bottonenuovaopera.js"></script>
 </body>
 </html>
 

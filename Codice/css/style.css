@@ -210,6 +210,7 @@ body {
   margin: 0.5em;
   background-color: #fff6c1;
   border: 1px solid #ff7b0f;
+  cursor: pointer;
 }
 
 .indiceattivocar{
@@ -515,6 +516,14 @@ object-fit: cover;
   border: 12px solid transparent; /*blu fa schifo ma fa vedere che c'è il bordo*/
 }
 
+/** **/
+
+.arrow_back_header{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+}
 
 /** ACCOUNT **/
 
@@ -614,10 +623,15 @@ object-fit: cover;
 
 /* sezione account artista */
 
-.account_section{
+.rounded_main_container{
   margin: 2em 4em 4em 4em;
+  padding-bottom: 2em;
   border-radius: 2em;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.rounded_main_container > h2{
+  padding: 1em;
 }
 
 .account_data_section{
@@ -633,10 +647,6 @@ object-fit: cover;
 
 .account_data_section > ul > li{
   margin-bottom: 0.2em;
-}
-
-.account_section > h2{
-  padding: 1em;
 }
 
 .account_desc_section{
@@ -658,6 +668,26 @@ object-fit: cover;
   margin: 0 2em 0 2em;
 }
 
+#new_opera_section{
+  margin: 0 0 0 3em;
+}
+
+.rised_button{
+  cursor: pointer;
+  background-color: #ff7b0f;
+  color: #fff6c1;
+  border: none;
+  border-radius: 1em;
+  padding: 0.8em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: transform .2s; /* Animation */
+}
+
+.rised_button:hover{
+  transform: scale(1.1);
+  background-color: #ff8e31;
+}
+
 .opera_artista_card{
   list-style: none;
   align-items: center;
@@ -671,10 +701,10 @@ object-fit: cover;
   border-radius: 1em;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transition: transform .2s; 
+  cursor: pointer;
 }
 
 .opera_artista_card:hover{
-  cursor: pointer;
   transform: scale(1.1);
 }
 
@@ -688,6 +718,39 @@ object-fit: cover;
   border-radius: 1em 1em 0 0;
   object-fit: cover;
 }
+
+/* Upload Opera */
+#text_data_opera{
+  margin-left: 2em;
+}
+
+#text_data_opera > div > p{
+  font-weight: bold;
+}
+
+.textbox{
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 0.5em;
+  margin: 1em;
+  transition: transform .2s; 
+}
+
+.textbox:focus{
+  outline: none;
+  transform: scale(1.1);
+}
+
+/*
+
+  aggiungere tasto info a desc e desc abbreviata
+
+*/
+
+
 
 /****************************************************/
 /*                     ARTISTI       */

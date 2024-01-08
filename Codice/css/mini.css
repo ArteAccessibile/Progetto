@@ -219,5 +219,11 @@ nav {
   justify-content: center;
 }
 
+#new_opera_section{
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
 
 
