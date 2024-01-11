@@ -7,6 +7,10 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
+label{
+  font-weight: bold;
+}
+
 
 .containerMini{
   display: none;
@@ -594,7 +598,14 @@ object-fit: cover;
   display: flex;
   align-items: center;
   list-style: none;
-  margin: 0.3em;
+  margin: 1em;
+  cursor: pointer;
+  transition: transform .2s;
+}
+
+.preferito:hover{
+  transform: scale(1.1);
+  background-color: #c5ffa2;
 }
 
 .preferito > li > img{
@@ -724,8 +735,27 @@ object-fit: cover;
   margin-left: 2em;
 }
 
-#text_data_opera > div > p{
-  font-weight: bold;
+#text_data_opera > div{
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 50%;
+}
+
+#text_data_opera > div > span{
+  height: 2em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#text_data_opera > div > textarea{
+  height: 7em;
+}
+
+#opera_picker{
+ margin: 1em 0 0 2em;
 }
 
 .textbox{
@@ -744,11 +774,47 @@ object-fit: cover;
   transform: scale(1.1);
 }
 
-/*
+#submit_opera_section{
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+}
 
-  aggiungere tasto info a desc e desc abbreviata
-
+/* Tooltip text */
+/* 
+   EXAMPLE
+   <div class="tooltip">Hover over me
+   <span class="tooltiptext">Tooltip text</span>
+   </div>
 */
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip > img {
+  width: 1em;
+  height: 1em;
+  margin: 0.25em 0 0 0.25em;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: #fff6c1;
+  padding: 0.5em;
+  border-radius: 6px;
+  font-weight: lighter;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+
 
 
 
