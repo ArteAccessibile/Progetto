@@ -1,0 +1,26 @@
+<html>
+{% block header %}
+<body>
+    <h1>Home Page</h1>
+    <form action="{{link}}" method="post">
+        <input type="email" name="email" placeholder="Email" required><br>
+        <input type="password" name="password" placeholder="Password" required><br>
+        <input typye="text" name="name" placeholder="Name" required><br>
+        <input type="text" name="surname" placeholder="Surname" required><br>
+        <input type="submit" value="Register"><br>
+        {{message}}
+    </form>
+    <footer class="footer">
+            
+        <div class="footerContent">
+                <p>AAA - Avanguardia Artistica Accessibile &amp; <span lang="en">All rights reserved</span></p>
+                <ul class="no-bullets">
+                    <li><span lang="en">Email: </span><a href="mailto:infoAAA@gmail.com">infoAAA@gmail.com</a></li>
+                    <li><span lang="en"><a href="" title="Privacy Policy">Privacy Policy</a></span> GNU</li> 
+                 </ul>   
+
+
+        </div>  
+    </footer> 
+</body>
+</html>
