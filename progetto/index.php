@@ -1,4 +1,7 @@
 <?php
+include 'php/framework/router.php';
+
+
 foreach (glob("framework/*.php") as $filename) {
     require $filename;
 }

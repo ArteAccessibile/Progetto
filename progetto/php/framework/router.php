@@ -1,4 +1,6 @@
 <?php
+include 'php/controller/homeController.php';
+
 class Router {
     private $routes = [];
 
