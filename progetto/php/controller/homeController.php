@@ -1,4 +1,6 @@
 <?php
+include 'php/framework/controller.php';
+include 'php/framework/templateEngine.php';
 
 class HomeController extends Controller {
     public function index() {

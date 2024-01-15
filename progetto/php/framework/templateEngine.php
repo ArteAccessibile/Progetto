@@ -7,7 +7,7 @@ class TemplateEngine {
 
     public function loadTemplate($path) {
         // compose the file path
-        $filePath = $this->path . "/" . $path .".htm";
+        $filePath = $this->path . "/" . $path .".html";
         
         if (file_exists($filePath)) {
             $this->template = file_get_contents($filePath);
