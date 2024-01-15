@@ -5,9 +5,7 @@
     {% foreach artists as artist %}
         <p>{{artist->alias}} / {{artist->contact_mail}}</p>
     {% endforeach %}
-    <footer class="footer">
-            
-        <div class="footerContent">
+    <div class="footerContent">
                 <p>AAA - Avanguardia Artistica Accessibile &amp; <span lang="en">All rights reserved</span></p>
                 <ul class="no-bullets">
                     <li><span lang="en">Email: </span><a href="mailto:infoAAA@gmail.com">infoAAA@gmail.com</a></li>
@@ -15,7 +13,35 @@
                  </ul>   
 
 
-        </div>  
+        </div> 
+    <main>
+        <ul id="artisti">
+            <?php
+            // Fetch artist data from the server using PHP
+            $artists_data = json_decode(file_get_contents('listArtists.php'), true);
+
+            // Loop through the artists and display them dynamically
+            foreach ($artists_data as $artist) {
+            ?>
+                <li class="card">
+                    <a href="<?php echo $artist['link']; ?>">
+                        <div class="card-body">
+                            <h1><?php echo $artist['alias']; ?></h1>
+                            <p><?php echo $artist['contact_mail']; ?></p>
+                        </div>
+                    </a>
+                </li>
+            <?php
+            }
+            ?>
+    </main>
+
+<footer class="footer">
+        <p>AAA - Avanguardia Artistica Accessibile &amp; <span lang="en">All rights reserved</span></p>
+        <ul class="no-bullets">
+            <li><span lang="en">Email: </span><a href="mailto:infoAAA@gmail.com">infoAAA@gmail.com</a></li>
+            <li><span lang="en"><a href="" title="Privacy Policy">Privacy Policy</a></span> GNU</li> 
+         </ul>   
     </footer> 
 </body>
 </html>
