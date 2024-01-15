@@ -1,5 +1,8 @@
 <?php
 
+include 'php/framework/controller.php';
+include 'php/framework/templateEngine.php';
+
 class ArtistController extends Controller{
     public function save(){
         if (!isset($_SESSION['user'])) {

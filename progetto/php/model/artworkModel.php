@@ -16,6 +16,7 @@ class ArtworkModel extends ORM {
         'image'
     ];
 
+    
     public function get_artwork_by_artist_id($artist_id){
         $query = "SELECT * FROM {$this->table} WHERE artist_id = :artist_id";
         $data = [
@@ -23,6 +24,11 @@ class ArtworkModel extends ORM {
         ];
         return $this->find($query, $data);
     }
+    public function get_all_artworks(){
+        $query = "SELECT * FROM {$this->table}";
+        return $this->find($query, []);
+      }
+      
 
     public function __construct() {
         parent::__construct($this->table);

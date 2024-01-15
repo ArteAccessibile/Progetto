@@ -1,3 +1,6 @@
+
+USE test2db; 
+
 CREATE TABLE `user` (
   `id` int(11) AUTO_INCREMENT PRIMARY KEY,
   `email` varchar(40) NOT NULL,

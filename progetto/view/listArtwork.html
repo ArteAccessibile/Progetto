@@ -1,11 +1,17 @@
 <html>
 {% block header %}
 <body>
-    <h1>List Artwork</h1>
-    <h2>Artist: {{artist_name}}</h2>
+
+
+    
+    <h1>Artwork List</h1>
     {% foreach artworks as artwork %}
         <p>{{artwork->title}}</p>
     {% endforeach %}
+
+
+
+
     <footer class="footer">
             
         <div class="footerContent">

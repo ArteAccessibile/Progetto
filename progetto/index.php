@@ -29,6 +29,8 @@ $router->addRoute('/artists', 'ArtistController', 'listArtists');
 $router->addRoute('/artwork/save', 'ArtistController', 'addArtwork');
 $router->addRoute('/artist/listArtworks', 'ArtistController', 'listArtworks');
 $router->addRoute('/artwork/upload', 'ArtistController', 'uploadArtwork');
+$router->addRoute('/artworks', 'ArtworkController', 'index');
+
 
 $router->dispatch();
 ?>
