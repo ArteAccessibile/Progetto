@@ -50,18 +50,16 @@
             {cosa}
         </p>
     </nav>
-    <main>
-        <div>
-            <img id="opera-image" src="{opera_image}" alt="">
-        </div>
-        <h1>{opera_name}</h1>
-        <div id="opera-info">
-            <!-- Rest of the opera details -->
-            <p><strong>Descrizione:</strong>
-                {opera_description}
-            </p>
-        </div>
-    </main>
+    <main id="maincontent">
+        <dl class="opera-container">
+            <dt><h1>{opera_name}</h1></dt>
+            <dd><img id="opera-image" src="{opera_image}" alt=""></dd>
+            <dt><strong>Descrizione</strong></dt>
+            <dd>{opera_description}</dd>
+            
+        </dl>
+     </main>
+     
     <div class="bottonetop"> <img src="../../immagini/topArrow.png" alt="Torna su"></div>
     <footer>
         
@@ -83,7 +81,7 @@
         </ul>
 </div>
 
-<script src="/js/bottonetop.js"></script>
+<script src="../js/bottonetop.js"></script>
 
 </body>
 </html>
