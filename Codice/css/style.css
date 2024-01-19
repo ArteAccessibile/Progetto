@@ -7,6 +7,23 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
+/*link skip content*/
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  left: auto;
+  top: auto;
+  width: auto;
+  height: auto;
+  overflow: visible;
+}
 
 .containerMini{
   display: none;
@@ -479,11 +496,17 @@ border-radius: 5px;
 border: 12px solid transparent; /*blu fa schifo ma fa vedere che c'è il bordo*/
 
 }
-.opere li p {
- 
+.opere li p,a {
+  position: relative;
   padding-bottom: 1em;
   
   }
+.opere li  {
+ 
+ padding-bottom: 1em;
+    
+}
+  
 
 .containerOpere img{
 

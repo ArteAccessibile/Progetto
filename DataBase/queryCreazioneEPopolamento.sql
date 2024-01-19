@@ -41,7 +41,7 @@ CREATE TABLE opera (
     id INT PRIMARY KEY AUTO_INCREMENT,
     artista varchar(40) NOT NULL,
     titolo varchar(50) NOT NULL,
-    desc_abbrev varchar(200) NOT NULL,
+    desc_abbrev varchar(75) NOT NULL,
     descrizione TEXT NOT NULL,
     data_creazione date NOT NULL,
     FOREIGN KEY (artista) REFERENCES artista(utente)
