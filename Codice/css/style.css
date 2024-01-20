@@ -7,6 +7,23 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
+/*link skip content*/
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  left: auto;
+  top: auto;
+  width: auto;
+  height: auto;
+  overflow: visible;
+}
 
 .containerMini{
   display: none;
@@ -479,11 +496,17 @@ border-radius: 5px;
 border: 12px solid transparent; /*blu fa schifo ma fa vedere che c'è il bordo*/
 
 }
-.opere li p {
- 
+.opere li p,a {
+  position: relative;
   padding-bottom: 1em;
   
   }
+.opere li  {
+ 
+ padding-bottom: 1em;
+    
+}
+  
 
 .containerOpere img{
 
@@ -515,6 +538,47 @@ object-fit: cover;
   border-radius: 5px;
   border: 12px solid transparent; /*blu fa schifo ma fa vedere che c'è il bordo*/
 }
+
+/******* opera_template container **********/
+.opera-container dt, .opera-container dd {
+  display: block;
+ }
+ 
+ .opera-container {
+  margin: auto;
+  width: 95%;
+  max-width: 1024px;
+  padding-top: 1em;
+  padding-bottom: 2em;
+ }
+ 
+ .opera-container dt {
+  background-color: var(--headColor);
+  color: var(--txtColor);
+  border: 1px solid black;
+  padding: 0.5em;
+  font-size: 1.1em;
+ }
+ 
+ .opera-container dd {
+  display: flex;
+  background-color: var(--bgColor);
+  border: 1px solid black;
+  border-top: none;
+  padding: 0.5em;
+  margin-bottom: 1em;
+ }
+ 
+ .opera-container dd img {
+  max-width: 300px; /* Adjust as needed */
+  max-height: 300px; /* Adjust as needed */
+  width: auto;
+  height: auto;
+  float: left;
+  margin-right: 1em;
+  border: 1px solid black; /* Apply the border directly to the image */
+ }
+ 
 
 /** **/
 

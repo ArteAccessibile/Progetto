@@ -17,7 +17,7 @@ class DBAccess {
         }
 
         public function getOperas() {
-            $query = "SELECT id, titolo FROM opera"; // Selecting id and name of the opera from the 'opera' table
+            $query = "SELECT id, titolo, desc_abbrev FROM opera"; // Selecting id and name of the opera from the 'opera' table
             $result = $this->connection->query($query);
          
             $operas = array();
@@ -26,8 +26,9 @@ class DBAccess {
                 while ($row = $result->fetch_assoc()) {
                     $id = $row['id'];
                     $name = $row['titolo'];
+                    $shortdesc = $row['desc_abbrev'];
                     $file_path = "../../immagini/" . str_replace(" ", "", strtolower($name)) . ".jpg"; // Generating the file path based on the opera's name
-                    $operas[] = array('id' => $id, 'titolo' => $name, 'file_path' => $file_path); // Adding each opera's id, name and file path to the $operas array
+                    $operas[] = array('id' => $id, 'titolo' => $name, 'file_path' => $file_path, 'desc_abbrev'=>$shortdesc); // Adding each opera's id, name and file path to the $operas array
                 }
             }
          

@@ -24,9 +24,15 @@ if ($connectionOk) {
            $file_path = $opera['file_path'];
            $opera_name = $opera['titolo'];
            $operaID = $opera['id'];
+           $shortDesc = $opera['desc_abbrev'];
 
            // Creating the list with opera names and respective image file paths
-           $stringaOpere .= "<li> <img src='$file_path' alt='$file_path'><a href='../php/template_opera.php?id=$operaID'>$opera_name</a></li> ";
+           $stringaOpere .= "
+            
+                <li> <img src='$file_path' alt='$shortDesc'>
+                <h2>$opera_name</h2>
+                <a href='../php/template_opera.php?id=$operaID'>Visualizza opera</a>
+                </li> ";
        }
    } else {
        $stringaOpere .= "<li>Non sono presenti opere</li>";
