@@ -994,8 +994,12 @@ ul.artist-works{
   margin: 2em;
 }
 
-
-
+/***********CONTATTI**************/
+.label{
+  color: #DDE5FE;
+  font-size: 1.2em;
+}
+/*********************************/
 .navbar{
   display: none;
 }
