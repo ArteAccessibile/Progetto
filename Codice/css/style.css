@@ -7,6 +7,34 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
+
+label{
+  font-weight: bold;
+}
+
+
+
+/*link skip content*/
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  left: auto;
+  top: auto;
+  width: auto;
+  height: auto;
+  overflow: visible;
+}
+
+/**container mini***/
+
+
 .containerMini{
   display: none;
 }
@@ -135,7 +163,7 @@ body {
   transform: scale(1.1);
 }
 
-#accountflexbox > li > h2 {
+#accountflexbox > li > a {
   cursor: pointer;
   padding-left: 0.2em;
   font-size: 1.2em;
@@ -478,17 +506,11 @@ border-radius: 5px;
 border: 12px solid transparent; /*blu fa schifo ma fa vedere che c'è il bordo*/
 
 }
-.opere li p,a {
-  position: relative;
+.opere li p {
+ 
   padding-bottom: 1em;
   
   }
-.opere li  {
- 
- padding-bottom: 1em;
-    
-}
-  
 
 .containerOpere img{
 
@@ -520,6 +542,7 @@ object-fit: cover;
   border-radius: 5px;
   border: 12px solid transparent; /*blu fa schifo ma fa vedere che c'è il bordo*/
 }
+
 
 /******* opera_template container **********/
 .opera-container dt, .opera-container dd {
@@ -561,6 +584,7 @@ object-fit: cover;
   border: 1px solid black; /* Apply the border directly to the image */
  }
  
+
 
 /** **/
 
@@ -953,7 +977,26 @@ object-fit: cover;
   width: 60%;
 }
 
+/* login */
 
+.login-error > strong{
+  color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+
+#form-login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#submit-login{
+  margin-bottom: 2em;
+}
 
 /* Additional styles for artist-info */
 .artist-info h3, .artist-info p,  .artist-description p {
@@ -998,6 +1041,7 @@ ul.artist-works{
     margin: auto;
     padding: 20px 0;
     text-align: center;
+    bottom: 0;
 }
 
 #opera-image {
