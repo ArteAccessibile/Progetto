@@ -3,7 +3,7 @@
   padding:0;
 }
 body {
-  background-color:#000412;
+  background: linear-gradient(to bottom, rgba(37, 37, 37, 0.99), #000000);
   font-family: 'Raleway', sans-serif;
 }
 
@@ -34,7 +34,7 @@ body {
   position: relative;
   width: 80%;
   margin: 2em auto;
-  background-color: #000412;
+  background-color: rgba(37, 37, 37);
   box-shadow: -2px -2px 5px #93d3f9, 2px -2px 5px #93d3f9;
 }
 
@@ -46,7 +46,7 @@ body {
 }
 
 #container > nav > ul {
-  background-color: #000412;
+  background-color: rgba(37, 37, 37);
   padding: 0;
   list-style-type: none;
   display: flex;
@@ -77,12 +77,12 @@ body {
 }
 
 #container > nav > ul > li:hover {
-  border-bottom: 2px solid #FBF50D;
-  background-color: #FBF50D;
+  border-bottom: 2px solid #7c7c8a;
+  background-color: #7c7c8a;
 }
 #selected {
-    border-bottom: 2px solid #FBF50D;
-    background-color: #FBF50D;
+    border-bottom: 2px solid #7c7c8a;
+    background-color: #7c7c8a;
 }
 #container > nav > ul > .dropdown:hover {
   border-bottom:none;
@@ -326,7 +326,7 @@ a {
   z-index: 1;
   top: 0;
   padding: 1em 0.5em;
-  background-color: #74EEF5; /* Cambiato il colore di sfondo delle briciole di pane */
+  background-color: #ffa500d0; /* Cambiato il colore di sfondo delle briciole di pane */
   border-bottom: 2px solid #0b204c; /* Cambiato il colore del bordo inferiore */
   border-top: 2px solid #0b204c; /* Aggiunto il colore del bordo superiore */
   margin: 4em 0 20px 0;
