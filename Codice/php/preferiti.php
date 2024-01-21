@@ -1,7 +1,14 @@
 <?php
     include "../config.php";
-    include $php_path . "db-connection.php";
     include $php_path . "check-connection.php";
+    include $php_path . "DBAccess.php";
+    use DB\DBAccess;
+
+    
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+    setlocale(LC_ALL, 'it_IT');
 
     if(session_status() == PHP_SESSION_NONE) {
         session_start();
@@ -21,7 +28,40 @@
         $page = str_replace("<set-visibility/>", "<div class=\"nascosto\" tabindex='0'>" , $page);
     }
 
+    $connection = new DBAccess();
 
-    $mysqli->close(); //mysqli da db-connection.php
+    $connectionOk = $connection->openDBConnection();
+
+    if ($connectionOk) {
+        $favs = $connection->getFavourites();
+        $replace = "";
+        if ($favs != null) {
+            foreach ($favs as $f) {
+            // Creating the list with opera names and respective image file paths
+                $replace .= "
+                            <ul class=\"preferito\">
+                            <li><img src=\"../../immagini/gattogamberetto.jpg\" alt=\"Paolo Sbringato\" ></li>
+                            <li>
+                                <ul class=\"descrizione-preferito\">
+                                    <li>
+                                        <h3>".$f['titolo']."</h2>
+                                        <p>".$f['desc_abbrev']."</p>
+                                    </li>
+                                    <li>
+                                        <h3> Autore </h2>
+                                        <p>".$f['artista']."</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            </ul>
+                            ";
+                        
+            }
+        } else {$replace .= "<p>Non sono presenti preferiti</p>";}
+    } else {
+        $stringaOpere = "<li>I sistemi sono momentaneamente fuori servizio, ci scusiamo per il disagio</li>";
+    }
+    $connection->closeConnection(); 
+    $page = str_replace("<favourites/>", $replace, $page);
     echo $page;
 ?>
