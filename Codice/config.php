@@ -6,6 +6,7 @@
 
     $php_pages = DIRECTORY_SEPARATOR . "php";
     $account_page = $php_pages . DIRECTORY_SEPARATOR . "account.php";
+    $favourite_page = $php_pages . DIRECTORY_SEPARATOR . "preferiti.php";
     //per ora teniamo questo qua sopra, cambiate def con il nome della cartella su httdocs 
 ?>
 

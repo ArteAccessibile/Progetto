@@ -7,9 +7,12 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
+
 label{
   font-weight: bold;
 }
+
+
 
 /*link skip content*/
 .skip-link {
@@ -30,6 +33,7 @@ label{
 }
 
 /**container mini***/
+
 
 .containerMini{
   display: none;
@@ -1034,6 +1038,7 @@ ul.artist-works{
     margin: auto;
     padding: 20px 0;
     text-align: center;
+    bottom: 0;
 }
 
 #opera-image {

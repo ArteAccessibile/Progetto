@@ -4,8 +4,8 @@
     error_reporting(E_ALL);
 
     const ADMIN_ROLE = "admin";
-    const USER_ROLE = "user";
-    const ARTIST_ROLE = "artist";
+    const USER_ROLE = "utente";
+    const ARTIST_ROLE = "artista";
 
     include ".." . DIRECTORY_SEPARATOR . "config.php";
     include  'db-connection.php';
@@ -24,7 +24,7 @@
         $password = clearInput($_POST['password']);
                 
         
-        $query = "SELECT * FROM `user` WHERE `email` = '$email' AND `password` = '$password'";
+        $query = "SELECT * FROM `utente` WHERE `email` = '$email' AND `psw` = '$password'";
         
         $result = $mysqli->query($query);
         
@@ -34,9 +34,9 @@
         } else {
             while ($row = $result->fetch_assoc()) {
                 $_SESSION["email"] = $row["email"];
-                $_SESSION["name"] = $row["name"];
-
-                switch($row["role"]){
+                $_SESSION["name"] = $row["nome"];
+                echo $row["ruolo"];
+                switch($row["ruolo"]){
                     case ADMIN_ROLE:
                         $_SESSION["role"] = ADMIN_ROLE;
                         break;
@@ -56,6 +56,7 @@
             $mysqli->close();
 
             header("Location: " . $_SESSION["go_back_page"]); 
+            //header("location: ../html/home.html"); NON VA BENE, UNO POTREBBE LOGGARE ANCHE DA UN ALTRA PAGINA
             die();
         }
     }

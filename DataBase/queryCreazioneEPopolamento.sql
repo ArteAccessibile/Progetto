@@ -14,7 +14,7 @@ CREATE TABLE utente (
     nome varchar(20) NOT NULL,
     cognome varchar(20) NOT NULL,
     data_nascita date NOT NULL,
-    role ENUM('utente', 'admin') NOT NULL DEFAULT 'utente'
+    ruolo ENUM('utente', 'admin') NOT NULL DEFAULT 'utente'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Inserisci valori nella tabella utente

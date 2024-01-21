@@ -7,10 +7,10 @@
         session_start();
     }
 
-    $_SESSION["go_back_page"] = $account_page; //index page definito in config.php
+    $_SESSION["go_back_page"] = $favourite_page; //index page definito in config.php
 
 
-    $page = file_get_contents($html_path . "account.html");
+    $page = file_get_contents($html_path . "preferiti.html");
 
     
     if (isset($_SESSION["role"]) && $_SESSION["role"] != "guest" && isset($_SESSION["email"])) {
