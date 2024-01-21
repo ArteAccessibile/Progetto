@@ -5,9 +5,9 @@ namespace DB;
 
 class DBAccess {
     private const HOST_DB = "localhost";
-        private const DATABASE_NAME = "fgiacomuTest";
-        private const USERNAME = "testUtente"; // da cambiare alla consegna
-        private const PASSWORD = "password";
+        private const DATABASE_NAME = "arte_accessibile";
+        private const USERNAME = "root"; // da cambiare alla consegna
+        private const PASSWORD = "";
 
         private $connection;
 
@@ -110,14 +110,26 @@ class DBAccess {
             return $images;
          }
          
+         public function getFavourites() {
+            $query = "SELECT pseudonimo, titolo, desc_abbrev FROM opera,preferito,artista WHERE preferito.utente=\"".$_SESSION["email"]."\" AND preferito.opera=opera.id AND opera.artista=artista.utente"; // Selecting id and name of the opera from the 'opera' table
+            $result = $this->connection->query($query);
+         
+            $fav = array();
+         
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $artista = $row['pseudonimo'];
+                    $title = $row['titolo'];
+                    $shortdesc = $row['desc_abbrev'];
+                    $fav[] = array('artista' => $artista, 'titolo' => $title, 'desc_abbrev'=>$shortdesc);
+                }
+            }
+            return $fav;
+         }
            
      
     public function closeConnection() {
         $this->connection->close();
     }
 }
-
-
-
-
 ?>

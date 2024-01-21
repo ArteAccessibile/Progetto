@@ -34,27 +34,28 @@
     </header>
 
     <nav id="breadcrumb">
-        <p>Ti trovi in: <a href="../html/account.html"><span lang="en"> Account </span></a></p>
+        <p>Ti trovi in: <a href="../php/account.php"><span lang="en"> Account </span></a></p>
     </nav>
 
     <main id="content">
         <div id="sezioneaccount">
-            <h2 class="logged_has"> Sei loggato come: <strong>ombrettatimangia@unipd.it</strong> </h2>
-            <h1> Account </h1>
-            <ul>
+            <loggedhas/>
+            <set-visibility/>
+            <h1> Account </h1> 
                 <li id="vaiPreferiti">
-                    <a href="preferiti.html">Opere salvate nei preferiti</a>
+                    <a href="preferiti.php">Opere salvate nei preferiti</a>
                 </li>
                 <li id="vaiRichiesta">
                     <a href="">Richiedi account artista</a>
                 </li>
                 <li id="logout">
-                    <a href="">Logout</a>
+                    <a href="logout.php">Logout</a>
                 </li>
                 <li id="test">
                     <a href="account_artista.html"> Gestione opere d'arte | visibile se si è artista</a>
                 </li>
             </ul>
+            </div>
         </div>
     </main>
 
