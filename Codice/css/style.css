@@ -12,6 +12,11 @@ label{
   font-weight: bold;
 }
 
+#logo{
+  width: auto;
+  height: 2em;
+}
+
 /*link skip content*/
 .skip-link {
   position: absolute;

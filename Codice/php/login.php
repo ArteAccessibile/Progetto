@@ -24,7 +24,7 @@
         $password = clearInput($_POST['password']);
                 
         
-        $query = "SELECT * FROM `user` WHERE `email` = '$email' AND `password` = '$password'";
+        $query = "SELECT * FROM `utente` WHERE `email` = '$email' AND `psw` = '$password'";
         
         $result = $mysqli->query($query);
         
@@ -54,7 +54,8 @@
             $result->free_result();
             $mysqli->close();
 
-            header("Location: " . $_SESSION["go_back_page"]); 
+        //*    header("Location: " . $_SESSION["go_back_page"]); 
+        header("location: ../html/home.html");
             die();
         }
     }
