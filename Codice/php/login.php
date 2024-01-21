@@ -34,6 +34,7 @@
         } else {
             while ($row = $result->fetch_assoc()) {
                 $_SESSION["email"] = $row["email"];
+                $_SESSION["name"] = $row["name"];
 
                 switch($row["role"]){
                     case ADMIN_ROLE:

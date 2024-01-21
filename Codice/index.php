@@ -12,8 +12,8 @@
 
     $page = file_get_contents($html_path . "home.html");
 
-    if (isset($_SESSION["role"]) && $_SESSION["role"] != "guest" && isset($_SESSION["username"])) {
-        $page = str_replace("<welcome/>", "Ciao, " .$_SESSION["username"] , $page);
+    if (isset($_SESSION["role"]) && $_SESSION["role"] != "guest" && isset($_SESSION["name"])) {
+        $page = str_replace("<welcome/>", "<p> Ciao, " .$_SESSION["name"]."</p>" , $page);
     } else {
         $page = str_replace("<welcome/>", "", $page);
     }
