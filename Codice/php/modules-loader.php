@@ -29,7 +29,6 @@ if(isset($page)){
         $nav = str_replace("<li id=\"home\">", "<li lang=\"en\" id=\"selected\">", $nav);
     }
 
-
     $page = str_replace("<header/>", $header, $page);
     $page = str_replace("<footer/>", $footer, $page);
     $page = str_replace("<mininavbar/>", $nav, $page);
