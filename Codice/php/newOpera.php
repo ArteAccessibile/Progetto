@@ -132,7 +132,7 @@ if(strlen($messaggiPerForm) == 0){//se non ci sono messaggi di errore fino ad qu
 
 $funzioniDB->closeConnection();
 //per non perdere quello scritto in caso di errore
-$paginaHTML = str_replace("{nome_utente}", $_SESSION["name"], $paginaHTML);
+//$paginaHTML = str_replace("{nome_utente}", $_SESSION["name"], $paginaHTML);
 $paginaHTML = str_replace("{messaggiForm}", $messaggiPerForm, $paginaHTML);
 $paginaHTML = str_replace("{titolo}", $titolo, $paginaHTML); 
 $paginaHTML = str_replace("{anno}", $data_creazione, $paginaHTML);
