@@ -45,6 +45,6 @@ if ($connectionOk) {
 
 $page = str_replace("{opere}", $stringaOpere, $page);
 $_SESSION["nav_page"] = "gallery"; //importante definirlo in ogni pagina tra home | contatti ...
-include "../modules-loader.php";
+include "modules-loader.php";
 echo $page;
 ?>
