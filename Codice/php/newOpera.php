@@ -1,6 +1,6 @@
 <?php
 require_once "../php/DBAccess.php";
-require_once "../php/login.php";
+
 
 use DB\DBAccess;
 
