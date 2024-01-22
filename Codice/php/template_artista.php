@@ -32,9 +32,9 @@ if ($connectionOk) {
        $imagesHtml = "No images found.";
    }
    
+   
    // Replace the {listaOpere} placeholder with the generated HTML for the images
    $paginaHTML = str_replace("{listaOpere}", $imagesHtml, $paginaHTML);
-   
    echo $paginaHTML;
  } else {
    echo "Artist not found.";

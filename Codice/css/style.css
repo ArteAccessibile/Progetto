@@ -431,25 +431,6 @@ h1{
     margin: 0.5em;
 }
 
-#Artista1{
-  background-image: url("/immagini/artisti/1.jpg");
-  border-radius: 5%;
-}
-
-#Artista2{
-  background-image: url("/img/artisti/2.jpg");
-  border-radius: 5%;
-}
-
-#Artista3{
-  background-image: url("/img/artisti/3.jpg");
-  border-radius: 5%;
-}
-
-#Artista4{
-  background-image: url("/img/artisti/4.jpg");
-  border-radius: 5%;
-}
 .card {
   display: block;
   width: 20%;
@@ -566,7 +547,6 @@ object-fit: cover;
 /******* opera_template container **********/
 .opera-container dt, .opera-container dd {
   display: block;
-  color: #DDE5FE;
  }
  
  .opera-container {
@@ -577,17 +557,22 @@ object-fit: cover;
   padding-bottom: 2em;
  }
  
+.opera-container h1{
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
  .opera-container dt {
   background-color: var(--headColor);
-  border: 1px solid black;
   padding: 0.5em;
   font-size: 1.1em;
+  border: 1px solid rgb(255,255,255);
  }
  
  .opera-container dd {
   display: flex;
   background-color: var(--bgColor);
-  border: 1px solid black;
   border-top: none;
   padding: 0.5em;
   margin-bottom: 1em;
@@ -600,7 +585,7 @@ object-fit: cover;
   height: auto;
   float: left;
   margin-right: 1em;
-  border: 1px solid black; /* Apply the border directly to the image */
+  border: 1px solid rgb(255, 255, 255); /* Apply the border directly to the image */
  }
  
 
@@ -720,7 +705,6 @@ object-fit: cover;
 .descrizione-preferito > li > p{
   margin-left: 0.2em  
 }
-
 /* sezione account artista */
 
 .rounded_main_container{
@@ -856,55 +840,48 @@ object-fit: cover;
 /*                     ARTISTI       */
 /****************************************************/
 
-#maincontent dl{
-  
+#maincontent dl {
   color: #DDE5FE;
 }
 
-.artist-container dt, .artist-container dd {
-  display: block;
- }
- 
 .artist-container {
-    margin:auto;
-    width:95%;
-    max-width: 1024px;
-    padding-top: 1em;
-    padding-bottom: 2em;
+  margin: auto;
+  width: 95%;
+  max-width: 1024px;
+  padding-top: 1em;
+  padding-bottom: 2em;
 }
 
-.artist-container>dt{
-  background-color: var(--headColor);
-  border:1px solid black;
-  padding:0.5em;
+.artist-container > dt {
+  padding: 0.5em;
   font-size: 1.1em;
 }
 
-.artist-container dt{
-  display: block;
- }
- 
-.artist-container>dd{
+.artist-container > dd {
   display: flex;
-  background-color: var(--bgColor);
-  border: 1px solid black;
   border-top: none;
   padding: 0.5em;
   margin-bottom: 1em;
+  border: 1px solid rgb(255, 255, 255);
 }
 
-.artist-container>dd img {
- max-width: 300px; /* Adjust as needed */
- max-height: 300px; /* Adjust as needed */
- width: auto;
- height: auto;
- float: left;
- margin-right: 1em;
- border: 1px solid black; /* Apply the border directly to the image */
+.artist-container > dd img {
+  max-width: 300px; /* Adjust as needed */
+  max-height: 300px; /* Adjust as needed */
+  width: auto;
+  height: auto;
+  float: left;
+  margin-right: 1em;
+  border: 1px solid rgb(255, 255, 255); /* Apply the border directly to the image */
 }
 
- 
+.artist-container > dd:first-of-type {
+  border: none;
+}
 
+.artist-container > dd:last-of-type {
+  border: none;
+}
 #artist-image {
   max-width: 300px;
   height: auto; /* Allow the height to adjust according to the image */
