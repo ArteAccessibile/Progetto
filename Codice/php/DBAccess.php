@@ -2,6 +2,7 @@
 
 namespace DB;
 
+use mysqli;
 
 class DBAccess {
     private const HOST_DB = "localhost";
@@ -130,8 +131,42 @@ class DBAccess {
             }
             return $fav;
          }
-           
-     
+// funzione per pulire input form
+         public function pulisciInput($value) {
+            $value = trim($value); 
+            $value = strip_tags($value); 
+            $value = htmlentities($value);
+            return $value;
+        }
+        
+        public function checkOpera ($titolo, $artista){
+            $titolo = $this->connection->real_escape_string($titolo);
+            $artista = $this->connection->real_escape_string($artista);
+        
+            $query = "SELECT * FROM opera WHERE titolo = ? AND artista = ?";
+            $stmt = $this->connection->prepare($query);
+            $stmt->bind_param("ss", $titolo, $artista);
+            $stmt->execute();
+        
+            $result = $stmt->get_result();
+        
+            if ($result->num_rows > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        
+        public function aggiungiOpera($artista,$titolo,$desc_abbrev,$descrizione, $data_creazione){
+            $query = "INSERT INTO opera (artista,titolo,desc_abbrev,descrizione,data_creazione) VALUES (?,?,?,?,?,?)";
+            
+            return mysqli_query($this->connection, $query);
+            
+
+        }  
+    
+
+        
     public function closeConnection() {
         $this->connection->close();
     }

@@ -38,37 +38,58 @@
     </nav>
     
     <main id="content">
-        <h2 class="logged_has"> Sei loggato come: <strong>ombrettatimangia@unipd.it</strong> </h2>
-        <div class="rounded_main_container">
-            <h2> Inserisci i dati </h2>
-            <section id="text_data_opera">
-                <div> 
-                    <label for="title_textbox"> Titolo opera </label>
-                    <input type="text" name="titolo_opera" id="title_textbox" placeholder="Inserisci il titolo" class="textbox" maxlength="50"/>
-                </div>
-                <div> 
-                    <span>
-                        <label for="short_desc_textbox">  Descrizione breve </label>
-                        <div class="tooltip">
-                            <img src="../../immagini/info.png"/>
-                            <span class="tooltiptext">Una descrizione sintetica dell'opera, verrà mostrata nelle anteprime dell'opera</span>
-                        </div>
-                    </span>
-                    <textarea id="short_desc_textbox" name="descrizione_breve" class="textbox" rows="2" maxlength="100" placeholder="Inserisci una breve descrizione"> </textarea>    
-                </div>
-                <div> 
-                    <label for="desc_textbox">  Descrizione completa </label>
-                    <textarea id="desc_textbox" name="descrizione" class="textbox" rows="4" maxlength="400" placeholder="Inserisci la descrizione dell'opera"> </textarea>    
-                </div>
-                <div>
-                    <label for="opera_picker"> Scegli un immagine </label>
-                    <input type="file" id="opera_picker" name="opera_picker" accept="image/png, image/jpeg"/>
-                </div>
-            </section>
-            <section id="submit_opera_section">
-                <button type=button class="rised_button" id="btnsubmitopera"> Carica la nuova opera </button>
-            </section>
-        </div>
+        <h2 class="logged_has"> Sei loggato come: <strong>{nome_utente}</strong> </h2> <br>
+        <h3>Inserisci una nuova opera</h3>
+        <div class="form-container">
+            {messaggiForm}
+            <form action="../php/newOpera.php">
+               <div class="row">
+                 <div class="col-25">
+                   <label for="titolo">Titolo</label>
+                 </div>
+                 <div class="col-75">
+                   <input type="text" id="titolo" name="titolo" placeholder="Il titolo dell'opera..">
+                 </div>
+               </div>
+               <div class="row">
+                    <div class="col-25">
+                    <label for="dataCreazione">Data di creazione:</label>
+                    </div>
+                    <div class="col-75">
+                    <input type="date" id="dataCreazione" name="Data" placeholder="01/01/2024">
+                    </div>
+               </div>
+
+               <div class="row">
+                 <div class="col-25">
+                   <label for="breve_descrizione">Breve descrizione, in 75 caratteri</label>
+                 </div>
+                 <div class="col-75">
+                   <textarea id="breve_descrizione" name="breve_descrizione" maxlength="75" placeholder="Scrivi qualcosa.." ></textarea>
+                 </div>
+               </div>
+               <div class="row">
+                 <div class="col-25">
+                   <label for="descrizione">Descrizione</label>
+                 </div>
+                 <div class="col-75">
+                   <textarea id="descrizione" name="descrizione" placeholder="Scrivi qualcosa.."></textarea>
+                 </div>
+               </div>
+               <div class="row">
+                 <div class="col-25">
+                   <label for="immagine">Immagine</label>
+                 </div>
+                 <div class="col-75">
+                   <input type="file" id="immagine" name="immagine" accept="image/png, image/jpeg, image/jpg">
+                 </div>
+               </div>
+               <div class="row">
+                 <input type="submit" value="Invia">
+               </div>
+            </form>
+           </div>
+           
     </main>
     <footer>
         
@@ -83,6 +104,4 @@
     <script src="../js/bottoneindietro.js"></script>
 </body>
 </html>
-
-
 
