@@ -28,8 +28,12 @@ if ($connectionOk) {
        
       }
       // Insert the list items into the <ul> tag
-      $paginaHTML = str_replace("{artist-list}", $artistaString, file_get_contents("../html/artistitemplate.html"));
-      echo $paginaHTML;
+      $page = str_replace("{artist-list}", $artistaString, file_get_contents("../html/artistitemplate.html"));
+
+      $_SESSION["nav_page"] = "artists"; //importante definirlo in ogni pagina tra home | contatti ...
+      include "../modules-loader.php";
+
+      echo $page; //per far funzionare script sopra è importante che si chiami page
   } else {
       echo "No artists found.";
   }
