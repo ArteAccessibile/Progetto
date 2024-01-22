@@ -1,5 +1,7 @@
 <?php
 require_once "DBAccess.php";
+require_once "../config.php";
+
 use DB\DBAccess;
 
 $connection = new DBAccess();
@@ -31,7 +33,7 @@ if ($connectionOk) {
       $page = str_replace("{artist-list}", $artistaString, file_get_contents("../html/artistitemplate.html"));
 
       $_SESSION["nav_page"] = "artists"; //importante definirlo in ogni pagina tra home | contatti ...
-      include "../modules-loader.php";
+      include "modules-loader.php";
 
       echo $page; //per far funzionare script sopra è importante che si chiami page
   } else {

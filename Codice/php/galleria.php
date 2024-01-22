@@ -1,5 +1,6 @@
 <?php
 require_once "DBAccess.php";
+require_once "../config.php";
 use DB\DBAccess;
 
 ini_set('display_errors', 1);
