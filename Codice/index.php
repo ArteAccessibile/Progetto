@@ -1,6 +1,5 @@
 <?php
     include "config.php";
-    include $php_path . "db-connection.php";
     include $php_path . "check-connection.php";
 
     if(session_status() == PHP_SESSION_NONE) {
@@ -21,7 +20,5 @@
 
     $page = str_replace("<log/>", $log_status, $page);
 
-
-    $mysqli->close(); //mysqli da db-connection.php
     echo $page;
 ?>

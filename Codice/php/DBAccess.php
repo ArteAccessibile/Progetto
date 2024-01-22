@@ -16,6 +16,11 @@ class DBAccess {
             return mysqli_connect_errno()==0;
         }
 
+        public function login($email,$password){
+            $query = "SELECT * FROM `utente` WHERE `email` = '$email' AND `psw` = '$password'";
+            return $this->connection->query($query);
+        }
+
         public function getOperas() {
             $query = "SELECT id, titolo, desc_abbrev FROM opera"; // Selecting id and name of the opera from the 'opera' table
             $result = $this->connection->query($query);
