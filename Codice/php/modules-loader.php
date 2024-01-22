@@ -1,5 +1,5 @@
 <?php
-include $root . "config.php";
+include "../config.php";
 
 if(isset($page)){
     $header = file_get_contents($modules_path . "header.html");
