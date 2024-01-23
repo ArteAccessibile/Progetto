@@ -737,6 +737,140 @@ object-fit: cover;
   margin: 0 2em 0 2em;
 }
 
+
+.logsection {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: transform .2s; /* Animation */
+  margin-right: 1em;
+}
+
+.logsection > *{
+  padding: 0.7em;
+  margin: 0.5em;
+}
+
+.logsection > li:hover{
+  border-radius: 1em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transform: scale(1.1);
+}
+
+
+
+/* Upload Opera */
+
+input[type=text], select, textarea{
+  width: 100%;
+  padding: 14px;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+/* Style the label to display next to the inputs */
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+/* Style the container */
+.form-container {
+  border-radius: 5px;
+  padding: 20px;
+}
+
+/* Floating column for labels: 25% width */
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+/* Floating column for inputs: 75% width */
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Tooltip text */
+/* 
+   EXAMPLE
+   <div class="tooltip">Hover over me
+   <span class="tooltiptext">Tooltip text</span>
+   </div>
+*/
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip > img {
+  width: 1em;
+  height: 1em;
+  margin: 0.25em 0 0 0.25em;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: #fff6c1;
+  padding: 0.5em;
+  border-radius: 6px;
+  font-weight: lighter;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+/* login */
+
+.login-error > strong{
+  color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+
+#form-login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#submit-login{
+  margin-bottom: 2em;
+}
+
 .avatar_image{
   width: 10em;
   height: 10em;
