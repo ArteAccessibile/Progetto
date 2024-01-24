@@ -513,14 +513,12 @@ border: 12px solid transparent; /*blu fa schifo ma fa vedere che c'è il bordo*/
  
   padding-bottom: 1em;
   
-  }
-
+}
 .containerOpere img{
 
 width: 200px;
 height: 200px;
 object-fit: cover;
-;
 
 }
 
@@ -1024,7 +1022,8 @@ input[type=submit] {
   padding: 0.5em;
   margin: 1em;
   transition: transform .2s; 
-}/* Floating column for labels: 25% width */
+/* Floating column for labels: 25% width */
+}
 .col-25 {
   float: left;
   width: 25%;
