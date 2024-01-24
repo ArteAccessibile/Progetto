@@ -15,8 +15,6 @@
 
 </head>
 <body>
-    <a href="#maincontent" class="skip-link">Vai al contenuto</a>
-
     <header>
         <div class="arrow_back_header">
             <div class="bottoneindietro">
@@ -34,29 +32,26 @@
     </header>
 
     <nav id="breadcrumb">
-        <p>Ti trovi in: <a href="../html/home.html"><span lang="en">Home</span></a>&gt; <span lang="en">Account</span></p>
+        <p>Ti trovi in: <a href="login.html"><span lang="en"> Login </span></a></p>
     </nav>
-    <main id="content">
-        <div id="sezioneaccount">
-            <h2 class="logged_has"> Sei loggato come: <strong>ombrettatimangia@unipd.it</strong> </h2>
-            <h3> Account </h3>
-            <ul>
-                <li id="vaiPreferiti">
-                    <a href="preferiti.php">Opere salvate nei preferiti</a>
-                </li>
-                <li id="vaiRichiesta">
-                    <a href="">Richiedi account artista</a>
-                </li>
-                <li id="logout">
-                    <a href="logout.php">Logout</a>
-                </li>
-                <li id="test">
-                    <a href="account_artista.html"> Gestione opere d'arte | visibile se si è artista</a>
-                </li>
-            </ul>
+
+    <error/>
+    <form action="../php/login.php" id="logform" method="post">
+        <div id="form-login">
+
+            <div id="username-textbox">
+                <div><label for="email">Email utente</label></div>
+                <input type="text" name="email" id="email" class="textbox" placeholder="Email" tabindex="0" autocomplete="email" required/>
             </div>
+
+            <div id="password-textbox">
+                <div><label for="password">Password</label></div>
+                <input type="password" name="password" id="password" class="textbox" placeholder="Password" tabindex="0" autocomplete="current-password" required/>
+            </div>
+
+            <input type="submit" id="submit-login" name="submit-login" class="rised_button" value="Accedi" tabindex="0"/>
         </div>
-    </main>
+    </form>
 
     <footer>
         
