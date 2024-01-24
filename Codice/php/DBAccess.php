@@ -5,14 +5,11 @@ namespace DB;
 use mysqli;
 
 class DBAccess {
-    private const HOST_DB = "localhost";
-        private const DATABASE_NAME = "fgiacomutest";
-        private const USERNAME = "testUtente"; // da cambiare alla consegna
-        private const PASSWORD = "password";
-//        private const HOST_DB = "localhost";
-//        private const DATABASE_NAME = "arte_accessibile";
-//        private const USERNAME = "root"; // da cambiare alla consegna
-//       private const PASSWORD = "";
+    
+       private const HOST_DB = "localhost";
+        private const DATABASE_NAME = "arte_accessibile";
+        private const USERNAME = "root"; // da cambiare alla consegna
+        private const PASSWORD = "";
 
         private $connection;
 
