@@ -26,7 +26,7 @@ if ($connectionOk) {
    $imagesHtml = "";
    if (!empty($images)) {
        foreach ($images as $image) {
-           $imagesHtml .= "<img src=\"{$image}\" alt=\"Image\">";
+           $imagesHtml .= "<img src=\"{$image}\" alt=\"\">";
        }
    } else {
        $imagesHtml = "No images found.";
