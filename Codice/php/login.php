@@ -55,8 +55,13 @@
             $result->free_result();
             $mysqli->close();
 
-            header("Location: " . $_SESSION["go_back_page"]); 
-            //header("location: ../html/home.html"); NON VA BENE, UNO POTREBBE LOGGARE ANCHE DA UN ALTRA PAGINA
+            if (isset($_SESSION["go_back_page"])) {
+                header("Location: " . $_SESSION["go_back_page"]); 
+            } else {
+                // intanto metto questo per vedere se funziona, poi lo cambiamo con la gobackpage consegna, esame
+                header("Location: ../html/home.html"); 
+            }
+            
             die();
         }
     }
