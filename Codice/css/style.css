@@ -1024,8 +1024,7 @@ input[type=submit] {
   padding: 0.5em;
   margin: 1em;
   transition: transform .2s; 
-=======
-/* Floating column for labels: 25% width */
+}/* Floating column for labels: 25% width */
 .col-25 {
   float: left;
   width: 25%;
