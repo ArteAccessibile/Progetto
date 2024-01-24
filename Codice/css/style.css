@@ -794,53 +794,58 @@ object-fit: cover;
 }
 
 /* Upload Opera */
-#text_data_opera{
-  margin-left: 2em;
+
+input[type=text], select, textarea{
+  width: 100%;
+  padding: 14px;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
 }
 
-#text_data_opera > div{
-  margin-bottom: 1em;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  width: 50%;
+/* Style the label to display next to the inputs */
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
 }
 
-#text_data_opera > div > span{
-  height: 2em;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-#text_data_opera > div > textarea{
-  height: 7em;
-}
-
-#opera_picker{
- margin: 1em 0 0 2em;
-}
-
-.textbox{
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
+/* Style the submit button */
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
   border: none;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  padding: 0.5em;
-  margin: 1em;
-  transition: transform .2s; 
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
 }
 
-.textbox:focus{
-  outline: none;
-  transform: scale(1.1);
+/* Style the container */
+.form-container {
+  border-radius: 5px;
+  padding: 20px;
 }
 
-#submit_opera_section{
-  margin-top: 2em;
-  display: flex;
-  justify-content: center;
+/* Floating column for labels: 25% width */
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+/* Floating column for inputs: 75% width */
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /* Tooltip text */

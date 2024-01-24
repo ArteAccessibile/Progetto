@@ -2,7 +2,7 @@ const btn = document.getElementById('btnnewopera');
 
 
 function goToUpload() {
-    window.location.href = "../html/opera_upload.html";
+    window.location.href = "../php/newOpera.php";
 }
 
 btn.addEventListener('click', goToUpload);
