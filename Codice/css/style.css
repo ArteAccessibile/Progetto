@@ -1207,23 +1207,35 @@ ul.artist-works{
 }
 
 
-.footerContent{
-    border-top: 1px solid black;
-    padding-top: 2em;
-    width: 60%;
-    margin: auto;
-    padding: 20px 0;
-    text-align: center;
-    color: #DDE5FE;
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.footerContent a {
-  color: #679839; /* Sostituisci con il colore desiderato */
-  text-decoration: underline; /* Aggiungi sottolineatura per evidenziare che sono link */
+.wrapper {
+  flex: 1;
 }
-.footerContent a:selected {
-  color: #DDE5FE; /* Cambia il colore quando il link viene selezionato */
+
+.footer {
+  border-top: 1px solid black;
+  padding-top: 2em;
+  width: 60%;
+  margin: auto;
+  padding: 20px 0;
+  text-align: center;
+  color: #DDE5FE;
 }
+
+.footer a {
+  color: #679839; /* Replace with your desired color */
+  text-decoration: underline; /* Add underline to highlight links */
+}
+
+.footer a:selected {
+  color: #DDE5FE; /* Change color when the link is selected */
+}
+
 
 #opera-image {
   max-width: 100%; /* Set the maximum width to 100% of its container */
