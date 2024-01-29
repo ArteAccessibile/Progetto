@@ -1,5 +1,5 @@
 
-USE fgiacomutest; 
+USE arte_accessibile; 
 -- cambiare con il nome del database 
 
 DROP TABLE if EXISTS utente;

@@ -26,15 +26,15 @@ if ($connectionOk) {
    $imagesHtml = "";
    if (!empty($images)) {
        foreach ($images as $image) {
-           $imagesHtml .= "<img src=\"{$image}\" alt=\"Image\">";
+           $imagesHtml .= "<img src=\"{$image}\" alt=\"\">";
        }
    } else {
        $imagesHtml = "No images found.";
    }
    
+   
    // Replace the {listaOpere} placeholder with the generated HTML for the images
    $paginaHTML = str_replace("{listaOpere}", $imagesHtml, $paginaHTML);
-   
    echo $paginaHTML;
  } else {
    echo "Artist not found.";

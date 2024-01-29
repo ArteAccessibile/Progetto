@@ -3,7 +3,7 @@
   padding:0;
 }
 body {
-  background-color:#defeca;
+  background: linear-gradient(to bottom, rgba(37, 37, 37, 0.99), #000000);
   font-family: 'Raleway', sans-serif;
 }
 
@@ -22,6 +22,7 @@ label{
   width: 1px;
   height: 1px;
   overflow: hidden;
+  color: #DDE5FE;
 }
 
 .skip-link:focus {
@@ -41,21 +42,93 @@ label{
 
 #container {
   position: relative;
-  width:80%;
+  width: 80%;
   margin: 2em auto;
-  background-color:#fff6c1;
-  box-shadow: -2px -2px 5px #ff7b0f,2px -2px 5px #ff7b0f;
+  background-color: rgba(37, 37, 37);
+  box-shadow: -2px -2px 5px #93d3f9, 2px -2px 5px #93d3f9;
 }
+
 #container > nav {
-  width:100%;
-  display:flex;
-  max-height:60px;
+  width: 100%;
+  display: flex;
+  max-height: 60px;
   margin-top: -20px;
+}
+
+#container > nav > ul {
+  background-color: rgba(37, 37, 37);
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  position: absolute;
+  right: 50px;
+}
+
+#container > nav > ul > li {
+  line-height: 60px;
+  margin: 0 0px;
+  padding: 0;
+  text-align: center;
+  display: inline-block;
+  min-width: 120px;
+}
+
+#container > nav > ul > li > a {
+  position: relative;
+  margin: 0 20px;
+  color: #dde5fe;
+  padding: 10px; /* Aggiungi spazio attorno al testo */
+  border-radius: 5px; /* Bordi arrotondati per una migliore estetica */
+  transition: background-color 0.3s ease; /* Effetto di transizione per il cambio di colore */
+}
+
+#container > nav > ul > li:hover > a {
+  color: black; /* Cambia il colore del testo per mantenere il contrasto */
+}
+
+#container > nav > ul > li:hover {
+  border-bottom: 2px solid #7c7c8a;
+  background-color: #7c7c8a;
+}
+#selected {
+    border-bottom: 2px solid #7c7c8a;
+    background-color: #7c7c8a;
+}
+#container > nav > ul > .dropdown:hover {
+  border-bottom:none;
+}
+#container > nav > ul > .dropdown:hover >  .dd
+{
+  display:block;
+}
+.dropdown:hover > a .fa-caret-down {
+  display:none;
+}
+a {
+  text-decoration:underline;
+
+}
+
+#container > nav > ul > li > div {
+  position:absolute;
+  padding: 0 10px;
+  
+  background-color:black;
+  display:none;
+  background-color:aliceblue;
+  min-width:100px;
+}
+
+#container > nav > ul > li > div > ul {
+  margin:0px 0 10px 0;
+  padding:0;
+  list-style:none;
 }
 #content{
     position: relative;
     width: 60%;
     margin: 5% auto;
+    color: #DDE5FE;
 }
 
 .homecontent{  /* TODO FARLA DIVENTARE CLASSE NO ID */
@@ -78,55 +151,34 @@ label{
 
 .homecontent > p > a{
   text-decoration: underline;
+  color: #679839;
+}
+
+.homecontent > p{
+  color: #DDE5FE;
 }
 
 .homecontent > h2{
   padding-bottom: 1em;
+  color: #DDE5FE;
 }
 
 .homecontent > a > p{
   padding-top: 1em;
   text-decoration: underline;
+  color: #679839
 }
 
 #logo {
   line-height:60px;
   font-size:30px;
   padding: 0 50px;
-  color: white;
+  color: #000412;
   width:40%;
   letter-spacing:2px;
   text-shadow:2px 2px 5px;
 }
-#container > nav > ul {
-  background-color:#fff6c1;
-  padding: 0;
-  list-style-type:none;
-  display:flex;
-  position: absolute;
 
-    right:50px;
-  
-/*   min-width:60%; */
-}
-
-#container > nav > ul > li {
-  line-height:60px;
-  margin: 0 0px;
-  padding:0;
-  text-align:center;
-  display:inline-block;
-  
-/*   background-color:green; */
-  min-width:120px;
-
-} 
-#container > nav > ul > li > a {
-  position:relative;
-/*   background-color:red; */
-  margin: 0 20px;
-  color:#84b304;
-}
 
 #headerflexbox{
   width: 100%;
@@ -152,21 +204,19 @@ label{
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  transition: transform .2s; /* Animation */
-  margin-right: 1em;
+  margin: 1em 2em 0 0;
+  padding: 0.5em;
 }
 
-.logsection > *{
-  padding: 0.7em;
-  margin: 0.5em;
+#accountflexbox > li > h2 {
+  cursor: pointer;
+  padding-left: 0.2em;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #DDE5FE;
 }
 
-.logsection > li:hover{
-  border-radius: 1em;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  transform: scale(1.1);
-}
 
 .nascosto{
   visibility: hidden;
@@ -205,27 +255,28 @@ label{
   width: 700px;
 }
 
-.bottonecar{
+.bottonecar {
   cursor: pointer;
   text-align: center;
   margin: 0 1em 0 1em;
-  background-color: #fff6c1;
-  color:  #ff7b0f;
+  background-color: #000412; /* Colore di sfondo con contrasto */
+  color: #ffffff; /* Colore del testo con contrasto */
   font-weight: bold;
-  border: 1px solid #ff7b0f;
+  border: 1px solid #000412; /* Colore del bordo con contrasto */
   border-radius: 100%;
-  -webkit-border-radius:100%; /* Safari & Chrome */
-  -moz-border-radius:100%; /* Firefox */
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
   width: 2.5em;
   height: 2.5em;
-  line-height: 2.5em; /*per centrare il testo verticalmente*/
+  line-height: 2.5em; /* Per centrare il testo verticalmente */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.bottonecar:hover{
-  background-color:  #ff7b0f;
-  color: #fff6c1;
+.bottonecar:hover {
+  background-color: #003366; /* Colore di sfondo al passaggio del mouse con contrasto */
+  color: #ffffff; /* Colore del testo al passaggio del mouse con contrasto */
 }
+
 
 .indicecarosello{
   border-radius: 100%;
@@ -285,9 +336,9 @@ label{
   z-index: 1;
   top: 0;
   padding: 1em 0.5em;
-  background-color: #fff6c1;
-  border-bottom: 2px solid #ff7b0f;
-  border-top: 2px solid #ff7b0f;
+  background-color: #ffa500d0; /* Cambiato il colore di sfondo delle briciole di pane */
+  border-bottom: 2px solid #0b204c; /* Cambiato il colore del bordo inferiore */
+  border-top: 2px solid #0b204c; /* Aggiunto il colore del bordo superiore */
   margin: 4em 0 20px 0;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   
@@ -296,8 +347,13 @@ label{
 #breadcrumb p{
   max-width: 1024px;
   margin: auto;
+  color: black;
+  font-weight: bold;
 }
 
+#breadcrumb p > a{
+  color: #2B327B;
+}
 
 #odd{
     position:relative;
@@ -305,44 +361,7 @@ label{
     margin: 0 20px;
     color:#84b304;
 }
-#container > nav > ul > li:hover {
-  border-bottom: 2px solid #ff7b0f;
-  background-color: #ffc054;
-}
-#selected {
-    border-bottom: 2px solid #ff7b0f;
-    background-color: #ff7b0f;
-}
-#container > nav > ul > .dropdown:hover {
-  border-bottom:none;
-}
-#container > nav > ul > .dropdown:hover >  .dd
-{
-  display:block;
-}
-.dropdown:hover > a .fa-caret-down {
-  display:none;
-}
-a {
-  text-decoration:underline;
 
-}
-
-#container > nav > ul > li > div {
-  position:absolute;
-  padding: 0 10px;
-  
-  background-color:black;
-  display:none;
-  background-color:aliceblue;
-  min-width:100px;
-}
-
-#container > nav > ul > li > div > ul {
-  margin:0px 0 10px 0;
-  padding:0;
-  list-style:none;
-}
 #u_a_c {
   position:relative;
   width:100%;
@@ -391,6 +410,12 @@ textarea {
     cursor: pointer;
 }
 
+#submit_opera_section{
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+}
+
 #artisti {
   list-style-type: none;
   text-align: center;
@@ -417,36 +442,17 @@ textarea {
 }
 
 h1{
-    font-size: 1.5em;
-    color: rgb(0, 0, 0);
+    font-size: 2em;
+    color: #DDE5FE;
     margin: 0.5em;
 }
 
-#Artista1{
-  background-image: url("/immagini/artisti/1.jpg");
-  border-radius: 5%;
-}
-
-#Artista2{
-  background-image: url("/img/artisti/2.jpg");
-  border-radius: 5%;
-}
-
-#Artista3{
-  background-image: url("/img/artisti/3.jpg");
-  border-radius: 5%;
-}
-
-#Artista4{
-  background-image: url("/img/artisti/4.jpg");
-  border-radius: 5%;
-}
 .card {
   display: block;
   width: 20%;
   border-radius: 5px;
-  border: 1em solid rgb(105, 155, 48);
-  background-color: rgba(66, 112, 24, 0.308);
+  border: 1em solid #93d3f9;
+  background-color: #70a1bd;
   margin: 10px;
   flex-direction: column;
   align-items: center;
@@ -459,18 +465,18 @@ h1{
   border-radius: 5px;
 }
 
-.card:hover {
-    border: 1em solid rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.308);
-    /*
-    transform: scale(1.2);
-    transition-duration: 0.5s;*/
-}
-
 .card-body {
     position: relative;
     padding: 0.4em;
     overflow: hidden;
+}
+
+.card-body h1{
+  color:black;
+}
+
+.card-body p{
+  color:black;
 }
 
 
@@ -507,15 +513,21 @@ border: 12px solid transparent; /*blu fa schifo ma fa vedere che c'è il bordo*/
  
   padding-bottom: 1em;
   
-  }
-
+}
 .containerOpere img{
 
 width: 200px;
 height: 200px;
 object-fit: cover;
-;
 
+}
+
+.containerOpere > ul> li > h2 {
+  color: #DDE5FE;
+}
+
+.containerOpere > ul> li > a {
+  color: #679839;
 }
 
 .containerMini{
@@ -554,18 +566,22 @@ object-fit: cover;
   padding-bottom: 2em;
  }
  
+.opera-container h1{
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
  .opera-container dt {
   background-color: var(--headColor);
-  color: var(--txtColor);
-  border: 1px solid black;
   padding: 0.5em;
   font-size: 1.1em;
+  border: 1px solid rgb(255,255,255);
  }
  
  .opera-container dd {
   display: flex;
   background-color: var(--bgColor);
-  border: 1px solid black;
   border-top: none;
   padding: 0.5em;
   margin-bottom: 1em;
@@ -578,7 +594,7 @@ object-fit: cover;
   height: auto;
   float: left;
   margin-right: 1em;
-  border: 1px solid black; /* Apply the border directly to the image */
+  border: 1px solid rgb(255, 255, 255); /* Apply the border directly to the image */
  }
  
 
@@ -619,6 +635,17 @@ object-fit: cover;
 
 }
 
+#sezioneaccount > h2{
+  color: #DDE5FE;
+  margin-left: 2em;
+}
+
+#sezioneaccount > h3{
+  color: #DDE5FE;
+  font-size: 2em;
+  margin-left: 1em;
+}
+
 #sezioneaccount > ul{
   margin: 0.5em 0 0 2em;
 }
@@ -629,6 +656,7 @@ object-fit: cover;
 
 #sezioneaccount > ul > li > a{
   text-decoration: underline;
+  color: #679839;
 }
 
 /**preferiti**/
@@ -643,7 +671,7 @@ object-fit: cover;
 
 .logged_has > strong{
   font-size: 1.1em;
-  color: #ff7b0f
+  color: #FBF50D;
 }
 
 .preferiti-container{
@@ -694,7 +722,6 @@ object-fit: cover;
 .descrizione-preferito > li > p{
   margin-left: 0.2em  
 }
-
 /* sezione account artista */
 
 .rounded_main_container{
@@ -725,6 +752,140 @@ object-fit: cover;
 
 .account_desc_section{
   margin: 0 2em 0 2em;
+}
+
+
+.logsection {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: transform .2s; /* Animation */
+  margin-right: 1em;
+}
+
+.logsection > *{
+  padding: 0.7em;
+  margin: 0.5em;
+}
+
+.logsection > li:hover{
+  border-radius: 1em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transform: scale(1.1);
+}
+
+
+
+/* Upload Opera */
+
+input[type=text], select, textarea{
+  width: 100%;
+  padding: 14px;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+/* Style the label to display next to the inputs */
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+/* Style the container */
+.form-container {
+  border-radius: 5px;
+  padding: 20px;
+}
+
+/* Floating column for labels: 25% width */
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+/* Floating column for inputs: 75% width */
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Tooltip text */
+/* 
+   EXAMPLE
+   <div class="tooltip">Hover over me
+   <span class="tooltiptext">Tooltip text</span>
+   </div>
+*/
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip > img {
+  width: 1em;
+  height: 1em;
+  margin: 0.25em 0 0 0.25em;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: #fff6c1;
+  padding: 0.5em;
+  border-radius: 6px;
+  font-weight: lighter;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+/* login */
+
+.login-error > strong{
+  color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+
+#form-login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#submit-login{
+  margin-bottom: 2em;
 }
 
 .avatar_image{
@@ -794,9 +955,40 @@ object-fit: cover;
 }
 
 /* Upload Opera */
-#text_data_opera{
-  margin-left: 2em;
+
+input[type=text], select, textarea{
+  width: 100%;
+  padding: 14px;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
 }
+
+/* Style the label to display next to the inputs */
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+/* Style the container */
+.form-container {
+  border-radius: 5px;
+  padding: 20px;
+}
+
+
 
 #text_data_opera > div{
   margin-bottom: 1em;
@@ -830,17 +1022,27 @@ object-fit: cover;
   padding: 0.5em;
   margin: 1em;
   transition: transform .2s; 
+/* Floating column for labels: 25% width */
+}
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+
 }
 
-.textbox:focus{
-  outline: none;
-  transform: scale(1.1);
+/* Floating column for inputs: 75% width */
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
 }
 
-#submit_opera_section{
-  margin-top: 2em;
-  display: flex;
-  justify-content: center;
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /* Tooltip text */
@@ -885,74 +1087,48 @@ object-fit: cover;
 /*                     ARTISTI       */
 /****************************************************/
 
-.artist-container dt, .artist-container dd {
-  display: block;
- }
- 
-.artist-container {
-    margin:auto;
-    width:95%;
-    max-width: 1024px;
-    padding-top: 1em;
-    padding-bottom: 2em;
+#maincontent dl {
+  color: #DDE5FE;
 }
 
-.artist-container>dt{
-  background-color: var(--headColor);
-  color: var(--txtColor);
-  border:1px solid black;
-  padding:0.5em;
-  font-size: 1.1em;
+.artist-container {
+  margin: auto;
+  width: 95%;
+  max-width: 1024px;
+  padding-top: 1em;
+  padding-bottom: 2em;
 }
-.artist-container>dd{
-  background-color: var(--bgColor);
-  border: 1px solid black;
-  border-top: none;
+
+.artist-container > dt {
   padding: 0.5em;
-  margin-bottom: 1em;
-}
-
-
-.artist-container dt{
-  display: block;
- }
- 
-.artist-container {
-    margin:auto;
-    width:95%;
-    max-width: 1024px;
-    padding-top: 1em;
-    padding-bottom: 2em;
-}
-
-.artist-container>dt{
-  background-color: var(--headColor);
-  color: var(--txtColor);
-  border:1px solid black;
-  padding:0.5em;
   font-size: 1.1em;
 }
-.artist-container>dd{
+
+.artist-container > dd {
   display: flex;
-  background-color: var(--bgColor);
-  border: 1px solid black;
   border-top: none;
   padding: 0.5em;
   margin-bottom: 1em;
+  border: 1px solid rgb(255, 255, 255);
 }
 
-.artist-container>dd img {
- max-width: 300px; /* Adjust as needed */
- max-height: 300px; /* Adjust as needed */
- width: auto;
- height: auto;
- float: left;
- margin-right: 1em;
- border: 1px solid black; /* Apply the border directly to the image */
+.artist-container > dd img {
+  max-width: 300px; /* Adjust as needed */
+  max-height: 300px; /* Adjust as needed */
+  width: auto;
+  height: auto;
+  float: left;
+  margin-right: 1em;
+  border: 1px solid rgb(255, 255, 255); /* Apply the border directly to the image */
 }
 
- 
+.artist-container > dd:first-of-type {
+  border: none;
+}
 
+.artist-container > dd:last-of-type {
+  border: none;
+}
 #artist-image {
   max-width: 300px;
   height: auto; /* Allow the height to adjust according to the image */
@@ -1031,15 +1207,35 @@ ul.artist-works{
 }
 
 
-.footerContent{
-    border-top: 1px solid black;
-    padding-top: 2em;
-    width: 60%;
-    margin: auto;
-    padding: 20px 0;
-    text-align: center;
-    bottom: 0;
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
+
+.wrapper {
+  flex: 1;
+}
+
+.footer {
+  border-top: 1px solid black;
+  padding-top: 2em;
+  width: 60%;
+  margin: auto;
+  padding: 20px 0;
+  text-align: center;
+  color: #DDE5FE;
+}
+
+.footer a {
+  color: #679839; /* Replace with your desired color */
+  text-decoration: underline; /* Add underline to highlight links */
+}
+
+.footer a:selected {
+  color: #DDE5FE; /* Change color when the link is selected */
+}
+
 
 #opera-image {
   max-width: 100%; /* Set the maximum width to 100% of its container */
@@ -1053,22 +1249,28 @@ ul.artist-works{
   margin: 2em;
 }
 
-
-
+/***********CONTATTI**************/
+.label{
+  color: #DDE5FE;
+  font-size: 1.2em;
+}
+/*********************************/
 .navbar{
   display: none;
 }
 
 .error-505 {
-  background-color: #defeca; /* Cambia il colore di sfondo per l'errore 505 */
-  color: black; /* Cambia il colore del testo per l'errore 505 */
+  background-color: #000412;
+  color: #DDE5FE;
   font-size: 16px;
 }
 
 .error-404 {
   text-align: center;
 }
-
+.message-404{
+  color: #DDE5FE;
+}
 .error-404 > h1 {
   color: #ff7b0f;
   font-size: 6em;
@@ -1081,6 +1283,7 @@ ul.artist-works{
 
 .error-404 > a {
   font-size: 1.3em;
+  color: #679839;
 }
 
 
