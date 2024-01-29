@@ -1,9 +1,7 @@
 <?php
 require_once "../php/DBAccess.php";
 
-
 use DB\DBAccess;
-
 
 ini_set('display_errors',1);
 ini_set('display_startup_errors',1);
