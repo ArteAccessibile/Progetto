@@ -29,7 +29,6 @@
     }
 
     $connection = new DBAccess();
-
     $connectionOk = $connection->openDBConnection();
 
     if ($connectionOk) {
