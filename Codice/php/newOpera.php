@@ -25,7 +25,7 @@ $proprietario = '';
 $breveDescrizione = '';
 $descrizione = '';
 $ListaArtisti='';
-
+$opzioniArt="";
 
 function pulisciInput($value) {
     $value = trim($value); 
@@ -34,13 +34,25 @@ function pulisciInput($value) {
     return $value;
 }
 
-if(isset($_POST['submit'])){  
 
+    
     $ListaArtisti=$funzioniDB->getArtistiPseudonimo();
-    $opzioniArt="";
+    
     foreach($ListaArtisti as $artista){
         $opzioniArt.= "<option value=\"{$artista}\">{$artista}</option>";
     }
+    
+
+
+
+if(isset($_POST['submit'])){  
+
+    $ListaArtisti=$funzioniDB->getArtistiPseudonimo();
+    
+    foreach($ListaArtisti as $artista){
+        $opzioniArt.= "<option value=\"{$artista}\">{$artista}</option>";
+    }
+    
 
     
     $messaggiPerForm="";
