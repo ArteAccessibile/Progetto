@@ -35,14 +35,28 @@
 
     <nav id="breadcrumb">
         <p>Ti trovi in: <a href="opera_upload.html"><span lang="en"> Upload Opera </span></a></p>
-    </nav>
+    </nav>  
     
     <main id="content">
         <h2 class="logged_has"> Sei loggato come: <strong>{nome_utente}</strong> </h2> <br>
         <h3>Inserisci una nuova opera</h3>
         <div class="form-container">
+          <ul>
             {messaggiForm}
-            <form action="../php/newOpera.php">
+          </ul>
+            <form method="post" action="../php/newOpera.php" enctype="multipart/form-data">
+              <div class="row">
+                <div class="col-25">
+                  <label for="artista">Artista</label>
+                </div>
+                <div class="col-75">
+               
+                  <select id="artista" name="artista" placeholder="Il nome dell'artista.." required>
+                    {listaArtisti}
+                  </select>
+                   
+                </div>
+              </div>
                <div class="row">
                  <div class="col-25">
                    <label for="titolo">Titolo</label>
@@ -96,7 +110,7 @@
                 
                </div>
                <div class="row">
-                 <input type="submit" value="Invia">
+                 <input type="submit" value="submit" name="submit">
                </div>
             </form>
            </div>

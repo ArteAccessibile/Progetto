@@ -11,14 +11,14 @@ if ($connectionOk) {
   if (!empty($artists)) {
       // Generate the list items
       $artistaString = "";
-      foreach ($artists as $artista) {
-          $artistaLink = "template_artista.php?id={$artista['utente']}";
-          $artistaName = $artista['pseudonimo'];
-          $artistaDescription = $artista['descrizione'];
+      foreach ($artists as $listaArtisti) {
+          $artistaLink = "template_artista.php?id={$listaArtisti['utente']}";
+          $artistaName = $listaArtisti['pseudonimo'];
+          $artistaDescription = $listaArtisti['descrizione'];
           $artistaString .= "<li class=\"card\">
               <div class=\"card-body\">
-                  <a href=\"{$artistaLink}\" id=\"Artista{$artista['utente']}\">
-                      <img src=\"../../immagini/artisti/{$artista['pseudonimo']}.jpg\" alt=\"Artist Image\">
+                  <a href=\"{$artistaLink}\" id=\"Artista{$listaArtisti['utente']}\">
+                      <img src=\"../../immagini/artisti/{$listaArtisti['pseudonimo']}.jpg\" alt=\"Artist Image\">
                   </a>
                   <h1>{$artistaName}</h1>
                   <p>{$artistaDescription}</p>

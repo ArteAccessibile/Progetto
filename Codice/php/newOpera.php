@@ -20,10 +20,11 @@ $messaggiPerForm = ""; //messaggio errore
 
 //Variabili per il form
 $titolo = '';
-$data_creazione = '';
+$dataCreazione = '';
 $proprietario = '';
 $breveDescrizione = '';
 $descrizione = '';
+$ListaArtisti='';
 
 
 function pulisciInput($value) {
@@ -35,23 +36,28 @@ function pulisciInput($value) {
 
 if(isset($_POST['submit'])){  
 
+    $ListaArtisti=$funzioniDB->getArtistiPseudonimo();
+    $opzioniArt="";
+    foreach($ListaArtisti as $artista){
+        $opzioniArt.= "<option value=\"{$artista}\">{$artista}</option>";
+    }
+
     
-    $titolo = $funzioniDB->pulisciInput($_POST['titolo']); 
+    $messaggiPerForm="";
+    $titolo = pulisciInput($_POST['titolo']); 
     if (strlen($titolo) == 0){
         $messaggiPerForm .= '<li>titolo non inserito</li>';
+        echo "sei qui";
     }
 
 
-    $anno = $funzioniDB->pulisciInput($_POST['anno']);
-    if (strlen($anno) == 0){
+    $dataCreazione = $funzioniDB->pulisciInput($_POST['Data']);
+    if (strlen($dataCreazione) == 0){
         $messaggiPerForm .= '<li>anno non inserito</li>';
-    }else{
-        if(!preg_match("/^\d{4}$/", $anno)) {
-            $messaggiPerForm .= '<li>anno deve essere un numero di 4 cifre</li>';
-        }
     }
+    
 
-    $proprietario = $funzioniDB->pulisciInput($_POST['proprietario']);
+    $proprietario = $funzioniDB->pulisciInput($_POST['artista']);
     if (strlen($proprietario) == 0){
         //$messaggiPerForm .= '<li>proprietario non inserito</li>';
         $proprietarioNULL = NULL;//se non c'è proprietario
@@ -68,7 +74,7 @@ if(isset($_POST['submit'])){
         $messaggiPerForm .= '<li>descrizione non inserita</li>';
     }
 
-    $desc_abbrev = $funzioniDB->pulisciInput($_POST['desc_abbrev']);
+    $desc_abbrev = $funzioniDB->pulisciInput($_POST['breve_descrizione']);
     if (strlen($desc_abbrev) == 0){
         $messaggiPerForm .= '<li>descrizione abbreviata non inserita</li>';
     }
@@ -76,46 +82,36 @@ if(isset($_POST['submit'])){
         $messaggiPerForm .= '<li>descrizione abbreviata troppo lunga</li>';
     }
     //CONTROLLO ESISTENZA DELL?OPERA
-    if($funzioniDB->checkOpera($titolo, $artista)){
+    if($funzioniDB->checkOpera($titolo, $proprietario)){
         $messaggiPerForm .= "<li>L'opera esiste già o stai usando un path o titolo già esistente</li>";
     }
 
     //IMMAGINE
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // DESTINAZIONE
+    if (isset($_FILES['immagine']) && $_FILES['immagine']['error'] == 0) {
         $uploadDir = "../../immagini/";
-    
-        // Verifica se la cartella di destinazione esiste, altrimenti crea la cartella
-        if (!file_exists($uploadDir)) {
-            mkdir($uploadDir, 0777, true);
-        }
-    
-        // INFORMAZIONI SULL'IMMAGINE(recuperata online)
-        $fileName = basename($_FILES["file"]["name"]);
+        $fileName = basename($_FILES["immagine"]["name"]);
         $targetFilePath = $uploadDir . $fileName;
         $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
-    
-        // Verifica se il file è un'immagine
-        $allowTypes = array("jpg", "jpeg", "png", "gif");
+
+        $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
         if (in_array($fileType, $allowTypes)) {
-            // Sposta il file nella cartella di destinazione
-            if (move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)) {
-                //echo "L'immagine " . $fileName . " è stata caricata con successo.";
+            if (move_uploaded_file($_FILES["immagine"]["tmp_name"], $targetFilePath)) {
+                // File upload success
             } else {
-                $messaggiPerForm = "Si è verificato un errore durante il caricamento dell'immagine.";
-                //echo "Si è verificato un errore durante il caricamento dell'immagine.";
+                $messaggiPerForm .= "Errore nel caricamento del file.";
             }
         } else {
-            $messaggiPerForm = "Sono consentiti solo file di tipo JPG, JPEG, PNG e GIF.";
-            //echo "Sono consentiti solo file di tipo JPG, JPEG, PNG e GIF.";
+            $messaggiPerForm .= "Solo file JPG, JPEG, PNG e GIF sono permessi.";
         }
+    } else {
+        $messaggiPerForm .= "Si prega di selezionare un file da caricare.";
     }
     //IMMAGINE
 
 if(strlen($messaggiPerForm) == 0){//se non ci sono messaggi di errore fino ad qua
     if($conn){
 
-        if ($funzioniDB->aggiungiOpera($artista,$titolo,$desc_abbrev,$descrizione, $data_creazione)){
+        if ($funzioniDB->aggiungiOpera($proprietario,$titolo,$desc_abbrev,$descrizione, $dataCreazione)){
             $messaggiPerForm = "l'opera è stato aggiunta con successo";
 
             
@@ -134,9 +130,7 @@ $funzioniDB->closeConnection();
 //per non perdere quello scritto in caso di errore
 //$paginaHTML = str_replace("{nome_utente}", $_SESSION["name"], $paginaHTML);
 $paginaHTML = str_replace("{messaggiForm}", $messaggiPerForm, $paginaHTML);
-$paginaHTML = str_replace("{titolo}", $titolo, $paginaHTML); 
-$paginaHTML = str_replace("{anno}", $data_creazione, $paginaHTML);
-$paginaHTML = str_replace("{descrizione}", $descrizione, $paginaHTML);
+$paginaHTML = str_replace("{listaArtisti}", $opzioniArt, $paginaHTML);
 
 echo $paginaHTML;
 ?>
