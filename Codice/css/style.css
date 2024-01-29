@@ -884,6 +884,17 @@ input[type=submit] {
   justify-content: center;
 }
 
+#username-textbox h2, #password-textbox h2{
+  text-align: left;
+  font-size: large;
+  color: #DDE5FE;
+}
+
+#submit-login{
+  background-color: #ff7b0f;
+  color: black;
+}
+
 #submit-login{
   margin-bottom: 2em;
 }
@@ -956,7 +967,7 @@ input[type=submit] {
 
 /* Upload Opera */
 
-input[type=text], select, textarea{
+input[type=text], input[type=password], select, textarea{
   width: 100%;
   padding: 14px;
   border: 1px solid black;
@@ -1149,28 +1160,6 @@ input[type=submit] {
 .artist-info {
   width: 60%;
 }
-
-/* login */
-
-.login-error > strong{
-  color: red;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1em;
-}
-
-#form-login{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-#submit-login{
-  margin-bottom: 2em;
-}
-
 /* Additional styles for artist-info */
 .artist-info h3, .artist-info p,  .artist-description p {
   margin-bottom: 0.4em;
