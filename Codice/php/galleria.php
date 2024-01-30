@@ -1,5 +1,6 @@
 <?php
 require_once "DBAccess.php";
+require_once "../config.php";
 use DB\DBAccess;
 
 ini_set('display_errors', 1);
@@ -8,7 +9,7 @@ error_reporting(E_ALL);
 
 setlocale(LC_ALL, 'it_IT');
 
-$paginaHTML = file_get_contents("../html/galleriatemplate.html");
+$page = file_get_contents("../html/galleriatemplate.html");
 $stringaOpere = "";
 $listaOpere = "";
 
@@ -43,6 +44,8 @@ if ($connectionOk) {
    $stringaOpere = "<li>I sistemi sono momentaneamente fuori servizio, ci scusiamo per il disagio</li>";
 }
 
-$paginaHTML = str_replace("{opere}", $stringaOpere, $paginaHTML);
-echo $paginaHTML;
+$page = str_replace("{opere}", $stringaOpere, $page);
+$_SESSION["nav_page"] = "gallery"; //importante definirlo in ogni pagina tra home | contatti ...
+include "modules-loader.php";
+echo $page;
 ?>
