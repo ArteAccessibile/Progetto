@@ -38,26 +38,28 @@
     </nav>
 
     <main id="content">
-        <h2 class="logged_has"> Sei loggato come: <strong>ombrettatimangia@unipd.it</strong> </h2>
+        <h2 class="logged_has"> Sei loggato come: <strong>{emailUser}</strong> </h2>
         <div class="rounded_main_container">
             <h2> Il tuo account </h2>
             <section class="account_data_section">
+
+               <!-- {potenzialmente da togliere }-->
                 <img class="avatar_image" src="../../immagini/gattobaguette.jpg" width="300" height="300">
                 <ul>
-                    <li id="pseudonimo_artista"><strong>Pseudonimo: </strong> Ombretta</li>
-                    <li id="email_artista"><strong>Email di contatto: </strong> mail</li>
+                    <li id="pseudonimo_artista"><strong>Pseudonimo: </strong> {pseudonimo}</li>
+                  <!--  <li id="email_artista"><strong>Email di contatto: </strong> mail</li>-->
                 </ul>
             </section>
             <h2> La tua descrizione </h2>
             <section  class="account_desc_section">
                 <p id="descrizione_artista">
-                    Ciao sono uno caccone descrizione cose cose gcvhghgiwwe wihfwbfwf wbjfwfbhwf wbehfwlbflhvbewf whvfwevjf
-                    wdwfeewfwfe wbefwbfbhjwe hbewfhfwlbhw wbehfhweffewf ewhjfjbwf bwfebfbw bw jfbehbfhe
+                    {descrizione}
                 </p>
             </section>
             <h2> Le tue opere </h2>
             <section id="opere_artista_section">
                 <ul>
+                    {mieOpere}
                     <li class="opera_artista_card">
                         <img src="../../immagini/gattomirtillo.jpg" alt="Paolo Sbringato" >
                         <p> title title title title title title title title title tile tile </p>

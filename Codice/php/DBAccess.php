@@ -43,7 +43,7 @@ class DBAccess {
          }
          
     
-         public function getOperaById($operaId) {
+         public function getOperaById($operaId) { //l'id è quello dell'artista
             $query = "SELECT * FROM opera WHERE id = ?"; // Selecting all columns from the 'opera' table where the id matches the given id
             $statement = $this->connection->prepare($query);
             $statement->bind_param("i", $operaId); // Binding the id parameter to the query
