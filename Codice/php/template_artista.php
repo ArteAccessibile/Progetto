@@ -8,7 +8,7 @@ $connection = new DBAccess();
 $connectionOk = $connection->openDBConnection();
 
 if ($connectionOk) {
- $artist = $connection->getArtistByUser($userId);
+  $artist = $connection->getArtistByUser($userId);
  
  if (!empty($artist)) {
    // Get the images of the artist
