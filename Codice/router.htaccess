@@ -1,2 +1,2 @@
-ErrorDocument 404 /html/404.html
-ErrorDocument 505 /html/505.html
+ErrorDocument 404 http://tecweb.studenti.math.unipd.it/mperic/404.html
+ErrorDocument 505 http://tecweb.studenti.math.unipd.it/mperic/505.html
