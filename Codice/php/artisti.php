@@ -8,6 +8,10 @@ $connection = new DBAccess();
 $connectionOk = $connection->openDBConnection();
 
 if ($connectionOk) {
+  if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+  }
+  $_SESSION["go_back_page"] = $artists_page; 
   $artists = $connection->getArtists();
   
   if (!empty($artists)) {

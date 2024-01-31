@@ -4,6 +4,7 @@ if(isset($page)){
     $header = file_get_contents($modules_path . "header.html");
     $footer = file_get_contents($modules_path . "footer.html");
     $nav = file_get_contents($modules_path . "mininavbar.html");
+
     if(isset($_SESSION["nav_page"])){
         switch($_SESSION["nav_page"]){
             case "home":
@@ -26,6 +27,16 @@ if(isset($page)){
     } 
     else{
         $nav = str_replace("<li id=\"home\">", "<li lang=\"en\" id=\"selected\">", $nav);
+    }
+
+    include $php_path . "check-connection.php";
+
+    $header = str_replace("<log/>", $log_status, $header);
+    
+    if (isset($_SESSION["role"]) && $_SESSION["role"] != "guest" && isset($_SESSION["name"])) {
+        $heder = str_replace("<welcome/>", "<p> Ciao, " .$_SESSION["name"]."</p>" , $header);
+    } else {
+        $header = str_replace("<welcome/>", "", $header);
     }
 
     $page = str_replace("<header/>", $header, $page);

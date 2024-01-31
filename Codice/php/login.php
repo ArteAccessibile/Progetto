@@ -58,7 +58,6 @@
                 $connection->closeConnection();
 
                 header("Location: " . $_SESSION["go_back_page"]); 
-                //header("location: ../html/home.html"); NON VA BENE, UNO POTREBBE LOGGARE ANCHE DA UN ALTRA PAGINA
                 die();
             }
         }

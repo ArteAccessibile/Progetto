@@ -18,6 +18,10 @@ $connection = new DBAccess();
 $connectionOk = $connection->openDBConnection();
 
 if ($connectionOk) {
+   if (session_status() === PHP_SESSION_NONE) {
+     session_start();
+   }
+   $_SESSION["go_back_page"] = $gallery_page; 
    $listaOpere = $connection->getOperas();
 
    if ($listaOpere != null) {

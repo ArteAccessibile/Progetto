@@ -6,6 +6,6 @@
     }
     session_destroy();
     
-    header("Location: " . $index_page);
+    header("Location: " . $_SESSION["go_back_page"]);
     exit();
 ?>
