@@ -169,15 +169,6 @@ a {
   color: #679839
 }
 
-#logo {
-  line-height:60px;
-  font-size:30px;
-  padding: 0 50px;
-  color: #000412;
-  width:40%;
-  letter-spacing:2px;
-  text-shadow:2px 2px 5px;
-}
 
 
 #headerflexbox{
@@ -192,6 +183,13 @@ a {
   align-items: center;
   margin: 1em 0 0 2em;
   padding: 0.5em;
+}
+
+#logoflexbox img{
+  height: 3em;
+  width: 3em;
+  margin-right: 0.5em;
+
 }
 
 .nostylea{
