@@ -92,6 +92,41 @@ class DBAccess {
            
             return $artists;
           }
+          public function getArtistaPseudonimoByUser($value) {
+            $query = "SELECT pseudonimo FROM artista WHERE utente = ?"; // Selecting all columns from the 'artista' table
+            $statement = $this->connection->prepare($query);
+            $statement->bind_param("s",$value);// questo fa in modo che il parametro sia una stringa
+            $statement->execute();
+           
+            $risultato = $statement->get_result();
+            if($risultato->num_rows > 0){
+                $row = $risultato->fetch_assoc();
+                $pseudonimo = $row['pseudonimo'];
+            }
+            else{
+                $pseudonimo = null;
+            }
+            
+            return $pseudonimo;
+          }
+          public function getArtistaDescByUser($value) {
+            $query = "SELECT descrizione FROM artista WHERE utente = ?"; // Selecting all columns from the 'artista' table
+            $statement = $this->connection->prepare($query);
+            $statement->bind_param("s",$value);// questo fa in modo che il parametro sia una stringa
+            $statement->execute();
+           
+            $risultato = $statement->get_result();
+            if($risultato->num_rows > 0){
+                $row = $risultato->fetch_assoc();
+                $descrizione = $row['descrizione'];
+            }
+            else{
+                $descrizione = null;
+            }
+            
+            return $descrizione;
+          }
+          
           public function getArtistByUser($userEmail) {
             $query = "SELECT * FROM artista WHERE utente = ?"; // Selecting all columns from the 'artista' table where the user email matches the given email
             $statement = $this->connection->prepare($query);
