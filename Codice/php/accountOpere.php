@@ -24,14 +24,21 @@ if ($connectionOk) {
 
     $lista = $connection->getImagesByArtist($_SESSION["email"]);
 
-    // Generate the HTML for the images
+    // Generate the HTML for the images 
+    //crea alert per bottone elimina
     $imagesHtml = "";
     if (!empty($lista)) {
         foreach ($lista as $image) {
-            $imagesHtml .= "<img src=\"{$image}\" alt=\"\">";
+            $imagesHtml .= "<div class='opera_artista_card'>";
+            $imagesHtml .= "<img src='{$image}' alt=''>";
+            $imagesHtml .= "<form method='POST' action='deleteImage.php'>"; // Assuming you have a separate PHP file for handling the deletion
+            $imagesHtml .= "<input type='hidden' name='image_path' value='{$image}'>";
+            $imagesHtml .= "<button type='submit' name='delete_image'>Delete</button>";
+            $imagesHtml .= "</form>";
+            $imagesHtml .= "</div>";
         }
     } else {
-        $imagesHtml = "No images found.";
+        $imagesHtml = "<p>L'artista non ha ancora caricato opere.</p>";
     }
 }
 

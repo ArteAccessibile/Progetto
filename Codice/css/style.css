@@ -383,14 +383,14 @@ a {
 }
 
 textarea {
-    width: 100%;
-    height: 150px;
+    width: auto;
+    height: 10em;
     padding: 12px 20px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
     background-color: #f8f8f8;
-    resize: none;
+    resize:vertical;
 }
 .input {
     width: 100%;
@@ -913,7 +913,7 @@ input[type=submit] {
 }
 
 #new_opera_section{
-  margin: 0 0 0 3em;
+  margin-top: 3em;
 }
 
 .rised_button{

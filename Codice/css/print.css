@@ -135,7 +135,7 @@ ul.artist-works,
 .error-container,
 .error-title,
 .error-message {
-  display: none !important;
+  display: none;
 }
 
 /* Add any additional styles or adjustments for printing if needed */

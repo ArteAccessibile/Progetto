@@ -164,8 +164,14 @@ class DBAccess {
             
             return $images;
          }
-         
-         public function getFavourites() {
+         public function deleteImageFromDatabase($artista, $nome) {
+            $query = "DELETE FROM opera WHERE artista = ? AND titolo = ?";
+            $stmt = $this->connection->prepare($query);
+            $stmt->bind_param('ss', $artista, $nome);
+            $stmt->execute();
+            return $stmt;
+        }
+                 public function getFavourites() {
             $query = "SELECT pseudonimo, titolo, desc_abbrev FROM opera,preferito,artista WHERE preferito.utente=\"".$_SESSION["email"]."\" AND preferito.opera=opera.id AND opera.artista=artista.utente"; // Selecting id and name of the opera from the 'opera' table
             $result = $this->connection->query($query);
          
