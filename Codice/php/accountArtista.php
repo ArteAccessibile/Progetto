@@ -26,6 +26,7 @@ if ($connectionOk) {
 
     // Generate the HTML for the images 
     //crea alert per bottone elimina
+    $fotoProfilo = "../../immagini/artisti/" . $pseudonimo . ".jpg"; // Default profile image
     $imagesHtml = "";
     if (!empty($lista)) {
         foreach ($lista as $image) {
@@ -43,7 +44,7 @@ if ($connectionOk) {
 }
 
 $connection->closeConnection();
-
+$page= str_replace("{FotoProfilo}", $fotoProfilo, $page);
 $page = str_replace("{pseudonimo}", $pseudonimo, $page);
 $page = str_replace("{emailUser}", $_SESSION["email"], $page);
 $page = str_replace("{descrizione}", $descrizione, $page);
