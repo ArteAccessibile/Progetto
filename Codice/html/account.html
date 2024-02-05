@@ -38,20 +38,20 @@
     </nav>
     <main id="content">
         <div id="sezioneaccount">
-            <h2 class="logged_has"> Sei loggato come: <strong>ombrettatimangia@unipd.it</strong> </h2>
             <h3> Account </h3>
-            <ul>
+            <loggedhas/>
+            <account-options>
                 <li id="vaiPreferiti">
                     <a href="../php/preferiti.php">Opere salvate nei preferiti</a>
                 </li>
-                <li id="vaiRichiesta">
-                    <a href="">Richiedi account artista</a>
+                <artist-visibility/>
+                    <a href="../html/account_artista.html"> Gestione opere d'arte</a>
+                </li>
+                <become-artist-visibility/>
+                    <a href="../php/new_artist_form.php">Diventa un artista</a>
                 </li>
                 <li id="logout">
                     <a href="../php/logout.php">Logout</a>
-                </li>
-                <li id="test">
-                    <a href="../html/account_artista.html"> Gestione opere d'arte | visibile se si è artista</a>
                 </li>
             </ul>
             </div>

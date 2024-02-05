@@ -659,6 +659,14 @@ object-fit: cover;
   color: #679839;
 }
 
+.account_options_visible{
+  display: list-item;
+}
+
+.account_options_invisible{
+  display: none;
+}
+
 /**preferiti**/
 #sezionePreferiti{
   margin: 1em 1em 3em 1em;
@@ -725,14 +733,31 @@ object-fit: cover;
 /* sezione account artista */
 
 .rounded_main_container{
-  margin: 2em 4em 4em 4em;
-  padding-bottom: 2em;
   border-radius: 2em;
+  padding: 2em;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.rounded_main_container > h2{
-  padding: 1em;
+.rounded_main_container > p{
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.rounded_main_container > form > div{
+  padding-top: 0.5em;
+}
+
+.ok-message{
+  background-color: #04AA6D;
+  padding: 0.5em;
+  margin-left: 2em;
+  margin-bottom: 2em;
+}
+
+.errors-new-artist{
+  color: red;
+  margin-left: 2em;
+  margin-bottom: 2em;
 }
 
 .account_data_section{
@@ -889,14 +914,8 @@ input[type=submit] {
   font-size: large;
   color: #DDE5FE;
 }
-
 #submit-login{
-  background-color: #ff7b0f;
-  color: black;
-}
-
-#submit-login{
-  margin-bottom: 2em;
+  margin: 1em 0 2em 1em;
 }
 
 .avatar_image{

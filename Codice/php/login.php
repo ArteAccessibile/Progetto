@@ -4,8 +4,8 @@
     error_reporting(E_ALL);
 
     const ADMIN_ROLE = "admin";
-    const USER_ROLE = "utente";
     const ARTIST_ROLE = "artista";
+    const USER_ROLE = "utente";
 
     include ".." . DIRECTORY_SEPARATOR . "config.php";
     include  'DBAccess.php';
@@ -29,6 +29,7 @@
             $password = clearInput($_POST['password']);
                     
             $result = $connection->login($email, $password);
+            $isArtista = $connection->isArtista($email);
             
             if ($result->num_rows == 0) {       
                 $errorString = "<p class='login-error' tabindex='0'><strong>Username o password non corretti!</strong></p>";
@@ -42,11 +43,11 @@
                         case ADMIN_ROLE:
                             $_SESSION["role"] = ADMIN_ROLE;
                             break;
-                        case ARTIST_ROLE:
-                            $_SESSION["role"] = ARTIST_ROLE;
-                            break;
                         case USER_ROLE:
-                            $_SESSION["role"] = USER_ROLE;
+                            if($isArtista)
+                                $_SESSION["role"] = ARTIST_ROLE;
+                            else
+                                $_SESSION["role"] = USER_ROLE;
                             break;
                         default:
                             $_SESSION["role"] = "guest";
@@ -57,7 +58,10 @@
                 $result->free_result();
                 $connection->closeConnection();
 
-                header("Location: " . $_SESSION["go_back_page"]); 
+                if(isset($_SESSION["go_back_page"]))
+                    header("Location: " . $_SESSION["go_back_page"]);    
+                else             
+                    header("Location: ../index.php"); 
                 die();
             }
         }

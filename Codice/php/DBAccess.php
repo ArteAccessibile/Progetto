@@ -199,7 +199,47 @@ class DBAccess {
             return true; // Return true on success
         }
     
+    public function isArtista($email){
+        $query = "SELECT * FROM artista WHERE utente = ?";
+        $stmt = $this->connection->prepare($query);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+    
+        $result = $stmt->get_result();
+    
+        if ($result->num_rows > 0) {
+            return true;
+        } 
 
+        return false;
+    }
+
+    public function becameArtist($utente, $desc, $pseudonimo, $email_contatto) {
+        $query = "INSERT INTO artista (utente, descrizione, pseudonimo, email_contatto) VALUES (?, ?, ?, ?)";
+        $stmt = $this->connection->prepare($query);
+        if ($stmt === false) {
+            // Handle error, prepare failed
+            return false;
+        }
+    
+        // 's' denotes the type of the parameters: 's' for string, 'i' for integer, 'd' for double, 'b' for blob
+        $bind = $stmt->bind_param("ssss", $utente, $desc, $pseudonimo, $email_contatto);
+        if ($bind === false) {
+            // Handle error, bind_param failed
+            return false;
+        }
+    
+        $execute = $stmt->execute();
+        if ($execute === false) {
+            // Handle error, execute failed
+            return false;
+        }
+    
+        // Close the statement
+        $stmt->close();
+        
+        return true; // Return true on success
+    }
         
     public function closeConnection() {
         $this->connection->close();
