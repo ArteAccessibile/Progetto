@@ -32,6 +32,24 @@ function mostraImmagine(index) {
   aggiornaIndice(index);
 }
 
+function addPrintClass() {
+  const images = document.querySelectorAll('.immaginecarosello');
+  images.forEach(image => {
+      image.style.display = 'none';
+  });
+
+  // Trigger the print dialog
+  window.print();
+
+  // After printing, restore the display property
+  images.forEach(image => {
+      image.style.display = '';
+  });
+}
+
+// Add an event listener for the 'beforeprint' event
+window.addEventListener('beforeprint', addPrintClass);
+
 function dotClicked(dot){
     currentIndex=dot.currentTarget.index;
     mostraImmagine(dot.currentTarget.index);
