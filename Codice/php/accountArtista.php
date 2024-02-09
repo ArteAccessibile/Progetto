@@ -26,8 +26,21 @@ if ($connectionOk) {
 
     // Generate the HTML for the images 
     //crea alert per bottone elimina
-    $fotoProfilo = "../../immagini/artisti/" . $pseudonimo . ".jpg"; // Default profile image
-    $imagesHtml = "";
+    $fotoProfiloJPG = "../../immagini/artisti/" . $pseudonimo . ".jpg";
+    
+    // If the JPG version is not found, try loading the PNG version
+    if (!file_exists($fotoProfiloJPG)) {
+        $fotoProfiloPNG = "../../immagini/artisti/" . $pseudonimo . ".png";
+        // Check if the PNG version exists
+        if (file_exists($fotoProfiloPNG)) {
+            $fotoProfilo = $fotoProfiloPNG;
+        } else {
+            // If neither JPG nor PNG is found, set a default profile image
+            $fotoProfilo = "../../immagini.account_logo.png";
+        }
+    } else {
+        $fotoProfilo = $fotoProfiloJPG;
+    }    $imagesHtml = "";
     if (!empty($lista)) {
         foreach ($lista as $image) {
             $imagesHtml .= "<div class='opera_artista_card'>";

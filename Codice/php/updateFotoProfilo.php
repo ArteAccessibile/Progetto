@@ -29,35 +29,41 @@ if ($connectionOk) {
         }
 
         // Define the allowed image types
-        $allowedTypes = array(IMAGETYPE_JPEG);
+        $allowedTypes = array(IMAGETYPE_JPEG, IMAGETYPE_PNG);
 
         // Check if the uploaded image is of an allowed type
         if (!in_array($fileType, $allowedTypes)) {
-            echo "Unsupported image type. Please upload a JPEG, PNG, or GIF.";
+            echo "Formato non supportato. Perfavore inserisci una JPEG oPNG.";
             exit();
         }
 
         // Define the directory where the profile images will be stored
         $profileImageDirectory = '../../immagini/artisti/';
 
-        // Generate a unique filename for the profile image using the artist's name
+        // Get the current pseudonimo
         $artistName = $connection->getArtistaPseudonimoByUser($userId);
+
+        // Cancella il file esistente chiamato pseudonimo 
+        $existingFilePath = $profileImageDirectory . $artistName . '.jpg';
+        if (file_exists($existingFilePath)) {
+            unlink($existingFilePath);
+        }
+        $existingFilePath = $profileImageDirectory . $artistName . '.png';
+        if (file_exists($existingFilePath)) {
+            unlink($existingFilePath);
+        }
+
+        // Generate a unique filename for the profile image using the artist's name and the new file type
         $profileImageFilename = $artistName . '.' . pathinfo($profileImage['name'], PATHINFO_EXTENSION);
 
         // Move the uploaded file to the profile image directory
         $destinationPath = $profileImageDirectory . $profileImageFilename;
-
-        // If a file with the same name already exists, delete it
-        if (file_exists($destinationPath)) {
-            unlink($destinationPath);
-        }
 
         if (!move_uploaded_file($profileImage['tmp_name'], $destinationPath)) {
             echo "Error uploading image.";
             exit();
         }
 
-  
         // Redirect back to the previous page
         header("Location: " . $_SERVER['HTTP_REFERER']);
         exit();
