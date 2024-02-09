@@ -133,7 +133,7 @@ class DBAccess {
          }
          
          public function getFavourites() {
-            $query = "SELECT pseudonimo, titolo, desc_abbrev FROM opera,preferito,artista WHERE preferito.utente=\"".$_SESSION["email"]."\" AND preferito.opera=opera.id AND opera.artista=artista.utente"; // Selecting id and name of the opera from the 'opera' table
+            $query = "SELECT opera.id as opera, pseudonimo, titolo, desc_abbrev FROM opera,preferito,artista WHERE preferito.utente=\"".$_SESSION["email"]."\" AND preferito.opera=opera.id AND opera.artista=artista.utente"; // Selecting id and name of the opera from the 'opera' table
             $result = $this->connection->query($query);
          
             $fav = array();
@@ -143,7 +143,8 @@ class DBAccess {
                     $artista = $row['pseudonimo'];
                     $title = $row['titolo'];
                     $shortdesc = $row['desc_abbrev'];
-                    $fav[] = array('artista' => $artista, 'titolo' => $title, 'desc_abbrev'=>$shortdesc);
+                    $opera = $row['opera'];
+                    $fav[] = array('artista' => $artista, 'titolo' => $title, 'desc_abbrev'=>$shortdesc, 'opera'=>$opera);
                 }
             }
             return $fav;
