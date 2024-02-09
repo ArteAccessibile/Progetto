@@ -194,6 +194,11 @@ a {
   padding: 0.5em;
 }
 
+#logoflexbox img { 
+ width: 3em;
+ height: 3em;
+}
+
 .nostylea{
   text-decoration: none;
   color: black;
