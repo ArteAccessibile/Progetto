@@ -22,7 +22,7 @@ if ($connectionOk) {
         $email = $_SESSION["email"];
 
         // Elimina i dati dell'utente
-        $success = $connection->deleteUserAccount($email);
+        $success = $connection->removeUserAccount($email);
 
         if ($success) {
             // Eliminazione riuscita, reindirizza o gestisci di conseguenza

@@ -664,12 +664,9 @@ object-fit: cover;
   color: #679839;
 }
 
-#deleteAccountButton {
-  text-align: center;
-  margin-top: 20px;
-}
 
-.delete-account-button {
+
+#delete-account-button {
   background-color: red;
   color: white;
   padding: 10px 20px;
@@ -678,9 +675,7 @@ object-fit: cover;
   cursor: pointer;
 }
 
-.delete-account-button:hover {
-  background-color: darkred;
-}
+
 
 
 
