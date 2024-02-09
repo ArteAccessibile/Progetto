@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="it">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Arte Per Tutti</title> 
+    <meta name="keywords" content=", 
+    Opere d'arte, arte accessibile, AAA, opere, quadri, arredamento">
+    <meta name="description" content="sito di opere d'arte da comprare e mettere in casa, opere d'arte con descrizioni">
+
+    <link rel="stylesheet" href="../css/style.css" media="screen">
+    <link rel="stylesheet" href="../css/print.css" media="print">
+    <link rel="stylesheet" href="../css/mini.css" media="screen and (max-width:600px)">
+
+</head>
+<body>
+    <a href="#maincontent" class="skip-link">Vai al contenuto</a>
+
+    <header>
+        <div class="arrow_back_header">
+            <div class="bottoneindietro">
+                <img src="../../immagini/back_arrow.png" alt="">
+            </div>
+            <ol id="logoflexbox">
+                <li>
+                    <img src="../../immagini/logo.png" width="40" height="40" alt="">
+                </li>
+                <li>
+                        <h1> Arte Per Tutti </h1>
+                </li>
+            </ol>
+        </div>
+    </header>
+
+    <nav id="breadcrumb">
+        <p>Ti trovi in: <a href="../php/signup.php"><span lang="en"> Diventa artista </span></a></p>
+    </nav>  
+    
+    <main id="content">
+        <error/>
+        <ok/>
+        <visibility/>
+            <loggedhas/>
+            <div class="rounded_main_container">
+                <h2> Diventa un artista</h2>
+                <p> Per diventare un artista, compila i seguenti campi </p>
+                <form method="post" action="../php/signup.php" enctype="multipart/form-data">
+                    <label for="new_user_name">Nome</label>
+                    <input type="text" id="new_user_name" name="new_user_name" placeholder="Inserisci il tuo nome" required>
+                    <label for="new_user_surname">Cognome</label>
+                    <input type="text" id="new_user_surname" name="new_user_surname" placeholder="Inserisci il tuo cognome" required>
+                    <label for="new_user_email">Mail</label>
+                    <input type="text" id="new_user_email" name="new_user_email" placeholder="Inserisci la tua email" required>
+                    <label for="new_user_password">Password</label>
+                    <input type="password" id="new_user_password" name="new_user_password" placeholder="Inserisci una password" required>
+                    <label for="new_user_password_confirm">Conferma password</label>
+                    <input type="password" id="new_user_password_confirm" name="new_user_password_confirm" placeholder="Reinserisci la password scelta" required>
+                    <dsntmatch/>
+                    <div><input type="submit" value="Registrati!" name="new_user_submit" id="new_user_submit"></div>
+                </form>
+               </div>
+        </div>
+           
+    </main>
+    <footer class="footer">
+      <p>AAA - Avanguardia Artistica Accessibile &amp; <span lang="en">All rights reserved</span></p>
+      <ul class="no-bullets">
+          <li><span lang="en">Email: </span><a href="mailto:infoAAA@gmail.com">infoAAA@gmail.com</a></li>
+          <li><span lang="en"><a href="" title="Privacy Policy">Privacy Policy</a></span> GNU</li> 
+       </ul>   
+</footer>   
+    <script src="../js/bottoneindietro.js"></script>
+</body>
+</html>
+

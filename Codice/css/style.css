@@ -748,16 +748,30 @@ object-fit: cover;
 }
 
 .ok-message{
-  background-color: #04AA6D;
+  color: #04AA6D;
   padding: 0.5em;
   margin-left: 2em;
   margin-bottom: 2em;
 }
 
-.errors-new-artist{
+.errors-forms{
   color: red;
   margin-left: 2em;
   margin-bottom: 2em;
+}
+
+#new_user_submit{
+  margin-top: 1em;
+}
+
+#signup-label{
+  color: #DDE5FE;
+  margin: 1em 0 2em 1em;
+}
+
+#signup-label > a{
+  color: #04AA6D;
+  text-decoration: underline;
 }
 
 .account_data_section{

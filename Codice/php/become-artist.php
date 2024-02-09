@@ -13,7 +13,7 @@
     if(!isset($_SESSION["email"]) || !isset($_POST['new_artist_submit'])) {
         require_once "../config.php";
         $page = file_get_contents($html_path . "diventa_artista.html");
-        $page = str_replace("<error/>", "<div class=\"errors-new-artist\"><p> Sessione scaduta, torna al login per accedere: <a href=\"login.php\"> Vai al login </a> </p></div>", $page); 
+        $page = str_replace("<error/>", "<div class=\"errors-forms\"><p> Sessione scaduta, torna al login per accedere: <a href=\"login.php\"> Vai al login </a> </p></div>", $page); 
         $page = str_replace("<visibility/>", "<div class=\"nascosto\">", $page);
         echo $page;
         exit;

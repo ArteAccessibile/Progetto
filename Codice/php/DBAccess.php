@@ -19,6 +19,8 @@ class DBAccess {
         }
 
         public function login($email,$password){
+            //encrypt password
+            $password = md5($password);
             $query = "SELECT * FROM `utente` WHERE `email` = '$email' AND `psw` = '$password'";
             return $this->connection->query($query);
         }
@@ -240,9 +242,53 @@ class DBAccess {
         
         return true; // Return true on success
     }
+
+    public function checkEmail($email) {
+        $query = "SELECT * FROM utente WHERE email = ?";
+        $stmt = $this->connection->prepare($query);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+    
+        $result = $stmt->get_result();
+    
+        if ($result->num_rows > 0) {
+            return false;
+        } 
+
+        return true;
+    }
+
+    public function registerUser($name, $surname, $email, $password, $role) {
+        $password = md5($password);
+        $query = "INSERT INTO utente (nome, cognome, email, psw, ruolo) VALUES (?, ?, ?, ?, ?)";
+        $stmt = $this->connection->prepare($query);
+        if ($stmt === false) {
+            // Handle error, prepare failed
+            return false;
+        }
+    
+        // 's' denotes the type of the parameters: 's' for string, 'i' for integer, 'd' for double, 'b' for blob
+        $bind = $stmt->bind_param("sssss", $name, $surname, $email, $password, $role);
+        if ($bind === false) {
+            // Handle error, bind_param failed
+            return false;
+        }
+    
+        $execute = $stmt->execute();
+        if ($execute === false) {
+            // Handle error, execute failed
+            return false;
+        }
+    
+        // Close the statement
+        $stmt->close();
+        
+        return true; // Return true on success
+    }
         
     public function closeConnection() {
         $this->connection->close();
     }
+
 }
 ?>

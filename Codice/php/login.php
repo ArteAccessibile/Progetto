@@ -20,6 +20,17 @@
     }    
     $page = file_get_contents($html_path . "login.html");
 
+    if (isset($_SESSION["email"])) {
+        $message ="<div class=\"errors-forms\">Sei già loggato, clicca <a href=\"../index.php\">qui</a> per tornare alla home e mantenere l'accesso.<br/> Oppure clicca <a href=\"../php/logout.php\">qui</a> per effettuare il logout.</div>";
+        $page = str_replace("<alredylogged/>", $message, $page);
+        $page = str_replace("<visibility/>", "<div class=\"nascosto\">", $page);
+        echo $page;
+        exit;
+    }else {
+        $page = str_replace("<alredylogged/>", "", $page);
+        $page = str_replace("<visibility/>", "<div>", $page);
+    }
+
     if($connectionOk){
         $email = "";
         $password = "";
