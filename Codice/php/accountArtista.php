@@ -41,6 +41,7 @@ if ($connectionOk) {
     } else {
         $imagesHtml = "<p>L'artista non ha ancora caricato opere.</p>";
     }
+    
 }
 
 $connection->closeConnection();

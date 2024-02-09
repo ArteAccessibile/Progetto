@@ -29,7 +29,7 @@ if ($connectionOk) {
         }
 
         // Define the allowed image types
-        $allowedTypes = array(IMAGETYPE_JPEG, IMAGETYPE_PNG, IMAGETYPE_GIF);
+        $allowedTypes = array(IMAGETYPE_JPEG);
 
         // Check if the uploaded image is of an allowed type
         if (!in_array($fileType, $allowedTypes)) {
