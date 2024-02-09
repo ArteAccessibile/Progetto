@@ -36,9 +36,9 @@
     <nav id="breadcrumb">
         <p>Ti trovi in: <a href="../html/home.html"><span lang="en">Home</span></a>&gt; <span lang="en">Account</span></p>
     </nav>
-    <main id="content">
+    <main id="maincontent">
         <div id="sezioneaccount">
-            <h2 class="logged_has"> Sei loggato come: <strong>ombrettatimangia@unipd.it</strong> </h2>
+            <h2 class="logged_has"> Sei loggato come: <strong>{email}</strong> </h2>
             <h3> Account </h3>
             <ul>
                 <li id="vaiPreferiti">
@@ -51,11 +51,18 @@
                     <a href="../php/logout.php">Logout</a>
                 </li>
                 <li id="test">
-                    <a href="../html/account_artista.html"> Gestione opere d'arte | visibile se si è artista</a>
+                    <a href="../php/accountArtista.php"> Gestione opere d'arte | visibile se si è artista</a>
                 </li>
+                
             </ul>
+        
+            <div>
+                <form method="POST" action="../php/deleteAccount.php">
+                    <input id="delete-account-button" type="submit" value="Elimina Account" onclick="return confirm('Vuoi veramente cancellare il tuo account? Questa azione non è reversibile');">
+                </form>
             </div>
         </div>
+        
     </main>
 
     <footer class="footer">

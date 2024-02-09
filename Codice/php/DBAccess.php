@@ -43,7 +43,7 @@ class DBAccess {
          }
          
     
-         public function getOperaById($operaId) {
+         public function getOperaById($operaId) { //l'id è quello dell'artista
             $query = "SELECT * FROM opera WHERE id = ?"; // Selecting all columns from the 'opera' table where the id matches the given id
             $statement = $this->connection->prepare($query);
             $statement->bind_param("i", $operaId); // Binding the id parameter to the query
@@ -92,6 +92,41 @@ class DBAccess {
            
             return $artists;
           }
+          public function getArtistaPseudonimoByUser($value) {
+            $query = "SELECT pseudonimo FROM artista WHERE utente = ?"; // Selecting all columns from the 'artista' table
+            $statement = $this->connection->prepare($query);
+            $statement->bind_param("s",$value);// questo fa in modo che il parametro sia una stringa
+            $statement->execute();
+           
+            $risultato = $statement->get_result();
+            if($risultato->num_rows > 0){
+                $row = $risultato->fetch_assoc();
+                $pseudonimo = $row['pseudonimo'];
+            }
+            else{
+                $pseudonimo = null;
+            }
+            
+            return $pseudonimo;
+          }
+          public function getArtistaDescByUser($value) {
+            $query = "SELECT descrizione FROM artista WHERE utente = ?"; // Selecting all columns from the 'artista' table
+            $statement = $this->connection->prepare($query);
+            $statement->bind_param("s",$value);// questo fa in modo che il parametro sia una stringa
+            $statement->execute();
+           
+            $risultato = $statement->get_result();
+            if($risultato->num_rows > 0){
+                $row = $risultato->fetch_assoc();
+                $descrizione = $row['descrizione'];
+            }
+            else{
+                $descrizione = null;
+            }
+            
+            return $descrizione;
+          }
+          
           public function getArtistByUser($userEmail) {
             $query = "SELECT * FROM artista WHERE utente = ?"; // Selecting all columns from the 'artista' table where the user email matches the given email
             $statement = $this->connection->prepare($query);
@@ -129,8 +164,14 @@ class DBAccess {
             
             return $images;
          }
-         
-         public function getFavourites() {
+         public function deleteImageFromDatabase($artista, $nome) {
+            $query = "DELETE FROM opera WHERE artista = ? AND titolo = ?";
+            $stmt = $this->connection->prepare($query);
+            $stmt->bind_param('ss', $artista, $nome);
+            $stmt->execute();
+            return $stmt;
+        }
+                 public function getFavourites() {
             $query = "SELECT pseudonimo, titolo, desc_abbrev FROM opera,preferito,artista WHERE preferito.utente=\"".$_SESSION["email"]."\" AND preferito.opera=opera.id AND opera.artista=artista.utente"; // Selecting id and name of the opera from the 'opera' table
             $result = $this->connection->query($query);
          
