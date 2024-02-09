@@ -241,6 +241,14 @@ class DBAccess {
         }
     
 
+    public function removeUserAccount($email){ //return false in case of error
+        $query = "DELETE FROM utente WHERE email = ?";
+        $stmt = $this->connection->prepare($query);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        return $stmt;
+        
+    }
         
     public function closeConnection() {
         $this->connection->close();
