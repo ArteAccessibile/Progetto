@@ -607,6 +607,7 @@ object-fit: cover;
 
 /** ACCOUNT **/
 
+
 .bottoneindietro{
   margin: 1em 0 0 1em;
   cursor: pointer;
@@ -626,21 +627,28 @@ object-fit: cover;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-#sezioneaccount{
-  text-align: left;
-  margin: 1em 0 3em 1em;
+/** pagina account iniziale**/
 
+
+#sezioneaccount {
+  display: flex;
+  flex-direction: column; /* Set flex direction to column */
+  align-self: center;
+  max-width: 1024px;
+  text-align: left;
+  margin: 1em 0 3em 13em;
 }
 
-#sezioneaccount > h2{
+#sezioneaccount > h2 {
   color: #DDE5FE;
   margin-left: 2em;
-}
+}s
 
-#sezioneaccount > h3{
+#sezioneaccount, h3{
   color: #DDE5FE;
   font-size: 2em;
   margin-left: 1em;
+  margin-top: 1em;
 }
 
 #sezioneaccount > ul{
@@ -655,6 +663,26 @@ object-fit: cover;
   text-decoration: underline;
   color: #679839;
 }
+
+#deleteAccountButton {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.delete-account-button {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  cursor: pointer;
+}
+
+.delete-account-button:hover {
+  background-color: darkred;
+}
+
+
 
 /**preferiti**/
 #sezionePreferiti{
