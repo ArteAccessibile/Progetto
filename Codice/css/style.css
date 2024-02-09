@@ -124,7 +124,7 @@ a {
   padding:0;
   list-style:none;
 }
-#content{
+.content{
     position: relative;
     width: 60%;
     margin: 5% auto;
@@ -666,6 +666,28 @@ object-fit: cover;
 .account_options_invisible{
   display: none;
 }
+
+#elimina-account{
+  margin-top: 1em;
+}
+
+#elimina-account > a{
+  color: red;
+  text-decoration: underline;
+  font-size: bold;
+}
+
+#elimina-account > a:hover{
+  color: #ff7b0f;
+}
+
+#elimina-account > a:visited{
+  color: red;
+  text-decoration: underline;
+  font-size: bold;
+}
+
+
 
 /**preferiti**/
 #sezionePreferiti{
