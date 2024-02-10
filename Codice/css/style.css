@@ -648,6 +648,7 @@ object-fit: cover;
 
 
 #sezioneaccount {
+  list-style:   none;
   display: flex;
   flex-direction: column; /* Set flex direction to column */
   align-self: center;
@@ -668,7 +669,7 @@ object-fit: cover;
   margin-top: 1em;
 }
 
-#sezioneaccount > ul{
+#sezioneaccount > div > ul{
   margin: 0.5em 0 0 2em;
 }
 

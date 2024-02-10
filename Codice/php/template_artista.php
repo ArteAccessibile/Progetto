@@ -37,6 +37,7 @@ if ($connectionOk) {
    // Replace the {listaOpere} placeholder with the generated HTML for the images
    $page = str_replace("{listaOpere}", $imagesHtml, $page);
    require_once "../config.php";
+   $_SESSION["nav_page"] = "artists";
    require_once "../php/modules-loader.php";
    echo $page;
  } else {

@@ -65,6 +65,7 @@ if ($connectionOk) {
  $page = str_replace("{MessaggiForm}", $textMessageForm, $page);
 
  require_once "../config.php";
+ $_SESSION["nav_page"] = "gallery";
  require_once "modules-loader.php";
  echo $page;
  ?>
