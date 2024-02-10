@@ -10,7 +10,9 @@ setlocale(LC_ALL, 'it_IT');
 
 $page = file_get_contents("../html/contatti.html");
 
-
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 $_SESSION["nav_page"] = "contatti"; //importante definirlo in ogni pagina tra home | contatti ...
 include "modules-loader.php";
 echo $page;
