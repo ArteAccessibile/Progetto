@@ -34,7 +34,7 @@ if(isset($page)){
     $header = str_replace("<log/>", $log_status, $header);
     
     if (isset($_SESSION["role"]) && $_SESSION["role"] != "guest" && isset($_SESSION["name"])) {
-        $heder = str_replace("<welcome/>", "<p> Ciao, " .$_SESSION["name"]."</p>" , $header);
+        $header = str_replace("<welcome/>", "<p> Benvenuto, " .$_SESSION["name"]."</p>" , $header);
     } else {
         $header = str_replace("<welcome/>", "", $header);
     }

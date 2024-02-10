@@ -7,36 +7,63 @@ $operaId = $_GET['id'];
 $connection = new DBAccess();
 $connectionOk = $connection->openDBConnection();
 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+$textMessageForm="";
+$file_path="";
+$opera_name="";
+$opera_description="";
+$disable="";
+
 if ($connectionOk) {
     $opera = $connection->getOperaById($operaId);
     
     if (!empty($opera)) {
-        // Check if the necessary keys exist in the $opera array
+        // prendo i dati dell'opera
         $file_path = isset($opera['file_path']) ? $opera['file_path'] : '';
         $opera_name = isset($opera['titolo']) ? $opera['titolo'] : '';
         $opera_description = isset($opera['descrizione']) ? $opera['descrizione'] : '';
 
-        // Check if the file exists
+        // se il file esiste
         if (!file_exists($file_path)) {
-            echo "File not found.";
+            $textMessageForm= "File not found.";
             echo $file_path;
         }
 
-        // Pass the opera details to the template_opera.html file
-        $page = file_get_contents("../html/template_opera.html");
-        $page = str_replace("{cosa}", $opera_name, $page);
-        $page = str_replace("{opera_image}", $file_path, $page);
-        $page = str_replace("{opera_name}", $opera_name, $page);
-        $page = str_replace("{opera_description}", $opera_description, $page);
-        require_once "../config.php";
-        require_once "modules-loader.php";
-        echo $page;
+        if(isset($_SESSION["email"])){
+            if($connection->checkPreferita($operaId,$_SESSION["email"])){
+                $textMessageForm= "L'opera è presente nei tuoi preferiti.";
+                $disable="disabled";
+
+            }
+        }
+        else{
+            $textMessageForm= "Per aggiungere l'opera ai preferiti devi essere loggato.";
+            $disable="disabled";
+        }
+
     } else {
-        echo "Opera not found.";
+        $textMessageForm= "Opera non trovata.";
     }
     
     $connection->closeConnection();
 } else {
-    echo "Database connection error.";
+    $textMessageForm= "Errore di connessione al database.";
 }
-?>
+
+
+ // Pass the opera details to the template_opera.html file
+ $paginaHTML = file_get_contents("../html/template_opera.html");
+ $paginaHTML = str_replace("{cosa}", $opera_name, $paginaHTML);
+ $paginaHTML = str_replace("{opera_image}", $file_path, $paginaHTML);
+ $paginaHTML = str_replace("{operaId}", $operaId, $paginaHTML);    
+ $paginaHTML = str_replace("{opera_name}", $opera_name, $paginaHTML);
+ $paginaHTML = str_replace("{opera_description}", $opera_description, $paginaHTML);
+ $paginaHTML = str_replace("{valore}", $disable, $paginaHTML);
+ $paginaHTML = str_replace("{MessaggiForm}", $textMessageForm, $paginaHTML);
+ echo $paginaHTML;
+ 
+ 
+ ?>

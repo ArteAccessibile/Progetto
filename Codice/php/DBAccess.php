@@ -3,6 +3,7 @@
 namespace DB;
 
 use mysqli;
+use Exception;
 
 class DBAccess {
     
@@ -239,17 +240,40 @@ class DBAccess {
             
             return true; // Return true on success
         }
-    
+ 
+        public function removeUserAccount($email) {
+            $queryUtente = "DELETE FROM utente WHERE email = $email";
+            
+            try {
+                mysqli_query($this->connection, $queryUtente);
+            } catch (Exception $exep) {
+                echo "Exception: " . $exep->getMessage() . mysqli_error($this->connection);
+            }
+        }
 
-    public function removeUserAccount($email){ //return false in case of error
-        $query = "DELETE FROM utente WHERE email = ?";
-        $stmt = $this->connection->prepare($query);
-        $stmt->bind_param("s", $email);
-        $stmt->execute();
-        return $stmt;
         
-    }
-        
+        public function aggiungiPreferiti($userId,$idOpera){
+            $query = "INSERT INTO preferito (utente,opera) VALUES (?,?)";
+            $stmt = $this->connection->prepare($query);
+            $stmt->bind_param("si",$userId,$idOpera);
+            $stmt->execute();
+            return $stmt;
+        }
+
+        public function checkPreferita($idOpera,$userId){
+            $query = "SELECT * FROM preferito WHERE utente = ? AND opera = ?";
+            $stmt = $this->connection->prepare($query);
+            $stmt->bind_param("si",$userId,$idOpera);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            if($result->num_rows > 0){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
     public function closeConnection() {
         $this->connection->close();
     }
