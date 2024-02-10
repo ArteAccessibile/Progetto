@@ -20,6 +20,8 @@ class DBAccess {
         }
 
         public function login($email,$password){
+            //encrypt password
+            $password = md5($password);
             $query = "SELECT * FROM `utente` WHERE `email` = '$email' AND `psw` = '$password'";
             return $this->connection->query($query);
         }
@@ -165,6 +167,8 @@ class DBAccess {
             
             return $images;
          }
+         
+
          public function deleteImageFromDatabase($artista, $nome) {
             $query = "DELETE FROM opera WHERE artista = ? AND titolo = ?";
             $stmt = $this->connection->prepare($query);
@@ -172,8 +176,8 @@ class DBAccess {
             $stmt->execute();
             return $stmt;
         }
-                 public function getFavourites() {
-            $query = "SELECT pseudonimo, titolo, desc_abbrev FROM opera,preferito,artista WHERE preferito.utente=\"".$_SESSION["email"]."\" AND preferito.opera=opera.id AND opera.artista=artista.utente"; // Selecting id and name of the opera from the 'opera' table
+         public function getFavourites() {
+            $query = "SELECT opera.id as opera, pseudonimo, titolo, desc_abbrev FROM opera,preferito,artista WHERE preferito.utente=\"".$_SESSION["email"]."\" AND preferito.opera=opera.id AND opera.artista=artista.utente"; // Selecting id and name of the opera from the 'opera' table
             $result = $this->connection->query($query);
          
             $fav = array();
@@ -183,7 +187,8 @@ class DBAccess {
                     $artista = $row['pseudonimo'];
                     $title = $row['titolo'];
                     $shortdesc = $row['desc_abbrev'];
-                    $fav[] = array('artista' => $artista, 'titolo' => $title, 'desc_abbrev'=>$shortdesc);
+                    $opera = $row['opera'];
+                    $fav[] = array('artista' => $artista, 'titolo' => $title, 'desc_abbrev'=>$shortdesc, 'opera'=>$opera);
                 }
             }
             return $fav;
@@ -240,16 +245,102 @@ class DBAccess {
             
             return true; // Return true on success
         }
- 
-        public function removeUserAccount($email) {
-            $queryUtente = "DELETE FROM utente WHERE email = $email";
-            
-            try {
-                mysqli_query($this->connection, $queryUtente);
-            } catch (Exception $exep) {
-                echo "Exception: " . $exep->getMessage() . mysqli_error($this->connection);
-            }
+
+    
+    public function isArtista($email){
+        $query = "SELECT * FROM artista WHERE utente = ?";
+        $stmt = $this->connection->prepare($query);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+    
+        $result = $stmt->get_result();
+    
+        if ($result->num_rows > 0) {
+            return true;
+        } 
+
+        return false;
+    }
+
+    public function becameArtist($utente, $desc, $pseudonimo, $email_contatto) {
+        $query = "INSERT INTO artista (utente, descrizione, pseudonimo, email_contatto) VALUES (?, ?, ?, ?)";
+        $stmt = $this->connection->prepare($query);
+        if ($stmt === false) {
+            // Handle error, prepare failed
+            return false;
         }
+    
+        // 's' denotes the type of the parameters: 's' for string, 'i' for integer, 'd' for double, 'b' for blob
+        $bind = $stmt->bind_param("ssss", $utente, $desc, $pseudonimo, $email_contatto);
+        if ($bind === false) {
+            // Handle error, bind_param failed
+            return false;
+        }
+    
+        $execute = $stmt->execute();
+        if ($execute === false) {
+            // Handle error, execute failed
+            return false;
+        }
+    
+        // Close the statement
+        $stmt->close();
+        
+        return true; // Return true on success
+    }
+
+    public function checkEmail($email) {
+        $query = "SELECT * FROM utente WHERE email = ?";
+        $stmt = $this->connection->prepare($query);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+    
+        $result = $stmt->get_result();
+    
+        if ($result->num_rows > 0) {
+            return false;
+        } 
+
+        return true;
+    }
+
+    public function registerUser($name, $surname, $email, $password, $role) {
+        $password = md5($password);
+        $query = "INSERT INTO utente (nome, cognome, email, psw, ruolo) VALUES (?, ?, ?, ?, ?)";
+        $stmt = $this->connection->prepare($query);
+        if ($stmt === false) {
+            // Handle error, prepare failed
+            return false;
+        }
+    
+        // 's' denotes the type of the parameters: 's' for string, 'i' for integer, 'd' for double, 'b' for blob
+        $bind = $stmt->bind_param("sssss", $name, $surname, $email, $password, $role);
+        if ($bind === false) {
+            // Handle error, bind_param failed
+            return false;
+        }
+    
+        $execute = $stmt->execute();
+        if ($execute === false) {
+            // Handle error, execute failed
+            return false;
+        }
+    
+        // Close the statement
+        $stmt->close();
+        
+        return true; // Return true on success
+    }
+  
+    public function removeUserAccount($email){ //return false in case of error
+        $query = "DELETE FROM utente WHERE email = ?";
+        $stmt = $this->connection->prepare($query);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        return $stmt;
+        
+    }
+
 
         
         public function aggiungiPreferiti($userId,$idOpera){
@@ -277,5 +368,6 @@ class DBAccess {
     public function closeConnection() {
         $this->connection->close();
     }
+
 }
 ?>

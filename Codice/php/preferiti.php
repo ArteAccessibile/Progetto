@@ -36,10 +36,20 @@
         $replace = "";
         if ($favs != null) {
             foreach ($favs as $f) {
+                $opera = $connection->getOperaById($f['opera']);
+                if(empty($opera)) {
+                    echo "Failed to fetch favourites data.";
+                    exit();
+                }
+                $file_path = isset($opera['file_path']) ? $opera['file_path'] : '';
+                if (!file_exists($file_path)) {
+                    echo "Error images not founded!.";
+                    echo $file_path;
+                }
             // Creating the list with opera names and respective image file paths
                 $replace .= "
                             <ul class=\"preferito\">
-                            <li><img src=\"../../immagini/gattogamberetto.jpg\" alt=\"Paolo Sbringato\" ></li>
+                            <li><img src=\"".$file_path."\" alt=\"".$f['artista']."\" ></li>
                             <li>
                                 <ul class=\"descrizione-preferito\">
                                     <li>

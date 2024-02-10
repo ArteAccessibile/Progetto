@@ -681,7 +681,13 @@ object-fit: cover;
   color: #679839;
 }
 
+.account_options_visible{
+  display: list-item;
+}
 
+.account_options_invisible{
+  display: none;
+}
 
 #delete-account-button {
   background-color: #C20000;
@@ -691,10 +697,6 @@ object-fit: cover;
   border: none;
   cursor: pointer;
 }
-
-
-
-
 
 /**preferiti**/
 #sezionePreferiti{
@@ -762,14 +764,45 @@ object-fit: cover;
 /* sezione account artista */
 
 .rounded_main_container{
-  margin: 2em 4em 4em 4em;
-  padding-bottom: 2em;
   border-radius: 2em;
+  padding: 2em;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.rounded_main_container > h2{
-  padding: 1em;
+.rounded_main_container > p{
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.rounded_main_container > form > div{
+  padding-top: 0.5em;
+}
+
+.ok-message{
+  color: #04AA6D;
+  padding: 0.5em;
+  margin-left: 2em;
+  margin-bottom: 2em;
+}
+
+.errors-forms{
+  color: red;
+  margin-left: 2em;
+  margin-bottom: 2em;
+}
+
+#new_user_submit{
+  margin-top: 1em;
+}
+
+#signup-label{
+  color: #DDE5FE;
+  margin: 1em 0 2em 1em;
+}
+
+#signup-label > a{
+  color: #04AA6D;
+  text-decoration: underline;
 }
 
 .account_data_section{
@@ -933,14 +966,8 @@ input[type=submit] {
   font-size: large;
   color: #DDE5FE;
 }
-
 #submit-login{
-  background-color: #ff7b0f;
-  color: black;
-}
-
-#submit-login{
-  margin-bottom: 2em;
+  margin: 1em 0 2em 1em;
 }
 
 .avatar_image{

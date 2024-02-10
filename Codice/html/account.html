@@ -34,27 +34,26 @@
     </header>
 
     <nav id="breadcrumb">
-        <p>Ti trovi in: <a href="../index.php"><span lang="en">Home</span></a>&gt; <span lang="en">Account</span></p>
+        <p>Ti trovi in: <a href="../index.php"><span lang="en">Home</span></a>&gt; <a href="../php/account.php"><span lang="en">Account</span></a></p>
     </nav>
     <main id="maincontent">
         <div id="sezioneaccount">
             <h2 class="logged_has"> Il tuo account è: <strong>{email}</strong> </h2>
             <h3> Account </h3>
-            <ul>
+            <loggedhas/>
+            <account-options>
                 <li id="vaiPreferiti">
                     <a href="../php/preferiti.php">Opere salvate nei preferiti</a>
                 </li>
-                <li id="vaiRichiesta">
-                    <a href="">Richiedi account artista</a>
+                <artist-visibility/>
+                    <a href="../php/accountArtista.php"> Gestione opere d'arte</a>
                 </li>
-                <!--
-                <li id="logout">
-                    <a href="../php/logout.php">Logout</a>
+                <become-artist-visibility/>
+                    <a href="../php/new_artist_form.php">Diventa un artista</a>
                 </li>
-                <li id="test">
-                    <a href="../php/accountArtista.php"> Gestione opere d'arte | visibile se si è artista</a>
-                </li>
-            -->
+                {liPerArtista}
+               
+
             </ul>
         
             <div>

@@ -10,6 +10,7 @@
     if (isset($_SESSION["nav_page"]) && $_SESSION["nav_page"]=="home"){
         $path_prefix = "." . DIRECTORY_SEPARATOR . "php" . DIRECTORY_SEPARATOR;
     }
+    
     $logoutPath = $path_prefix . "logout.php";
     $accountPath = $path_prefix . "account.php";
     $logout_ref = "<li class> <a href=\"" . $logoutPath . "\" tabindex='0'> Logout </a> </li><li> <a href=\"" . $accountPath . "\" tabindex='0'> Gestisci Account </a></li>";
@@ -25,5 +26,4 @@
         $_SESSION["role"] = GUEST_ROLE;
         $log_status = $login_ref;
     }
-
 ?>

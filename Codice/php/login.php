@@ -4,8 +4,8 @@
     error_reporting(E_ALL);
 
     const ADMIN_ROLE = "admin";
-    const USER_ROLE = "utente";
     const ARTIST_ROLE = "artista";
+    const USER_ROLE = "utente";
 
     include ".." . DIRECTORY_SEPARATOR . "config.php";
     include  'DBAccess.php';
@@ -20,6 +20,17 @@
     }    
     $page = file_get_contents($html_path . "login.html");
 
+    if (isset($_SESSION["email"])) {
+        $message ="<div class=\"errors-forms\">Sei già loggato, clicca <a href=\"../index.php\">qui</a> per tornare alla home e mantenere l'accesso.<br/> Oppure clicca <a href=\"../php/logout.php\">qui</a> per effettuare il logout.</div>";
+        $page = str_replace("<alredylogged/>", $message, $page);
+        $page = str_replace("<visibility/>", "<div class=\"nascosto\">", $page);
+        echo $page;
+        exit;
+    }else {
+        $page = str_replace("<alredylogged/>", "", $page);
+        $page = str_replace("<visibility/>", "<div>", $page);
+    }
+
     if($connectionOk){
         $email = "";
         $password = "";
@@ -29,6 +40,7 @@
             $password = clearInput($_POST['password']);
                     
             $result = $connection->login($email, $password);
+            $isArtista = $connection->isArtista($email);
             
             if ($result->num_rows == 0) {       
                 $errorString = "<p class='login-error' tabindex='0'><strong>Username o password non corretti!</strong></p>";
@@ -42,11 +54,11 @@
                         case ADMIN_ROLE:
                             $_SESSION["role"] = ADMIN_ROLE;
                             break;
-                        case ARTIST_ROLE:
-                            $_SESSION["role"] = ARTIST_ROLE;
-                            break;
                         case USER_ROLE:
-                            $_SESSION["role"] = USER_ROLE;
+                            if($isArtista)
+                                $_SESSION["role"] = ARTIST_ROLE;
+                            else
+                                $_SESSION["role"] = USER_ROLE;
                             break;
                         default:
                             $_SESSION["role"] = "guest";
@@ -57,7 +69,10 @@
                 $result->free_result();
                 $connection->closeConnection();
 
-                header("Location: " . $_SESSION["go_back_page"]); 
+                if(isset($_SESSION["go_back_page"]))
+                    header("Location: " . $_SESSION["go_back_page"]);    
+                else             
+                    header("Location: ../index.php"); 
                 die();
             }
         }
