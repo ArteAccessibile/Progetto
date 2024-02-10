@@ -240,7 +240,7 @@ class DBAccess {
             
             return true; // Return true on success
         }
-    
+ 
         public function removeUserAccount($email) {
             $queryUtente = "DELETE FROM utente WHERE email = $email";
             
@@ -250,6 +250,7 @@ class DBAccess {
                 echo "Exception: " . $exep->getMessage() . mysqli_error($this->connection);
             }
         }
+
         
         public function aggiungiPreferiti($userId,$idOpera){
             $query = "INSERT INTO preferito (utente,opera) VALUES (?,?)";
