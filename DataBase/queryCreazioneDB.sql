@@ -20,7 +20,7 @@ CREATE TABLE utente (
 
 -- Crea la tabella artista
 CREATE TABLE artista (
-    utente varchar(40) PRIMARY KEY REFERENCES utente(email),
+    utente varchar(40) PRIMARY KEY REFERENCES utente(email) ON DELETE CASCADE,
     descrizione TEXT NOT NULL,
     pseudonimo varchar(30),
     email_contatto varchar(30) NOT NULL
@@ -41,7 +41,7 @@ CREATE TABLE opera (
 
 -- Crea la tabella preferito
 CREATE TABLE preferito (
-    utente varchar (40) REFERENCES utente(email),
+    utente varchar (40) REFERENCES utente(email) ON DELETE CASCADE,
     opera BIGINT REFERENCES opera(id),
     PRIMARY KEY (utente, opera)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

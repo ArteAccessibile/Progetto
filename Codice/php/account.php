@@ -28,8 +28,11 @@
         $page = str_replace("{email}", $_SESSION["email"], $page);
         $page = str_replace("<set-visibility/>", "<div class=\"visibile\" tabindex='0'>" , $page);
     } else {
-        $page = str_replace("<loggedhas/>", "<h2 class=\"logged_has\" tabindex='0'> Devi loggarti per potere accedere ai contenuti di questa sezione: <a href=\"login.php\"> Login </a></h2>" , $page);
-        $page = str_replace("<account-options>", "<ul class=\"account_options_invisible\" tabindex='0'>" , $page);
+
+        $page = str_replace("{email}","anonimo, non hai effettuato il login.", $page);
+        $page = str_replace("<loggedhas/>", "<h2 class=\"logged_has\" tabindex='0'> Devi loggarti per potere accedere ai contenuti di questa sezione </h2>" , $page);
+        $page = str_replace("<set-visibility/>", "<div class=\"nascosto\" tabindex='0'>" , $page);
+
     }
 
 

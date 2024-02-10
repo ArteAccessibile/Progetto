@@ -17,6 +17,8 @@ $page = file_get_contents("../html/account_artista.html");
 $connection = new DBAccess();
 $connectionOk = $connection->openDBConnection();
 
+
+
 if ($connectionOk) {
 
     $pseudonimo = $connection->getArtistaPseudonimoByUser($_SESSION["email"]);

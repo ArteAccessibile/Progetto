@@ -1,7 +1,6 @@
 /* Mini CSS for Mobile Devices with screen width below 600px */
 @media only screen and (max-width: 600px) {
   body {
-      background-color: #defeca;
       font-family: 'Raleway', sans-serif;
   }
 
@@ -200,13 +199,13 @@ nav {
 
 /* Change the color of links on hover */
 .navbar li:hover {
-  background-color: #ddd;
+  background-color: #2B007A;
   color: black;
 }
 
 /* Add a color to the active */
 #selectedMini {
-  background-color: orange;
+  background-color: #E29608;
   color: white;
 }
 
@@ -222,7 +221,7 @@ nav {
 }
 
 #delete-account-button {
-  background-color: red;
+  background-color: #C20000;
   color: white;
   margin-top: 2em;
   margin-right: 1em;

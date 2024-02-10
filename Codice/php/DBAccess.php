@@ -3,6 +3,7 @@
 namespace DB;
 
 use mysqli;
+use Exception;
 
 class DBAccess {
     
@@ -244,6 +245,7 @@ class DBAccess {
             
             return true; // Return true on success
         }
+
     
     public function isArtista($email){
         $query = "SELECT * FROM artista WHERE utente = ?";
@@ -338,7 +340,31 @@ class DBAccess {
         return $stmt;
         
     }
+
+
         
+        public function aggiungiPreferiti($userId,$idOpera){
+            $query = "INSERT INTO preferito (utente,opera) VALUES (?,?)";
+            $stmt = $this->connection->prepare($query);
+            $stmt->bind_param("si",$userId,$idOpera);
+            $stmt->execute();
+            return $stmt;
+        }
+
+        public function checkPreferita($idOpera,$userId){
+            $query = "SELECT * FROM preferito WHERE utente = ? AND opera = ?";
+            $stmt = $this->connection->prepare($query);
+            $stmt->bind_param("si",$userId,$idOpera);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            if($result->num_rows > 0){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
     public function closeConnection() {
         $this->connection->close();
     }
