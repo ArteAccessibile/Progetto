@@ -127,7 +127,7 @@ a:hover {
   padding:0;
   list-style:none;
 }
-.content{
+#content{
     position: relative;
     width: 60%;
     margin: 5% auto;
