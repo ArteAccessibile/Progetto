@@ -55,15 +55,16 @@ if ($connectionOk) {
 
 
  // Pass the opera details to the template_opera.html file
- $paginaHTML = file_get_contents("../html/template_opera.html");
- $paginaHTML = str_replace("{cosa}", $opera_name, $paginaHTML);
- $paginaHTML = str_replace("{opera_image}", $file_path, $paginaHTML);
- $paginaHTML = str_replace("{operaId}", $operaId, $paginaHTML);    
- $paginaHTML = str_replace("{opera_name}", $opera_name, $paginaHTML);
- $paginaHTML = str_replace("{opera_description}", $opera_description, $paginaHTML);
- $paginaHTML = str_replace("{valore}", $disable, $paginaHTML);
- $paginaHTML = str_replace("{MessaggiForm}", $textMessageForm, $paginaHTML);
- echo $paginaHTML;
- 
- 
+ $page = file_get_contents("../html/template_opera.html");
+ $page = str_replace("{cosa}", $opera_name, $page);
+ $page = str_replace("{opera_image}", $file_path, $page);
+ $page = str_replace("{operaId}", $operaId, $page);    
+ $page = str_replace("{opera_name}", $opera_name, $page);
+ $page = str_replace("{opera_description}", $opera_description, $page);
+ $page = str_replace("{valore}", $disable, $page);
+ $page = str_replace("{MessaggiForm}", $textMessageForm, $page);
+
+ require_once "../config.php";
+ require_once "modules-loader.php";
+ echo $page;
  ?>
