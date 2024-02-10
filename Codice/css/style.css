@@ -82,9 +82,9 @@ label{
   transition: background-color 0.3s ease; /* Effetto di transizione per il cambio di colore */
 }
 
-#container > nav > ul > li:hover > a {
-  color: black; /* Cambia il colore del testo per mantenere il contrasto */
-}
+/*#container > nav > ul > li:hover > a {
+  color: black; /* Cambia il colore del testo per mantenere il contrasto 
+}*/
 
 #container > nav > ul > li:hover {
   border-bottom: 2px solid #7c7c8a;
@@ -206,6 +206,8 @@ a:hover {
   align-items: center;
   margin: 1em 2em 0 0;
   padding: 0.5em;
+  color: #679839; 
+
 }
 
 #accountflexbox > li > h2 {
@@ -336,7 +338,7 @@ a:hover {
   z-index: 1;
   top: 0;
   padding: 1em 0.5em;
-  background-color: #ffa500d0; /* Cambiato il colore di sfondo delle briciole di pane */
+  background-color: #E29608; /* Cambiato il colore di sfondo breadcrumb  */
   border-bottom: 2px solid #0b204c; /* Cambiato il colore del bordo inferiore */
   border-top: 2px solid #0b204c; /* Aggiunto il colore del bordo superiore */
   margin: 4em 0 20px 0;
@@ -791,6 +793,8 @@ object-fit: cover;
 
 
 .logsection {
+  color: #679839; /* Replace with your desired color */
+
   list-style-type: none;
   display: flex;
   flex-direction: row;
@@ -803,6 +807,11 @@ object-fit: cover;
 .logsection > *{
   padding: 0.7em;
   margin: 0.5em;
+}
+
+.logsection a{
+  text-decoration: underline;
+  color: #679839; /* Replace with your desired color */
 }
 
 .logsection > li:hover{
