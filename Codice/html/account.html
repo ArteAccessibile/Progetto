@@ -34,10 +34,11 @@
     </header>
 
     <nav id="breadcrumb">
-        <p>Ti trovi in: <a href="../php/account.php"><span lang="en">Home</span></a>&gt; <span lang="en">Account</span></p>
+        <p>Ti trovi in: <a href="../index.php"><span lang="en">Home</span></a>&gt; <a href="../php/account.php"><span lang="en">Account</span></a></p>
     </nav>
-    <main class="content">
+    <main id="maincontent">
         <div id="sezioneaccount">
+            <h2 class="logged_has"> Sei loggato come: <strong>{email}</strong> </h2>
             <h3> Account </h3>
             <loggedhas/>
             <account-options>
@@ -45,7 +46,7 @@
                     <a href="../php/preferiti.php">Opere salvate nei preferiti</a>
                 </li>
                 <artist-visibility/>
-                    <a href="../html/account_artista.html"> Gestione opere d'arte</a>
+                    <a href="../php/accountArtista.php"> Gestione opere d'arte</a>
                 </li>
                 <become-artist-visibility/>
                     <a href="../php/new_artist_form.php">Diventa un artista</a>
@@ -53,12 +54,15 @@
                 <li id="logout">
                     <a href="../php/logout.php">Logout</a>
                 </li>
-                <li id="elimina-account">
-                    <a href="../php/logout.php"> Elimina Account</a>
-                </li>
             </ul>
+        
+            <div>
+                <form method="POST" action="../php/deleteAccount.php">
+                    <input id="delete-account-button" type="submit" value="Elimina Account" onclick="return confirm('Vuoi veramente cancellare il tuo account? Questa azione non è reversibile');">
+                </form>
             </div>
         </div>
+        
     </main>
 
     <footer class="footer">

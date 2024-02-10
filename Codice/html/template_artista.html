@@ -14,40 +14,19 @@
     </head>
     <body>
         <a href="#maincontent" class="skip-link">Vai al contenuto</a>
-        <header>
-            <div id="headerflexbox">
-                <ol id="logoflexbox">
-                    <li> 
-                        <img src="../../immagini/logo.png" width="40" height="40" alt="">
-                    </li>
-                    <li>
-                            <h1> Arte Per Tutti </h1>
-                    </li>
-                </ol>
-                <a class="nostylea" href="../html/account.html">
-                    <ol id="accountflexbox">
-                        <li>
-                            <img src="../../immagini/account_logo.png" width="30" height="30" alt="">
-                        </li>
-                        <li>
-                                <h2> Account </h2>
-                        </li>
-                    </ol>
-                </a>
-            </div>
-        </header>
+        <header/>
         <div id="container">
-            <nav>
+            <nav id="menu">
                 <ul>
-                    <li lang="en"><a href="../html/home.html">Home</a></li>
-                    <li><a href="../php/galleria.php">Galleria</a></li>
-                    <li id="selected">Artisti</li>
-                    <li><a href="../html/contatti.html">Contatti</a></li>
+                    <li id="home"><a href="../index.php">Home</a></li>
+                    <li id="gallery"><a href="../php/galleria.php">Galleria</a></li>
+                    <li id="selected">Artisti</a></li>
+                    <li id="contacts"><a href="../php/contatti.php">Contatti</a></li>
                 </ul>
             </nav>
         </div>
         <nav id="breadcrumb">
-            <p>Ti trovi in: <a href="../html/home.html"><span lang="en">Home </span></a> &gt;
+            <p>Ti trovi in: <a href="../index.php"><span lang="en">Home </span></a> &gt;
                 <a href="../php/artisti.php">Artisti</a> &gt; {name}
             </p>
         </nav>

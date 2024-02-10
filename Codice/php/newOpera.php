@@ -10,6 +10,10 @@ setlocale(LC_ALL, 'it_IT');
 
 $paginaHTML = file_get_contents("../html/opera_upload.html");
 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 $funzioniDB = new DBAccess();
 
 $conn = $funzioniDB->openDBConnection();
@@ -72,12 +76,7 @@ if(isset($_POST['submit'])){
         //$messaggiPerForm .= '<li>proprietario non inserito</li>';
         $proprietarioNULL = NULL;//se non c'è proprietario
     }
-    else{
-        if(preg_match("/\d/", $proprietario)){
-            $messaggiPerForm .= '<li>Il proprietario non può contenere numeri</li>';
-        }
-        $proprietarioNULL=$proprietario;//se invece c'è
-    }
+    
 
     $descrizione = $funzioniDB->pulisciInput($_POST['descrizione']);
     if (strlen($descrizione) == 0){
@@ -120,8 +119,8 @@ if(isset($_POST['submit'])){
 
 if(strlen($messaggiPerForm) == 0){//se non ci sono messaggi di errore fino ad qua
     if($conn){
-
-        if ($funzioniDB->aggiungiOpera($proprietario,$titolo,$desc_abbrev,$descrizione, $dataCreazione)){
+// da fixare sta query
+        if ($funzioniDB->aggiungiOpera($_SESSION["email"],$titolo,$desc_abbrev,$descrizione, $dataCreazione)){
             $messaggiPerForm = "l'opera è stato aggiunta con successo";
 
             
@@ -138,7 +137,7 @@ if(strlen($messaggiPerForm) == 0){//se non ci sono messaggi di errore fino ad qu
 
 $funzioniDB->closeConnection();
 //per non perdere quello scritto in caso di errore
-//$paginaHTML = str_replace("{nome_utente}", $_SESSION["name"], $paginaHTML);
+$paginaHTML = str_replace("{nome_utente}", $_SESSION["email"], $paginaHTML);
 $paginaHTML = str_replace("{messaggiForm}", $messaggiPerForm, $paginaHTML);
 $paginaHTML = str_replace("{listaArtisti}", $opzioniArt, $paginaHTML);
 
