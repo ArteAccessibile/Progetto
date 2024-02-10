@@ -730,14 +730,8 @@ object-fit: cover;
   align-items: center;
   list-style: none;
   margin: 1em;
-  cursor: pointer;
-  transition: transform .2s;
 }
 
-.preferito:hover{
-  transform: scale(1.1);
-  background-color: #c5ffa2;
-}
 
 .preferito > li > img{
   height: 8em;
