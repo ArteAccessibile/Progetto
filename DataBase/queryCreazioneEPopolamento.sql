@@ -25,7 +25,7 @@ INSERT INTO utente (email, psw, nome, cognome, data_nascita) VALUES
 
 -- Crea la tabella artista
 CREATE TABLE artista (
-    utente varchar(40) PRIMARY KEY REFERENCES utente(email),
+    utente varchar(40) PRIMARY KEY REFERENCES utente(email) ON DELETE CASCADE,
     descrizione TEXT NOT NULL,
     pseudonimo varchar(30),
     email_contatto varchar(30) NOT NULL
@@ -54,7 +54,7 @@ INSERT INTO opera (artista, titolo, desc_abbrev, descrizione, data_creazione) VA
 
 -- Crea la tabella preferito
 CREATE TABLE preferito (
-    utente varchar (40) REFERENCES utente(email),
+    utente varchar (40) REFERENCES utente(email) ON DELETE CASCADE,
     opera BIGINT REFERENCES opera(id),
     PRIMARY KEY (utente, opera)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

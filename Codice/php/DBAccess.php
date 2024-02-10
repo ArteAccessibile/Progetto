@@ -3,6 +3,7 @@
 namespace DB;
 
 use mysqli;
+use Exception;
 
 class DBAccess {
     
@@ -240,7 +241,15 @@ class DBAccess {
             return true; // Return true on success
         }
     
-
+        public function removeUserAccount($email) {
+            $queryUtente = "DELETE FROM utente WHERE email = $email";
+            
+            try {
+                mysqli_query($this->connection, $queryUtente);
+            } catch (Exception $exep) {
+                echo "Exception: " . $exep->getMessage() . mysqli_error($this->connection);
+            }
+        }
         
     public function closeConnection() {
         $this->connection->close();
