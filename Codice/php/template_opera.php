@@ -43,6 +43,7 @@ if ($connectionOk) {
             $textMessageForm= "Per aggiungere l'opera ai preferiti devi essere loggato.";
             $disable="disabled";
         }
+
     } else {
         $textMessageForm= "Opera non trovata.";
     }
