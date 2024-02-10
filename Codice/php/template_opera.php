@@ -32,11 +32,16 @@ if ($connectionOk) {
             echo $file_path;
         }
 
+        if(isset($_SESSION["email"])){
+            if($connection->checkPreferita($operaId,$_SESSION["email"])){
+                $textMessageForm= "L'opera è presente nei tuoi preferiti.";
+                $disable="disabled";
 
-        if($connection->checkPreferita($operaId,$_SESSION["email"])){
-            $textMessageForm= "L'opera è presente nei tuoi preferiti.";
+            }
+        }
+        else{
+            $textMessageForm= "Per aggiungere l'opera ai preferiti devi essere loggato.";
             $disable="disabled";
-
         }
     } else {
         $textMessageForm= "Opera non trovata.";

@@ -105,8 +105,11 @@ label{
   display:none;
 }
 a {
-  text-decoration:underline;
-
+  text-decoration: underline;
+  color: #679839 ;
+}
+a:hover {
+  color: #DDE5FE ;
 }
 
 #container > nav > ul > li > div {
