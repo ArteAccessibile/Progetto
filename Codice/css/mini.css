@@ -220,6 +220,11 @@ nav {
   margin: 1em 0 3em 2em;
 }
 
+.account_options_visible ul li a{
+  text-decoration: underline;
+  color: #679839;
+}
+
 #delete-account-button {
   background-color: #C20000;
   color: white;
@@ -254,4 +259,16 @@ nav {
 }
 
 
+.ok-message{
+  color: #DDE5FE;
+}
 
+.ok-message > a{
+  color: #679839;
+  text-decoration: underline;
+}
+
+.errors-forms > a{
+  color: #679839;
+  text-decoration: underline;
+}

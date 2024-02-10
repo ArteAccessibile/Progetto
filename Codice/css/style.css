@@ -774,16 +774,27 @@ object-fit: cover;
 }
 
 .ok-message{
-  color: #04AA6D;
+  color: #DDE5FE;
   padding: 0.5em;
   margin-left: 2em;
   margin-bottom: 2em;
 }
 
+.ok-message > a{
+  color: #679839;
+  text-decoration: underline;
+}
+
+
 .errors-forms{
   color: red;
   margin-left: 2em;
   margin-bottom: 2em;
+}
+
+.errors-forms> a{
+  color: #679839;
+  text-decoration: underline;
 }
 
 #new_user_submit{
