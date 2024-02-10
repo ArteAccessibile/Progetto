@@ -8,7 +8,7 @@
     }
 
     $_SESSION["go_back_page"] = $index_page;
-
+    $liItems="";
 
     $page = file_get_contents($html_path . "account.html");
 
@@ -21,6 +21,9 @@
         if($_SESSION["role"] == "artista"){
             $page = str_replace("<become-artist-visibility/>", "<li class=\"account_options_invisible\" tabindex='0'>" , $page);
             $page = str_replace("<artist-visibility/>", "<li class=\"account_options_visible\" tabindex='0'>" , $page);
+            $liItems = "<li id=\"logout\"><a href=\"../php/logout.php\">Logout</a></li>
+                    <li id=\"test\"><a href=\"../php/accountArtista.php\"> Gestione opere d'arte</a></li>";
+            $page = str_replace("{liPerArtista}", $liItems , $page);
         } else {
             $page = str_replace("<artist-visibility/>", "<li class=\"account_options_invisible\" tabindex='0'>" , $page);
             $page = str_replace("<become-artist-visibility/>", "<li class=\"account_options_visible\" tabindex='0'>" , $page);
