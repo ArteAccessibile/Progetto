@@ -470,13 +470,23 @@ h1{
 .card-body {
     position: relative;
     padding: 0.4em;
-    overflow: hidden;
+    
 }
 
-.card-body h1{
+.card-body h2{
+  white-space: nowrap;
+  font-size: 1em;
   color:black;
 }
 
+.pseudonimo {
+  font-size: 1.2em;
+  margin: 0.5em;
+  display: flex;
+  justify-content: center;
+  white-space: nowrap; /* Prevent line break */
+  overflow: hidden;
+}
 .card-body p{
   color:black;
 }

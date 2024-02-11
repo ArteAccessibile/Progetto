@@ -26,9 +26,11 @@ if ($connectionOk) {
                   <a href=\"{$artistaLink}\" id=\"Artista{$listaArtisti['utente']}\">
                       <img src=\"../../immagini/artisti/{$listaArtisti['pseudonimo']}.jpg\" alt=\"Artist Image\">
                   </a>
-                  <h1>{$artistaName}</h1>
-                  <p>{$artistaDescription}</p>
+                  <p class=\"pseudonimo\"><strong>{$artistaName}</strong></p>
+              <p>{$artistaDescription}</p>
               </div>
+              
+             
             </li>";
 
        

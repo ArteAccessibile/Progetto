@@ -1,3 +1,8 @@
+@page{
+  size: A4;
+  margin: 1cm;
+}
+
 *,
 *:before,
 *:after {
@@ -99,9 +104,7 @@ footer a:visited {
 /* Galleria  */
 
 
-
-/* ARTISTI*/
-
+/* ARTISTI */
 
 #artisti {
   list-style-type: none;
@@ -114,7 +117,7 @@ footer a:visited {
   justify-content: space-evenly; /* Adjust this based on your layout preference */
 }
 
-#artisti li{
+#artisti li {
   display: inline-block;
   width: 25%;
   aspect-ratio: 1/1;
@@ -129,36 +132,38 @@ footer a:visited {
 }
 
 .card {
-  display: block;
-  width: 20%;
+  page-break-inside: avoid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Adjust the width to 100% for full-width cards */
   border-radius: 5px;
   border: 1px solid #000000;
   margin: 10px;
-  flex-direction: column;
-  align-items: center;
 }
 
-.card img{
+.card img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   border-radius: 5px;
 }
 
 .card-body {
-    position: relative;
-    padding: 0.4em;
-    overflow: hidden;
+  position: relative;
+  padding: 0.4em;
+  overflow: hidden;
 }
 
-.card-body h1{
-  color:black;
+.card-body h2 {
+  color: black;
+  white-space: nowrap;
+
 }
 
-.card-body p{
-  color:black;
+.card-body p {
+  color: black;
 }
-
 
 .artist-container {
   margin: auto;
@@ -198,15 +203,6 @@ footer a:visited {
 .artist-container > dd:last-of-type {
   border: none;
 }
-#artist-image {
-  max-width: 300px;
-  height: auto; /* Allow the height to adjust according to the image */
-  border-radius: 5%;
-  margin-right: 2em; /* Adjust margin as needed */
-}
-
-
-
 
 #artist-image {
   max-width: 300px;
@@ -219,12 +215,13 @@ footer a:visited {
   width: 60%;
 }
 /* Additional styles for artist-info */
-.artist-info h3, .artist-info p,  .artist-description p {
+.artist-info h3,
+.artist-info p,
+.artist-description p {
   margin-bottom: 0.4em;
 }
 
-
-ul.artist-works{
+ul.artist-works {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-evenly;
@@ -232,12 +229,11 @@ ul.artist-works{
   list-style-type: none;
 }
 
-.artist-works li{
+.artist-works li {
   display: inline-block;
   width: 25%;
   padding: 1em;
 }
-
 
 .artist-works li a {
   display: block;
