@@ -392,6 +392,7 @@ a:hover {
 }
 
 textarea {
+  margin-bottom: 1em;
     width: auto;
     height: 10em;
     padding: 12px 20px;

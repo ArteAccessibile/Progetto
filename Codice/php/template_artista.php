@@ -19,7 +19,6 @@ if ($connectionOk) {
    $page = file_get_contents("../html/template_artista.html");
    $page = str_replace("{artista_image}", "../../immagini/artisti/{$artist['pseudonimo']}.jpg", $page);
    $page = str_replace("{name}", $artist['pseudonimo'], $page);
-   $page = str_replace("{surname}", $artist['email_contatto'], $page);
    $page = str_replace("{mail}", $artist['email_contatto'], $page);
    $page = str_replace("{descriptionArtist}", $artist['descrizione'], $page);
    
