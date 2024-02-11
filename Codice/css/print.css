@@ -10,133 +10,30 @@
 }
 
 body {
-  margin: 1.6cm;
+  background-color: white !important;
+  color: black !important;
+  font-family: Arial, sans-serif !important;
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-/* General Styles */
-body {
-  background: none;
-  font-family: 'Raleway', sans-serif;
-}
+a {
+  text-decoration: underline ;
+} 
 
-.skip-link,
-.containerMini,
-#container,
-#container > nav,
-#container > nav > ul,
-#container > nav > ul > li > a,
-#container > nav > ul > li > div,
-#content,
-.homecontent,
-#logo,
-#headerflexbox,
-#logoflexbox,
-.nostylea,
-#accountflexbox,
-#accountflexbox > li > h2,
-.car,
-.bottonecar,
-.indicecarosello,
-.indiceattivocar,
-.bottonetop,
-#breadcrumb,
-#breadcrumb p,
-#odd,
-#u_a_c,
-textarea,
-.input,
-.submit,
-#artisti,
-#artisti li,
-#artisti li a,
-h1,
-.card,
-.card img,
-.card-body,
-.card-body h1,
-.card-body p,
-ul.no-bullets,
-.opere,
-.opere li img,
-.opere li p,
-.opere li a,
-.containerOpere img,
-.containerOpere > ul > li > h2,
-.containerOpere > ul > li > a,
-.containerMini,
-.containerMini li img,
-.opera-container,
-.opera-container h1,
-.opera-container dt,
-.opera-container dd,
-.arrow_back_header,
-.bottoneindietro,
-#sezioneaccount,
-#sezioneaccount > h2,
-#sezioneaccount > h3,
-#sezioneaccount > ul,
-#sezioneaccount > ul > li,
-#sezioneaccount > ul > li > a,
-#sezionePreferiti,
-.logged_has,
-.logged_has > strong,
-.preferiti-container,
-.preferito,
-.preferito > li > img,
-.descrizione-preferito,
-.descrizione-preferito > li,
-.descrizione-preferito > li > p,
-.rounded_main_container,
-.account_data_section,
-.account_data_section > ul,
-.account_data_section > ul > li,
-.account_desc_section,
-.avatar_image,
-#opere_artista_section,
-#new_opera_section,
-.rised_button,
-.opera_artista_card,
-.opera_artista_card:hover,
-.opera_artista_card > p,
-.opera_artista_card > img,
-#text_data_opera,
-#text_data_opera > div > p,
-.textbox,
-.textbox:focus,
-#maincontent dl,
-.artist-container,
-.artist-container > dt,
-.artist-container > dd,
-.artist-container > dd img,
-.artist-container > dd:first-of-type,
-.artist-container > dd:last-of-type,
-#artist-image,
-.artist-info,
-.artist-info h3,
-.artist-info p,
-.artist-description p,
-h4,
-ul.artist-works,
-.artist-works li,
-.artist-works li a,
-.footerContent,
-.footerContent a,
-.footerContent a:selected,
-#opera-image,
-#opera-info,
-.label,
-.navbar,
-.error-505,
-.error-404,
-.message-404,
-.error-404 > h1,
-.error-404 > p,
-.error-404 > a,
-.error-container,
-.error-title,
-.error-message {
+.logsection, #container{
   display: none;
 }
 
-/* Add any additional styles or adjustments for printing if needed */
+header h1{
+  background-image: url("../immagini/logo.png");
+  display: none;
 
+}
+
+#breadcrumb{
+  margin-top: auto;
+  display:block;
+}
