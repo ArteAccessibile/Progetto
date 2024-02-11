@@ -54,7 +54,8 @@ if ($connectionOk) {
         }
     } else {
         $fotoProfilo = $fotoProfiloJPG;
-    }    $imagesHtml = "";
+    }
+        $imagesHtml = "";
     if (!empty($lista)) {
         foreach ($lista as $image) {
             $imagesHtml .= "<div class='opera_artista_card'>";

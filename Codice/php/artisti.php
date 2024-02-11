@@ -17,14 +17,32 @@ if ($connectionOk) {
   if (!empty($artists)) {
       // Generate the list items
       $artistaString = "";
+      
       foreach ($artists as $listaArtisti) {
           $artistaLink = "template_artista.php?id={$listaArtisti['utente']}";
           $artistaName = $listaArtisti['pseudonimo'];
           $artistaDescription = $listaArtisti['descrizione'];
+
+          $fotoProfiloJPG = "../../immagini/artisti/" . $artistaName . ".jpg";
+    
+          // se il file non esiste, prova a caricare la versione PNG
+          if (!file_exists($fotoProfiloJPG)) {
+              $fotoProfiloPNG = "../../immagini/artisti/" . $artistaName . ".png";
+              // controllo se esiste la versione PNG
+              if (file_exists($fotoProfiloPNG)) {
+                  $fotoProfilo = $fotoProfiloPNG;
+              } else {
+                  // se nessuna delle due versioni esiste, imposto un'immagine di profilo predefinita
+                  $fotoProfilo = "../../immagini/account_logo.png";
+              }
+          } else {
+              $fotoProfilo = $fotoProfiloJPG;
+          }
+
           $artistaString .= "<li class=\"card\">
               <div class=\"card-body\">
                   <a href=\"{$artistaLink}\" id=\"Artista{$listaArtisti['utente']}\">
-                      <img src=\"../../immagini/artisti/{$listaArtisti['pseudonimo']}.jpg\" alt=\"Artist Image\">
+                      <img src=\"$fotoProfilo\" alt=\"Artist Image\">
                   </a>
                   <p class=\"pseudonimo\"><strong>{$artistaName}</strong></p>
               <p>{$artistaDescription}</p>
