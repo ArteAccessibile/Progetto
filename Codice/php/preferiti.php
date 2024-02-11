@@ -74,5 +74,6 @@
     }
     $connection->closeConnection(); 
     $page = str_replace("<favourites/>", $replace, $page);
+    require_once "modules-loader.php";
     echo $page;
 ?>

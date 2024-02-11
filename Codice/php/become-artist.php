@@ -15,6 +15,7 @@
         $page = file_get_contents($html_path . "diventa_artista.html");
         $page = str_replace("<error/>", "<div class=\"errors-forms\"><p> Sessione scaduta, torna al login per accedere: <a href=\"login.php\"> Vai al login </a> </p></div>", $page); 
         $page = str_replace("<visibility/>", "<div class=\"nascosto\">", $page);
+        require_once "modules-loader.php";
         echo $page;
         exit;
     }
@@ -56,6 +57,7 @@
                 require_once "../config.php";
                 $page = file_get_contents($html_path . "diventa_artista.html");
                 $page = str_replace("<ok/>", "<p class=\"ok-message\">".$ok."</p>", $page);
+                require_once "modules-loader.php";
                 echo $page;
                 exit;
             }else {
@@ -71,6 +73,7 @@
         $page = file_get_contents($html_path . "diventa_artista.html");
         $page = str_replace("<error/>", "<div class=\"errors-new-artist\"><ul>" . $error_messages . "</ul></div>", $page);
         $page = str_replace("<visibility/>", "<div>", $page);
+        require_once "modules-loader.php";
         echo $page;
         exit;
     }
