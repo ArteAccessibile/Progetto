@@ -706,6 +706,7 @@ object-fit: cover;
 
 .logged_has{
   margin-left: 0.8em;
+  margin-bottom: 1em;
   font-size: 1.1em;
 }
 
@@ -723,6 +724,11 @@ object-fit: cover;
   list-style: none;
 }
 
+.preferiti-container > a {
+  text-decoration: none;
+  color: #DDE5FE;
+}
+
 .preferito{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 1em;
@@ -731,6 +737,7 @@ object-fit: cover;
   list-style: none;
   margin: 1em;
 }
+
 
 
 .preferito > li > img{
@@ -754,7 +761,7 @@ object-fit: cover;
 }
 
 .descrizione-preferito > li > p{
-  margin-left: 0.2em  
+  margin-left: 2em  
 }
 /* sezione account artista */
 

@@ -13,6 +13,7 @@ $page = file_get_contents("../html/contatti.html");
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+$_SESSION["go_back_page"] = $contact_page;
 $_SESSION["nav_page"] = "contacts"; //importante definirlo in ogni pagina tra home | contatti ...
 include "modules-loader.php";
 echo $page;

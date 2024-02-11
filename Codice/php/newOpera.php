@@ -8,10 +8,20 @@ ini_set('display_startup_errors',1);
 error_reporting(E_ALL);
 setlocale(LC_ALL, 'it_IT');
 
-$paginaHTML = file_get_contents("../html/opera_upload.html");
-
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
+}
+
+$page = file_get_contents("../html/opera_upload.html");
+
+
+if(!isset($_SESSION["email"])) {
+    require_once "../config.php";
+    $page = str_replace("<error/>", "<div class=\"errors-forms\"><p> Sessione scaduta, torna al login per accedere e visualizzare il contenuto richiesto: <a href=\"login.php\"> Vai al login </a> </p></div>", $page); 
+    $page = str_replace("<visibility/>", "<div class=\"nascosto\">", $page);
+    require_once "modules-loader.php";
+    echo $page;
+    exit;
 }
 
 $funzioniDB = new DBAccess();
@@ -35,8 +45,6 @@ function pulisciInput($value) {
     $value = htmlentities($value);
     return $value;
 }
-
-
     
     $ListaArtisti=$funzioniDB->getArtistiPseudonimo();
     
@@ -137,9 +145,9 @@ if(strlen($messaggiPerForm) == 0){//se non ci sono messaggi di errore fino ad qu
 
 $funzioniDB->closeConnection();
 //per non perdere quello scritto in caso di errore
-$paginaHTML = str_replace("{nome_utente}", $_SESSION["email"], $paginaHTML);
-$paginaHTML = str_replace("{messaggiForm}", $messaggiPerForm, $paginaHTML);
-$paginaHTML = str_replace("{listaArtisti}", $opzioniArt, $paginaHTML);
+$page = str_replace("{nome_utente}", $_SESSION["email"], $page);
+$page = str_replace("{messaggiForm}", $messaggiPerForm, $page);
+$page = str_replace("{listaArtisti}", $opzioniArt, $page);
 
-echo $paginaHTML;
+echo $page;
 ?>
