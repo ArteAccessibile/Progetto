@@ -59,15 +59,15 @@
                     <form method="POST" enctype="multipart/form-data" action="../php/updateFotoProfilo.php">
                         <label for="profileImage">Cambia immagine profilo:</label>
                         <input type="file" id="profileImage" name="profileImage"  accept="image/png , image/jpeg" required>
-                        <input type="submit" value="Upload Image">
+                        <input type="submit" value="Carica immagine">
                     </form>
                     <!-- ...existing code... -->
                 </section>
                 <h2> La tua descrizione </h2>
                 <section class="account_desc_section">
-                    <form method="POST" action="updateDescription.php"> <!-- Assuming you have a separate PHP file for handling the update -->
+                    <form method="POST" action="aggiornaDescrizione.php"> 
                         <textarea id="descrizione_artista" name="descrizione" rows="10" cols="20">{descrizione}</textarea>
-                        <input type="submit" value="Update Description">
+                        <input type="submit" value="Aggiorna descrizione">
                     </form>
                 </section>
                             <h2> Le tue opere </h2>

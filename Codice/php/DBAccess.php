@@ -373,6 +373,15 @@ class DBAccess {
         return $stmt;
     }
 
+
+    public function aggiornaDescrizione($userId, $descrizione) {
+        $query = "UPDATE artista SET descrizione = ? WHERE utente = ?";
+        $stmt = $this->connection->prepare($query);
+        $stmt->bind_param("ss", $descrizione, $userId);
+        $stmt->execute();
+        return $stmt;
+    }
+
     public function closeConnection() {
         $this->connection->close();
     }
