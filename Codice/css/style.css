@@ -984,6 +984,7 @@ input[type=submit] {
 }
 
 .avatar_image{
+
   width: 10em;
   height: 10em;
   object-fit: cover;
