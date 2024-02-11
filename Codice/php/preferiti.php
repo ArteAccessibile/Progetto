@@ -67,7 +67,11 @@
 
                                     </ul>
                                 </a>
-                                <a class=\"delete-preferito\" href=\"remove-favorite.php?id=".$f['opera']."\"> Rimuovi dai preferiti </a>
+                                <form method=\"POST\" action=\"remove-favorite.php?id=".$f['opera']."\">
+                                <fieldset class=\"noBordo\"> 
+                                  <input id=\"remove-favourite-".$f['opera'].$_SESSION['email']."\" class=\"remove-favourite-button\" type=\"submit\" value=\"Rimuovi preferito\">
+                                </fieldset>
+                                </form>
                             </div>
                             ";
                         
@@ -80,4 +84,4 @@
     $page = str_replace("<favourites/>", $replace, $page);
     require_once "modules-loader.php";
     echo $page;
-?> //aggiungi bottone rimuovi opera
+?> 
