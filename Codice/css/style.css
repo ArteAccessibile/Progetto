@@ -683,7 +683,7 @@ object-fit: cover;
   color: #679839;
 }
 
-#noBordo{
+.noBordo{
   border: none;
 
 }
@@ -698,7 +698,17 @@ object-fit: cover;
 
 #delete-account-button {
   outline: none;
-  background-color: #C20000;
+  background-color: #C20000 !important;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  cursor: pointer;
+}
+
+.remove-favourite-button{
+  outline: none;
+  background-color: #C20000 !important;
   color: white;
   padding: 10px 20px;
   font-size: 1em;
