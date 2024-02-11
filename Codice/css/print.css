@@ -76,10 +76,6 @@ header h1{
 header{
   display: none;
 }
-
-/* Galleria  */
-
-
 footer {
   border-top: 1px solid rgb(0, 0, 0); /* Adjust color for print */
   padding-top: 2em;
@@ -100,7 +96,11 @@ footer a {
 footer a:visited {
   color: #000; /* Adjust visited link color for print */
 }
+/* Galleria  */
 
+
+
+/* ARTISTI*/
 
 
 #artisti {
