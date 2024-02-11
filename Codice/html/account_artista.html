@@ -38,45 +38,45 @@
     </nav>
 
     <main id="content">
-        <loggedhas/>
-        <div class="rounded_main_container">
-            <h2> Il tuo account </h2>
-          <!--  <section class="account_data_section" 
-
-                {potenzialmente da togliere }
-                <img class="avatar_image" src="../../immagini/gattobaguette.jpg" width="300" height="300">
-                <ul>
-                    <li id="pseudonimo_artista"><strong>Pseudonimo: </strong> {pseudonimo}</li>
-                    <li id="email_artista"><strong>Email di contatto: </strong> mail</li>
-                </ul>
-            </section> -->
-            <section class="account_data_section">
-                <img class="avatar_image" id="currentProfileImage" src={FotoProfilo}>
-                <form method="POST" enctype="multipart/form-data" action="../php/updateFotoProfilo.php">
-                    <label for="profileImage">Cambia immagine profilo:</label>
-                    <input type="file" id="profileImage" name="profileImage"  accept="image/png , image/jpeg" required>
-                    <input type="submit" value="Upload Image">
-                </form>
-                <!-- ...existing code... -->
-            </section>                
-            <h2> La tua descrizione </h2>
-            <section class="account_desc_section">
-                <form method="POST" action="updateDescription.php"> <!-- Assuming you have a separate PHP file for handling the update -->
-                    <textarea id="descrizione_artista" name="descrizione" rows="10" cols="20">
-                        {descrizione}
-                    </textarea>
-                    <input type="submit" value="Update Description">
-                </form>
-            </section>
-                        <h2> Le tue opere </h2>
-            <section id="opere_artista_section">
-                <dl class="artist-container"></dl>
-                <dd>{listaOpere}</dd>
-               
-            </section>
-            <section id="new_opera_section">
-                <button type=button class="rised_button" id="btnnewopera"> Carica una nuova opera </button>
-            </section>
+        <error/>
+        <visibility/>
+            <loggedhas/>
+            <div class="rounded_main_container">
+                <h2> Il tuo account </h2>
+              <!--  <section class="account_data_section"
+                    {potenzialmente da togliere }
+                    <img class="avatar_image" src="../../immagini/gattobaguette.jpg" width="300" height="300">
+                    <ul>
+                        <li id="pseudonimo_artista"><strong>Pseudonimo: </strong> {pseudonimo}</li>
+                        <li id="email_artista"><strong>Email di contatto: </strong> mail</li>
+                    </ul>
+                </section> -->
+                <section class="account_data_section">
+                    <img class="avatar_image" id="currentProfileImage" src={FotoProfilo}>
+                    <form method="POST" enctype="multipart/form-data" action="../php/updateFotoProfilo.php">
+                        <label for="profileImage">Cambia immagine profilo:</label>
+                        <input type="file" id="profileImage" name="profileImage"  accept="image/png , image/jpeg" required>
+                        <input type="submit" value="Upload Image">
+                    </form>
+                    <!-- ...existing code... -->
+                </section>
+                <h2> La tua descrizione </h2>
+                <section class="account_desc_section">
+                    <form method="POST" action="updateDescription.php"> <!-- Assuming you have a separate PHP file for handling the update -->
+                        <textarea id="descrizione_artista" name="descrizione" rows="10" cols="20">{descrizione}</textarea>
+                        <input type="submit" value="Update Description">
+                    </form>
+                </section>
+                            <h2> Le tue opere </h2>
+                <section id="opere_artista_section">
+                    <dl class="artist-container"></dl>
+                    <dd>{listaOpere}</dd>
+            
+                </section>
+                <section id="new_opera_section">
+                    <button type=button class="rised_button" id="btnnewopera"> Carica una nuova opera </button>
+                </section>
+            </div>
         </div>
     </main>
     <footer/>

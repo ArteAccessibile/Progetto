@@ -39,83 +39,85 @@
   </nav> 
     
     <main id="content">
-        <h2 class="logged_has"> Sei loggato come: <strong>{nome_utente}</strong> </h2> <br>
-        <h3>Inserisci una nuova opera</h3>
-        <div class="form-container">
-          <ul>
-            {messaggiForm}
-          </ul>
-            <form method="post" action="../php/newOpera.php" enctype="multipart/form-data">
-              <div class="row">
-                <div class="col-25">
-                  <label for="artista">Artista</label>
+        <error/>
+        <visibility/>
+          <loggedhas/>
+          <h3>Inserisci una nuova opera</h3>
+          <div class="form-container">
+            <ul>
+              {messaggiForm}
+            </ul>
+              <form method="post" action="../php/newOpera.php" enctype="multipart/form-data">
+                <div class="row">
+                  <div class="col-25">
+                    <label for="artista">Artista</label>
+                  </div>
+                  <div class="col-75">
+          
+                    <select id="artista" name="artista" placeholder="Il nome dell'artista.." required>
+                      {listaArtisti}
+                    </select>
+          
+                  </div>
                 </div>
-                <div class="col-75">
-               
-                  <select id="artista" name="artista" placeholder="Il nome dell'artista.." required>
-                    {listaArtisti}
-                  </select>
-                   
-                </div>
-              </div>
-               <div class="row">
-                 <div class="col-25">
-                   <label for="titolo">Titolo</label>
+                 <div class="row">
+                   <div class="col-25">
+                     <label for="titolo">Titolo</label>
+                   </div>
+                   <div class="col-75">
+          
+                     <input type="text" id="titolo" name="titolo" placeholder="Il titolo dell'opera.." required>
+          
+                   </div>
                  </div>
-                 <div class="col-75">
-                
-                   <input type="text" id="titolo" name="titolo" placeholder="Il titolo dell'opera.." required>
-                  
+                 <div class="row">
+                      <div class="col-25">
+          
+                      <label for="dataCreazione">Data di creazione:</label>
+                      </div>
+                      <div class="col-75">
+          
+                      <input type="date" id="dataCreazione" name="Data" placeholder="01/01/2024" required>
+                      </div>
+          
                  </div>
-               </div>
-               <div class="row">
-                    <div class="col-25">
-                      
-                    <label for="dataCreazione">Data di creazione:</label>
-                    </div>
-                    <div class="col-75">
-                
-                    <input type="date" id="dataCreazione" name="Data" placeholder="01/01/2024" required>
-                    </div>
-                  
-               </div>
-
-               <div class="row">
-                 <div class="col-25">
-                   <label for="breve_descrizione">Breve descrizione, in 75 caratteri</label>
+                 <div class="row">
+                   <div class="col-25">
+                     <label for="breve_descrizione">Breve descrizione, in 75 caratteri</label>
+                   </div>
+          
+                   <div class="col-75">
+                     <textarea id="breve_descrizione" name="breve_descrizione" maxlength="75" placeholder="Scrivi qualcosa.." required></textarea>
+                   </div>
+          
                  </div>
-                
-                 <div class="col-75">
-                   <textarea id="breve_descrizione" name="breve_descrizione" maxlength="75" placeholder="Scrivi qualcosa.." required></textarea>
+                 <div class="row">
+                   <div class="col-25">
+                     <label for="descrizione">Descrizione</label>
+                   </div>
+          
+                   <div class="col-75">
+                     <textarea id="descrizione" name="descrizione" placeholder="Scrivi qualcosa.." required></textarea>
+                   </div>
+          
                  </div>
-                
-               </div>
-               <div class="row">
-                 <div class="col-25">
-                   <label for="descrizione">Descrizione</label>
+                 <div class="row">
+                   <div class="col-25">
+                     <label for="immagine">Immagine</label>
+                   </div>
+          
+                   <div class="col-75">
+                     <input type="file" id="immagine" name="immagine" accept="image/png, image/jpeg, image/jpg" req>
+                   </div>
+          
                  </div>
-                
-                 <div class="col-75">
-                   <textarea id="descrizione" name="descrizione" placeholder="Scrivi qualcosa.." required></textarea>
+                 <div class="row">
+                   <input type="submit" value="submit" name="submit">
                  </div>
-                
-               </div>
-               <div class="row">
-                 <div class="col-25">
-                   <label for="immagine">Immagine</label>
-                 </div>
-                
-                 <div class="col-75">
-                   <input type="file" id="immagine" name="immagine" accept="image/png, image/jpeg, image/jpg" req>
-                 </div>
-                
-               </div>
-               <div class="row">
-                 <input type="submit" value="submit" name="submit">
-               </div>
-            </form>
-           </div>
-           
+              </form>
+             </div>
+          
+        </div>
     </main>
     <footer class="footer">
       <p>AAA - Avanguardia Artistica Accessibile &amp; <span lang="en">All rights reserved</span></p>

@@ -14,6 +14,15 @@ if (session_status() === PHP_SESSION_NONE) {
 
 $page = file_get_contents("../html/account_artista.html");
 
+if(!isset($_SESSION["email"])) {
+    require_once "../config.php";
+    $page = str_replace("<error/>", "<div class=\"errors-forms\"><p> Sessione scaduta, torna al login per accedere e visualizzare il contenuto richiesto: <a href=\"login.php\"> Vai al login </a> </p></div>", $page); 
+    $page = str_replace("<visibility/>", "<div class=\"nascosto\">", $page);
+    require_once "modules-loader.php";
+    echo $page;
+    exit;
+}
+
 $connection = new DBAccess();
 $connectionOk = $connection->openDBConnection();
 
@@ -61,11 +70,15 @@ if ($connectionOk) {
 }
 
 $connection->closeConnection();
+$page = str_replace("<visibility/>", "<div class=\"visibile\">", $page);
+$page = str_replace("<error/>", "", $page);
 $page= str_replace("{FotoProfilo}", $fotoProfilo, $page);
 $page = str_replace("{pseudonimo}", $pseudonimo, $page);
 $page = str_replace("{emailUser}", $_SESSION["email"], $page);
 $page = str_replace("{descrizione}", $descrizione, $page);
 $page = str_replace("{listaOpere}", $imagesHtml, $page);
+$page = str_replace("<visibility/>", "<div class=\"visibile\">", $page);
+$page = str_replace("<error/>", "", $page);
 
 require_once "../config.php";
 require_once "modules-loader.php";
