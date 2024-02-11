@@ -364,6 +364,14 @@ class DBAccess {
                 return false;
             }
         }
+        
+    public function removeFavourite($email,$idOpera){
+        $query = "DELETE FROM preferito WHERE utente = ? AND opera = ?";
+        $stmt = $this->connection->prepare($query);
+        $stmt->bind_param("ss",$email,$idOpera);
+        $stmt->execute();
+        return $stmt;
+    }
 
     public function closeConnection() {
         $this->connection->close();

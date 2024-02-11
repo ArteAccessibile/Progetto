@@ -731,9 +731,14 @@ object-fit: cover;
   list-style: none;
 }
 
-.preferiti-container > a {
+.go-to-opera {
   text-decoration: none;
   color: #DDE5FE;
+}
+
+.delete-preferito{
+  color: red;
+  margin-left: 2em;
 }
 
 .preferito{
@@ -745,7 +750,9 @@ object-fit: cover;
   margin: 1em;
 }
 
-
+.preferito-container{
+  margin-bottom: 2em;
+}
 
 .preferito > li > img{
   height: 8em;
@@ -801,7 +808,7 @@ object-fit: cover;
 
 
 .errors-forms{
-  color: red;
+  color: rgb(255, 255, 255);
   margin-left: 2em;
   margin-bottom: 2em;
 }

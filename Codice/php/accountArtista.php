@@ -23,6 +23,8 @@ if(!isset($_SESSION["email"])) {
     exit;
 }
 
+//TODO ADD CHECK SONO ARTISTA? ANCHE IN PAGINA OPERA UPLOAD MA IN OPERA UPLOAD SOLO SONO ADMIN ?
+
 $connection = new DBAccess();
 $connectionOk = $connection->openDBConnection();
 
