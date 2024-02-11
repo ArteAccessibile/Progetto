@@ -17,7 +17,8 @@ $page = file_get_contents("../html/account_artista.html");
 $connection = new DBAccess();
 $connectionOk = $connection->openDBConnection();
 
-
+$page = str_replace("<loggedhas/>", "<h2 class=\"logged_has\" tabindex='0'> Sei loggato come: <strong>".$_SESSION["email"]."</strong> </h2>" , $page);
+//quello sopra solo se è settato il ruolo e l'email
 
 if ($connectionOk) {
 
@@ -66,5 +67,7 @@ $page = str_replace("{emailUser}", $_SESSION["email"], $page);
 $page = str_replace("{descrizione}", $descrizione, $page);
 $page = str_replace("{listaOpere}", $imagesHtml, $page);
 
+require_once "../config.php";
+require_once "modules-loader.php";
 echo $page;
 ?>

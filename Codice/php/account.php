@@ -31,5 +31,6 @@
 
 
     $mysqli->close(); //mysqli da db-connection.php
+    require_once "modules-loader.php";
     echo $page;
 ?>
