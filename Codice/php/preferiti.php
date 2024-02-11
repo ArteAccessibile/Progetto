@@ -48,21 +48,23 @@
                 }
             // Creating the list with opera names and respective image file paths
                 $replace .= "
-                            <ul class=\"preferito\">
-                            <li><img src=\"".$file_path."\" alt=\"".$f['artista']."\" ></li>
-                            <li>
-                                <ul class=\"descrizione-preferito\">
-                                    <li>
-                                        <h3>".$f['titolo']."</h2>
-                                        <p>".$f['desc_abbrev']."</p>
-                                    </li>
-                                    <li>
-                                        <h3> Autore </h2>
-                                        <p>".$f['artista']."</p>
-                                    </li>
+                            <a href=\"".$opera_page."?id=".$f['opera']."\">
+                                <ul class=\"preferito\">
+                                <li><img src=\"".$file_path."\" alt=\"".$f['artista']."\" ></li>
+                                <li>
+                                    <ul class=\"descrizione-preferito\">
+                                        <li>
+                                            <h3>".$f['titolo']."</h2>
+                                            <p>".$f['desc_abbrev']."</p>
+                                        </li>
+                                        <li>
+                                            <h3> Autore </h2>
+                                            <p>".$f['artista']."</p>
+                                        </li>
+                                    </ul>
+                                </li>
                                 </ul>
-                            </li>
-                            </ul>
+                            </a>
                             ";
                         
             }
