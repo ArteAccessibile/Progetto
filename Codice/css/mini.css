@@ -25,6 +25,10 @@
       text-align: center; 
   }
 
+  #logoflexbox li{
+    margin-right: 1em;
+  }
+
   #container > nav > ul {
       display: none;
   }
@@ -51,8 +55,6 @@
       width: 90%; 
       margin: 10px auto; 
   }
-
- 
   
 
   .footerContent {
