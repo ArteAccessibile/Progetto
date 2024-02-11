@@ -46,25 +46,34 @@
                         <a href="../php/preferiti.php">Opere salvate nei preferiti</a>
                     </li>
                     <artist-visibility/>
-                        <a href="../php/accountArtista.php"> Gestione opere d'arte</a>
+                        <a href="../php/accountArtista.php"> Informazioni <span lang="en">account</span> </a>
                     </li>
                     <become-artist-visibility/>
                         <a href="../php/new_artist_form.php">Diventa un artista</a>
                     </li>
                     <li id="logout">
-                        <a href="../php/logout.php">Logout</a>
+                        <a href="../php/logout.php"><span lang="en">Logout</span> </a>
+                    </li>
+                    <li>
+                       <a href="../php/newOpera.php"> Carica una nuova opera </a>
+                    
                     </li>
                 </ul>
                 <div>
-                    <form method="POST" action="../php/deleteAccount.php">
-                        <input id="delete-account-button" type="submit" value="Elimina Account" onclick="return confirm('Vuoi veramente cancellare il tuo account? Questa azione non è reversibile');">
+                    <form method="POST" action="../php/NotdeleteAccount.php">
+                      <fieldset id="noBordo"> 
+                        <input id="delete-account-button" type="submit" value="Elimina Account">
+                      </fieldset>
                     </form>
                 </div>
+               
+                
             </div>
             </div>
             </div>
         </div>
         <footer/>
+    <script src="../js/careful.js"></script>
     <script src="../js/bottoneindietro.js"></script>
 </body>
 </html>

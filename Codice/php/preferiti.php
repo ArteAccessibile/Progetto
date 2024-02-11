@@ -64,6 +64,7 @@
                                             </li>
                                         </ul>
                                     </li>
+
                                     </ul>
                                 </a>
                                 <a class=\"delete-preferito\" href=\"remove-favorite.php?id=".$f['opera']."\"> Rimuovi dai preferiti </a>

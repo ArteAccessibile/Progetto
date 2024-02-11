@@ -50,7 +50,7 @@ if ($connectionOk) {
             $fotoProfilo = $fotoProfiloPNG;
         } else {
             // If neither JPG nor PNG is found, set a default profile image
-            $fotoProfilo = "../../immagini.account_logo.png";
+            $fotoProfilo = "../../immagini/account_logo.png";
         }
     } else {
         $fotoProfilo = $fotoProfiloJPG;
