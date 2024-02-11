@@ -23,7 +23,7 @@ a {
   text-decoration: underline ;
 } 
 
-.logsection, #container, .skip-link, .bottonetop, .navbar{
+.logsection, #container, .skip-link, .bottonetop, .navbar, .add_to_fav{
   display: none;
 }
 
@@ -73,9 +73,7 @@ header h1{
   display: none;
 }
 
-header{
-  display: none;
-}
+
 footer {
   border-top: 1px solid rgb(0, 0, 0); /* Adjust color for print */
   padding-top: 2em;
