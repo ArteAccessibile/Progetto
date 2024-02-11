@@ -23,7 +23,7 @@ a {
   text-decoration: underline ;
 } 
 
-.logsection, #container{
+.logsection, #container, .skip-link{
   display: none;
 }
 
@@ -31,6 +31,38 @@ header h1{
   background-image: url("../immagini/logo.png");
   display: none;
 
+}
+
+.car{
+  width: 100%;
+  margin: 3em auto;
+  display: flex;
+  justify-content: center;
+  height: 350px;
+  position:relative /*per mettere le immagini in stack*/
+}
+
+.immaginecarosello visibile{
+  object-fit: cover;
+  position:absolute; /*per mettere le immagini in stack*/
+  border-radius: 2em;
+  -webkit-border-radius:2em; /* Safari & Chrome */
+  -moz-border-radius:2em; /* Firefox */
+  width: 700px;
+  height: 350px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.immaginecarosello nascosto{
+  display: none;
+}
+
+.nascosto{
+  visibility: hidden;
+}
+
+.visibile{
+  visibility: visible;
 }
 
 #breadcrumb{
