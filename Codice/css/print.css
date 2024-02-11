@@ -158,3 +158,90 @@ footer a:visited {
 .card-body p{
   color:black;
 }
+
+
+.artist-container {
+  margin: auto;
+  width: 95%;
+  max-width: 1024px;
+  padding-top: 1em;
+  padding-bottom: 2em;
+}
+
+.artist-container > dt {
+  padding: 0.5em;
+  font-size: 1.1em;
+}
+
+.artist-container > dd {
+  display: flex;
+  border-top: none;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.artist-container > dd img {
+  max-width: 300px; /* Adjust as needed */
+  max-height: 300px; /* Adjust as needed */
+  width: auto;
+  height: auto;
+  float: left;
+  margin-right: 1em;
+  border: 1px solid rgb(255, 255, 255); /* Apply the border directly to the image */
+}
+
+.artist-container > dd:first-of-type {
+  border: none;
+}
+
+.artist-container > dd:last-of-type {
+  border: none;
+}
+#artist-image {
+  max-width: 300px;
+  height: auto; /* Allow the height to adjust according to the image */
+  border-radius: 5%;
+  margin-right: 2em; /* Adjust margin as needed */
+}
+
+
+
+
+#artist-image {
+  max-width: 300px;
+  height: auto; /* Allow the height to adjust according to the image */
+  border-radius: 5%;
+  margin-right: 2em; /* Adjust margin as needed */
+}
+
+.artist-info {
+  width: 60%;
+}
+/* Additional styles for artist-info */
+.artist-info h3, .artist-info p,  .artist-description p {
+  margin-bottom: 0.4em;
+}
+
+
+ul.artist-works{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  gap: 1em;
+  list-style-type: none;
+}
+
+.artist-works li{
+  display: inline-block;
+  width: 25%;
+  padding: 1em;
+}
+
+
+.artist-works li a {
+  display: block;
+  background-size: cover;
+  background-position: center;
+  aspect-ratio: 1/1; /* Added aspect ratio */
+}
