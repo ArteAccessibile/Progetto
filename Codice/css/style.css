@@ -669,17 +669,23 @@ object-fit: cover;
   margin-top: 1em;
 }
 
-#sezioneaccount > div > ul{
+#sezioneaccount > div > ul {
   margin: 0.5em 0 0 2em;
 }
 
-#sezioneaccount > ul > li{
-  padding-top: 0.2em;
+#sezioneaccount ul > li {
+  margin-bottom: 0.5em; /* Add margin-bottom to create space between list items */
 }
 
-#sezioneaccount > ul > li > a{
+#sezioneaccount ul > li > a {
+  margin-top: 1em;
   text-decoration: underline;
   color: #679839;
+}
+
+#noBordo{
+  border: none;
+
 }
 
 .account_options_visible{
@@ -691,6 +697,7 @@ object-fit: cover;
 }
 
 #delete-account-button {
+  outline: none;
   background-color: #C20000;
   color: white;
   padding: 10px 20px;

@@ -48,7 +48,7 @@
                 }
             // Creating the list with opera names and respective image file paths
                 $replace .= "
-                            <a href=\"".$opera_page."?id=".$f['opera']."\">
+                            <a href=\"template_opera.php?id=".$f['opera']."\">
                                 <ul class=\"preferito\">
                                 <li><img src=\"".$file_path."\" alt=\"".$f['artista']."\" ></li>
                                 <li>
