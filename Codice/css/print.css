@@ -23,7 +23,7 @@ a {
   text-decoration: underline ;
 } 
 
-.logsection, #container, .skip-link{
+.logsection, #container, .skip-link, .bottonetop, .navbar{
   display: none;
 }
 
@@ -42,7 +42,7 @@ header h1{
   position:relative /*per mettere le immagini in stack*/
 }
 
-.immaginecarosello visibile{
+.immaginecarosello{
   object-fit: cover;
   position:absolute; /*per mettere le immagini in stack*/
   border-radius: 2em;
@@ -53,9 +53,7 @@ header h1{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.immaginecarosello nascosto{
-  display: none;
-}
+
 
 .nascosto{
   visibility: hidden;
@@ -69,3 +67,4 @@ header h1{
   margin-top: auto;
   display:block;
 }
+
