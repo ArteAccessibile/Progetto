@@ -794,7 +794,7 @@ object-fit: cover;
 
 
 .errors-forms{
-  color: red;
+  color: rgb(255, 255, 255);
   margin-left: 2em;
   margin-bottom: 2em;
 }

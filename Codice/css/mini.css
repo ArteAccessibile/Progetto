@@ -263,6 +263,10 @@ nav {
   color: #DDE5FE;
 }
 
+.errors-forms{
+  color: #DDE5FE;
+}
+
 .ok-message > a{
   color: #679839;
   text-decoration: underline;
