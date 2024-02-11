@@ -15,7 +15,7 @@
     }
 
     if(!isset($_SESSION["email"])) {
-        $page = str_replace("<error/>", "<p> Sessione scaduta, torna al login per accedere: <a href=\"login.php\"> Vai al login </a> </p>", $page); 
+        $page = str_replace("<error/>", "<p> Sessione scaduta, torna al <span lang=\"en\">login</span> per accedere: <a href=\"login.php\"> Vai al <span lang=\"en\">login</span> </a> </p>", $page); 
         $page = str_replace("<visibility/>", "<div class=\"nascosto\">", $page);
     }else{
         $page = str_replace("<error/>", "", $page); 

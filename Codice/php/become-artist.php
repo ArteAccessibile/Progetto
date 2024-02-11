@@ -13,7 +13,7 @@
     if(!isset($_SESSION["email"]) || !isset($_POST['new_artist_submit'])) {
         require_once "../config.php";
         $page = file_get_contents($html_path . "diventa_artista.html");
-        $page = str_replace("<error/>", "<div class=\"errors-forms\"><p> Sessione scaduta, torna al login per accedere: <a href=\"login.php\"> Vai al login </a> </p></div>", $page); 
+        $page = str_replace("<error/>", "<div class=\"errors-forms\"><p> Sessione scaduta, torna al <span lang=\"en\">login</span> per accedere: <a href=\"login.php\"> Vai al <span lang=\"en\">login</span> </a> </p></div>", $page); 
         $page = str_replace("<visibility/>", "<div class=\"nascosto\">", $page);
         require_once "modules-loader.php";
         echo $page;
@@ -33,11 +33,11 @@
     }
 
     if (strlen($email_contatto) == 0){
-        $error_messages .= '<li>Email di contatto non inserita</li>';
+        $error_messages .= '<li><span lang=\"en\">Email</span> di contatto non inserita</li>';
     }
 
     if(!filter_var($email_contatto, FILTER_VALIDATE_EMAIL)){
-        $error_messages .= '<li>Email di contatto non valida</li>';
+        $error_messages .= '<li><span lang=\"en\">Email</span> di contatto non valida</li>';
     }
 
     if (strlen($pseudonimo) == 0){

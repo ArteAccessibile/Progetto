@@ -28,7 +28,7 @@ if ($connectionOk) {
 
         // se il file esiste
         if (!file_exists($file_path)) {
-            $textMessageForm= "File not found.";
+            $textMessageForm= "<span lang=\"en\">File</span> non trovato.";
             echo $file_path;
         }
 
@@ -40,7 +40,7 @@ if ($connectionOk) {
             }
         }
         else{
-            $textMessageForm= "Per aggiungere l'opera ai preferiti devi essere loggato.";
+            $textMessageForm= "Per aggiungere l'opera ai preferiti devi eseguire l'accesso.";
             $disable="disabled";
         }
 
@@ -50,7 +50,7 @@ if ($connectionOk) {
     
     $connection->closeConnection();
 } else {
-    $textMessageForm= "Errore di connessione al database.";
+    $textMessageForm= "Errore di connessione al <span lang=\"en\">database</span>.";
 }
 
 

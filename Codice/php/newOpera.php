@@ -17,7 +17,7 @@ $page = file_get_contents("../html/opera_upload.html");
 
 if(!isset($_SESSION["email"])) {
     require_once "../config.php";
-    $page = str_replace("<error/>", "<div class=\"errors-forms\"><p> Sessione scaduta, torna al login per accedere e visualizzare il contenuto richiesto: <a href=\"login.php\"> Vai al login </a> </p></div>", $page); 
+    $page = str_replace("<error/>", "<div class=\"errors-forms\"><p> Sessione scaduta, torna al <span lang=\"en\">login</span> per accedere e visualizzare il contenuto richiesto: <a href=\"login.php\"> Vai al login </a> </p></div>", $page); 
     $page = str_replace("<visibility/>", "<div class=\"nascosto\">", $page);
     require_once "modules-loader.php";
     echo $page;
@@ -137,7 +137,7 @@ if(strlen($messaggiPerForm) == 0){//se non ci sono messaggi di errore fino ad qu
             $messaggiPerForm = "l'opera NON è stato aggiunta, si è presentato un errore nell'inserimento dati";
         }
     }else{
-        die("Errore nella connessione al database");
+        die("Errore nella connessione al <span lang=\"en\">database</span>");
     }
 }   
     

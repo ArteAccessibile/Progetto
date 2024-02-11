@@ -42,7 +42,7 @@ if ($connectionOk) {
           $artistaString .= "<li class=\"card\">
               <div class=\"card-body\">
                   <a href=\"{$artistaLink}\" id=\"Artista{$listaArtisti['utente']}\">
-                      <img src=\"$fotoProfilo\" alt=\"Artist Image\">
+                      <img src=\"$fotoProfilo\" alt=\"Immagine artista\">
                   </a>
                   <p class=\"pseudonimo\"><strong>{$artistaName}</strong></p>
               <p>{$artistaDescription}</p>
@@ -61,11 +61,11 @@ if ($connectionOk) {
 
       echo $page; //per far funzionare script sopra è importante che si chiami page
   } else {
-      echo "No artists found.";
+      echo "Nessun artista trovato.";
   }
   
   $connection->closeConnection();
 } else {
-  echo "Database connection error.";
+  echo "Errore di connessione al <span lang=\"en\">database</span>, ci scusiamo per il disagio.";
 }
 ?>

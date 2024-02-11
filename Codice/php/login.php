@@ -21,7 +21,7 @@
     $page = file_get_contents($html_path . "login.html");
 
     if (isset($_SESSION["email"])) {
-        $message ="<div class=\"errors-forms\">Sei già loggato, clicca <a href=\"../index.php\">qui</a> per tornare alla home e mantenere l'accesso.<br/> Oppure clicca <a href=\"../php/logout.php\">qui</a> per effettuare il logout.</div>";
+        $message ="<div class=\"errors-forms\">Hai già eseguito l'accesso, clicca <a href=\"../index.php\">qui</a> per tornare alla home e mantenere l'accesso.<br/> Oppure clicca <a href=\"../php/logout.php\">qui</a> per effettuare il logout.</div>";
         $page = str_replace("<alredylogged/>", $message, $page);
         $page = str_replace("<visibility/>", "<div class=\"nascosto\">", $page);
         echo $page;
@@ -43,7 +43,7 @@
             $isArtista = $connection->isArtista($email);
             
             if ($result->num_rows == 0) {       
-                $errorString = "<p class='login-error' tabindex='0'><strong>Username o password non corretti!</strong></p>";
+                $errorString = "<p class='login-error'><strong><span lang=\"en\">Username</span> o <span lang=\"en\">password</span> non corretti!</strong></p>";
                 $connection->closeConnection();
             } else {
                 while ($row = $result->fetch_assoc()) {
@@ -78,9 +78,10 @@
         }
     }
     else {
-        $errorString = "<p class='login-error' tabindex='0'><strong> I sistemi sono momentaneamente fuori servizio, ci scusiamo per il disagio.</strong></p>";
+        $errorString = "<p class='login-error' ><strong> I sistemi sono momentaneamente fuori servizio, ci scusiamo per il disagio.</strong></p>";
     }
 
+    require_once "modules-loader.php";
     $page = str_replace("<error/>", $errorString, $page); 
     echo $page;
 ?>

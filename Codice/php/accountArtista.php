@@ -16,7 +16,7 @@ $page = file_get_contents("../html/account_artista.html");
 
 if(!isset($_SESSION["email"])) {
     require_once "../config.php";
-    $page = str_replace("<error/>", "<div class=\"errors-forms\"><p> Sessione scaduta, torna al login per accedere e visualizzare il contenuto richiesto: <a href=\"login.php\"> Vai al login </a> </p></div>", $page); 
+    $page = str_replace("<error/>", "<div class=\"errors-forms\"><p> Sessione scaduta, torna al login per accedere e visualizzare il contenuto richiesto: <a href=\"login.php\"> Vai al <span lang = \"en\">login</span> </a> </p></div>", $page); 
     $page = str_replace("<visibility/>", "<div class=\"nascosto\">", $page);
     require_once "modules-loader.php";
     echo $page;
@@ -28,7 +28,7 @@ if(!isset($_SESSION["email"])) {
 $connection = new DBAccess();
 $connectionOk = $connection->openDBConnection();
 
-$page = str_replace("<loggedhas/>", "<h2 class=\"logged_has\" tabindex='0'> Sei loggato come: <strong>".$_SESSION["email"]."</strong> </h2>" , $page);
+$page = str_replace("<loggedhas/>", "<h2 class=\"logged_has\"> Hai già eseguito l'accesso come: <strong>".$_SESSION["email"]."</strong> </h2>" , $page);
 //quello sopra solo se è settato il ruolo e l'email
 
 if ($connectionOk) {
@@ -62,7 +62,7 @@ if ($connectionOk) {
             $imagesHtml .= "<img src='{$image}' alt=''>";
             $imagesHtml .= "<form method='POST' action='deleteImage.php'>"; // Assuming you have a separate PHP file for handling the deletion
             $imagesHtml .= "<input type='hidden' name='image_path' value='{$image}'>";
-            $imagesHtml .= "<button type='submit' name='delete_image'>Delete</button>";
+            $imagesHtml .= "<button type='submit' name='delete_image'>Elimina</button>";
             $imagesHtml .= "</form>";
             $imagesHtml .= "</div>";
         }
