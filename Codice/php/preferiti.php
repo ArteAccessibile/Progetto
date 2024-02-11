@@ -1,6 +1,5 @@
 <?php
     include "../config.php";
-    include $php_path . "check-connection.php";
     include $php_path . "DBAccess.php";
     use DB\DBAccess;
 
@@ -14,7 +13,8 @@
         session_start();
     }
 
-    $_SESSION["go_back_page"] = $favourite_page; //index page definito in config.php
+    //$_SESSION["go_back_page"] = $favourite_page; //index page definito in config.php
+    $_SESSION["go_back_page"] =  $_SERVER['REQUEST_URI']; //è un test
 
 
     $page = file_get_contents($html_path . "preferiti.html");
@@ -48,23 +48,26 @@
                 }
             // Creating the list with opera names and respective image file paths
                 $replace .= "
-                            <a href=\"".$opera_page."?id=".$f['opera']."\">
-                                <ul class=\"preferito\">
-                                <li><img src=\"".$file_path."\" alt=\"".$f['artista']."\" ></li>
-                                <li>
-                                    <ul class=\"descrizione-preferito\">
-                                        <li>
-                                            <h3>".$f['titolo']."</h2>
-                                            <p>".$f['desc_abbrev']."</p>
-                                        </li>
-                                        <li>
-                                            <h3> Autore </h2>
-                                            <p>".$f['artista']."</p>
-                                        </li>
+                            <div class=\"preferito-container\">
+                                <a class=\"go-to-opera\" href=\"template_opera.php?id=".$f['opera']."\">
+                                    <ul class=\"preferito\">
+                                    <li><img src=\"".$file_path."\" alt=\"".$f['artista']."\" ></li>
+                                    <li>
+                                        <ul class=\"descrizione-preferito\">
+                                            <li>
+                                                <h3>".$f['titolo']."</h2>
+                                                <p>".$f['desc_abbrev']."</p>
+                                            </li>
+                                            <li>
+                                                <h3> Autore </h2>
+                                                <p>".$f['artista']."</p>
+                                            </li>
+                                        </ul>
+                                    </li>
                                     </ul>
-                                </li>
-                                </ul>
-                            </a>
+                                </a>
+                                <a class=\"delete-preferito\" href=\"remove-favorite.php?id=".$f['opera']."\"> Rimuovi dai preferiti </a>
+                            </div>
                             ";
                         
             }
@@ -76,4 +79,4 @@
     $page = str_replace("<favourites/>", $replace, $page);
     require_once "modules-loader.php";
     echo $page;
-?>
+?> //aggiungi bottone rimuovi opera
