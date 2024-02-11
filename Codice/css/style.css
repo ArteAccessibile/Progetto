@@ -90,9 +90,14 @@ label{
   border-bottom: 2px solid #7c7c8a;
   background-color: #7c7c8a;
 }
-#selected {
-    border-bottom: 2px solid #7c7c8a;
-    background-color: #7c7c8a;
+
+#selected{
+  background-color: #7c7c8a;
+
+}
+
+#selected a{
+    color: black !important;
 }
 #container > nav > ul > .dropdown:hover {
   border-bottom:none;
