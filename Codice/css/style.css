@@ -1052,7 +1052,7 @@ input[type=submit] {
 .rised_button{
   cursor: pointer;
   background-color: #008554;
-  color: #fff6c1;
+  color: white;
   border: none;
   border-radius: 1em;
   padding: 0.8em;
@@ -1062,7 +1062,6 @@ input[type=submit] {
 
 .rised_button:hover{
   transform: scale(1.1);
-  background-color: #ff8e31;
 }
 
 .opera_artista_card{
