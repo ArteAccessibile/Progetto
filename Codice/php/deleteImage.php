@@ -20,7 +20,7 @@ $connectionOk = $connection->openDBConnection();
 
 if ($connectionOk) {
     if (isset($_POST['delete_image'])) {
-        $imagePath = $_POST['image_path'];
+        $imagePath = "../immagini/artisti/" . $_POST['name']; // E.g. "../immagini/artisti/immagine.jpg
         $userId = $_SESSION["email"];
 
         // Check if the image path is set and not empty

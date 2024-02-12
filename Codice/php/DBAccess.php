@@ -201,18 +201,19 @@ class DBAccess {
         }
         
          
-        public function deleteImageFromDatabase($emailArtista, $titoloOpera) {
+        public function deleteImageFromDatabase($artista, $titolo) {
+            // prepara statement
             $query = "DELETE FROM opera WHERE artista = ? AND titolo = ?";
             $stmt = $this->connection->prepare($query);
-            $stmt->bind_param('ss', $emailArtista, $titoloOpera);
-            $stmt->execute();
+            $stmt->bind_param('ss', $artista, $titolo);
         
-            // controllo se è stata cancellata almeno una riga
-            if ($stmt->affected_rows >  0) {
-                // Record cancellato
+            $success = $stmt->execute();
+        
+            if ($success && $stmt->affected_rows >  0) {
+                // immagine eliminata con successo
                 return true;
             } else {
-                // Record non cancellato
+                // errore durante l'eliminazione
                 return false;
             }
         }
