@@ -45,6 +45,7 @@ if ($connectionOk) {
  
  $connection->closeConnection();
 } else {
- echo "Errore di connessione al <span lang=\"en\">database</span>.;
+ echo "Errore di connessione al <span lang=\"en\">database</span>.";
 }
+
 ?>
