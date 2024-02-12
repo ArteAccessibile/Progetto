@@ -52,13 +52,10 @@
     
         if($conn){
             if ($funzioniDB->becameArtist($_SESSION["email"], $desc,$pseudonimo, $email_contatto)){
-                $ok = "Sei diventato un artista! Ora puoi caricare le tue opere e gestire il tuo profilo.";
                 $_SESSION["role"] = "artista";
+                $_SESSION["now-artist"] = "yes";
                 require_once "../config.php";
-                $page = file_get_contents($html_path . "diventa_artista.html");
-                $page = str_replace("<ok/>", "<p class=\"ok-message\">".$ok."</p>", $page);
-                require_once "modules-loader.php";
-                echo $page;
+                header("Location: " . $account_page);
                 exit;
             }else {
                 $error_messages = "Si è verificato un errore nell'inserimento dei dati, riprova.";
