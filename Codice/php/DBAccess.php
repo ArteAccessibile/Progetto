@@ -148,25 +148,35 @@ class DBAccess {
           }
           
           public function getImagesByArtist($artistId) {
-            $query = "SELECT titolo FROM opera WHERE artista = ? LIMIT 3"; 
+            $query = "SELECT titolo FROM opera WHERE artista = ? ";  
             $statement = $this->connection->prepare($query);
-            $statement->bind_param("s", $artistId); 
+            $statement->bind_param("s", $artistId);  
             $statement->execute();
             
             $result = $statement->get_result();
             
             $images = array();
             
-            if ($result->num_rows > 0) {
+            if ($result->num_rows >  0) {
                 while ($row = $result->fetch_assoc()) {
                     $title = $row['titolo'];
-                    $file_path = "../../immagini/" . str_replace(" ", "", strtolower($title)) . ".jpg"; 
-                    $images[] = $file_path; 
+                    $basePath = "../../immagini/" . str_replace(" ", "", strtolower($title));
+                    
+                    // Check if the file exists with .jpg or .png extension
+                    $imagePathJpg = $basePath . ".jpg";
+                    $imagePathPng = $basePath . ".png";
+                    
+                    if (file_exists($imagePathJpg)) {
+                        $images[] = $imagePathJpg;  
+                    } elseif (file_exists($imagePathPng)) {
+                        $images[] = $imagePathPng;  
+                    }
                 }
             }
             
             return $images;
-         }
+        }
+        
          
 
          public function deleteImageFromDatabase($artista, $nome) {

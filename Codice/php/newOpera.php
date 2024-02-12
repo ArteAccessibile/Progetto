@@ -110,7 +110,7 @@ if(isset($_POST['submit'])){
         $targetFilePath = $uploadDir . $fileName;
         $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
 
-        $allowTypes = array('jpg', 'png', 'jpeg');
+        $allowTypes = array('jpg', 'png');
         if (file_exists($targetFilePath)) {
             $messaggiPerForm .= "Il file con lo stesso titolo esiste già.";
         }
@@ -121,7 +121,7 @@ if(isset($_POST['submit'])){
                 $messaggiPerForm .= "Errore nel caricamento del file.";
             }
         } else {
-            $messaggiPerForm .= "Solo file JPG, JPEG, PNG e GIF sono permessi.";
+            $messaggiPerForm .= "Solo file JPG e PNG sono permessi.";
         }
     } else {
         $messaggiPerForm .= "Si prega di selezionare un file da caricare.";
