@@ -8,6 +8,8 @@ error_reporting(E_ALL);
 
 setlocale(LC_ALL, 'it_IT');
 
+$errorMessage="";
+
 $page = file_get_contents("../html/contatti.html");
 
 if (session_status() === PHP_SESSION_NONE) {
@@ -15,6 +17,9 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 $_SESSION["go_back_page"] = $contact_page;
 $_SESSION["nav_page"] = "contacts"; //importante definirlo in ogni pagina tra home | contatti ...
+
+$page = str_replace ("{messaggiForm}",$errorMessage,$page);
+
 include "modules-loader.php";
 echo $page;
 ?>

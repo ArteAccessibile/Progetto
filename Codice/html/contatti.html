@@ -23,25 +23,15 @@
             Ok. 
             <div class="contact-form">
                 <h2>Contattaci</h2>
-                <form>
+                <form action="../php/sendEmail.php" method="post">
+                    {messaggiForm}
+                   
                     <div>
-                        <label class="label" for="name">Name:</label>
-                        <input type="text" class="input" name="name" id="name" required>
-                    </div>
-                    <div>
-                        <label class="label" for="surname">Surname:</label>
-                        <input type="text" class="input" name="surname" id="surname" required>
-                    </div>
-                    <div>
-                        <label class="label" for="email">Email:</label>
-                        <input type="email" class="input" name="email" id="email" required>
-                    </div>
-                    <div>
-                        <label class="label" for="object">Object:</label>
+                        <label class="label" for="object">Oggetto:</label>
                         <input type="text" class="input" name="object" id="object" required>
                     </div>
                     <div>
-                        <label class="label" for="description">Description:</label>
+                        <label class="label" for="description">Messaggio:</label>
                         <textarea name="description" id="description" required></textarea>
                     </div>
                     <div>
