@@ -46,14 +46,14 @@
   }
 
   #container > nav > ul > li > a {
-      padding:  .6em; 
+      padding: 0.6em; 
       
   }
 
   #breadcrumb, #breadcrumb p {
     display: flex;
       width: 90%; 
-      margin:  .6em auto; 
+      margin: 0.6em auto; 
   }
   
 
@@ -101,7 +101,7 @@
     
     .card {
       width: 100%;
-      margin:  .5em;
+      margin: 0.5em;
       margin-bottom: 5em;
     }
     
@@ -185,13 +185,13 @@ nav {
   display: flex;
   color: #f2f2f2;
   text-align: center;
-  padding: 1 .25em16px;
+  padding: 10.25em16px;
   text-decoration: none;
   font-size: 17px;
 }
 
 .navbar li a {
-  color: #fff;
+  color: white;
 }
 
 .navbar li:hover {
@@ -201,7 +201,7 @@ nav {
 /*mini selezinoato*/
 #selectedMini {
   background-color: #E29608;
-  color: #fff;
+  color: white;
 }
 
 /* account */
@@ -222,7 +222,7 @@ nav {
 
 #delete-account-button {
   background-color: #C20000;
-  color: #fff;
+  color: white;
   margin-top: 2em;
   margin-right: 1em;
   font-size: 1em;
