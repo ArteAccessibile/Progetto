@@ -1290,7 +1290,7 @@ footer a {
   vertical-align: bottom;
 }
 
-footer a:selected {
+footer a #selected {
   color: #DDE5FE; 
 }
 

@@ -185,9 +185,9 @@ nav {
   display: flex;
   color: #f2f2f2;
   text-align: center;
-  padding: 10.25em16px;
+  padding: 1em 1.5em 1em;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 1em;
 }
 
 .navbar li a {
