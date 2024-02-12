@@ -369,6 +369,14 @@ class DBAccess {
         return $stmt;
     }
 
+    public function deleteOpera($idOpera){
+        $query = "DELETE FROM opera WHERE id = ?";
+        $stmt = $this->connection->prepare($query);
+        $stmt->bind_param("i", $idOpera);
+        $stmt->execute();
+        return $stmt;
+    }
+
     public function closeConnection() {
         $this->connection->close();
     }

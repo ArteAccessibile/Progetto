@@ -14,7 +14,7 @@ if($connectionOk){
     if(!isset($_SESSION["email"])){
         $error = true;
     }
-    if(isset($_GET['id'])){
+    if(isset($_GET['id'])){ //TODO NON VA BENE DIOCANE PERCHè SE NO METTI URL E CIAO
         $connection->removeFavourite($_SESSION["email"], $operaId);
         header("Location: ".$_SESSION["go_back_page"]);
     }

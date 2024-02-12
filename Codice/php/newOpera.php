@@ -42,7 +42,6 @@ $messaggiPerForm = ""; //messaggio errore
 //Variabili per il form
 $titolo = '';
 $dataCreazione = '';
-$proprietario = '';
 $breveDescrizione = '';
 $descrizione = '';
 $ListaArtisti='';
@@ -86,14 +85,6 @@ if(isset($_POST['submit'])){
     if (strlen($dataCreazione) == 0){
         $messaggiPerForm .= '<li>anno non inserito</li>';
     }
-    
-
-    $proprietario = $funzioniDB->pulisciInput($_POST['artista']);
-    if (strlen($proprietario) == 0){
-        //$messaggiPerForm .= '<li>proprietario non inserito</li>';
-        $proprietarioNULL = NULL;//se non c'è proprietario
-    }
-    
 
     $descrizione = $funzioniDB->pulisciInput($_POST['descrizione']);
     if (strlen($descrizione) == 0){
@@ -108,7 +99,7 @@ if(isset($_POST['submit'])){
         $messaggiPerForm .= '<li>descrizione abbreviata troppo lunga</li>';
     }
     //CONTROLLO ESISTENZA DELL?OPERA
-    if($funzioniDB->checkOpera($titolo, $proprietario)){
+    if($funzioniDB->checkOpera($titolo, $_SESSION["email"])){
         $messaggiPerForm .= "<li>L'opera esiste già o stai usando un path o titolo già esistente</li>";
     }
 

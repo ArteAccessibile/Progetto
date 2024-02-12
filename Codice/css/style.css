@@ -226,7 +226,7 @@ a:hover {
 
 
 .nascosto{
-  visibility: hidden;
+  display: hidden;
 }
 
 .visibile{
@@ -702,7 +702,6 @@ object-fit: cover;
 
 .noBordo{
   border: none;
-
 }
 
 .account_options_visible{
