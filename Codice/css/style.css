@@ -805,6 +805,11 @@ object-fit: cover;
 }
 /* sezione account artista */
 
+#descrizione_artista{
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
 .rounded_main_container{
   border-radius: 2em;
   padding: 2em;
@@ -1045,7 +1050,7 @@ input[type=submit] {
 
 .rised_button{
   cursor: pointer;
-  background-color: #ff7b0f;
+  background-color: #008554;
   color: #fff6c1;
   border: none;
   border-radius: 1em;

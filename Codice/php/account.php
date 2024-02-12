@@ -1,6 +1,5 @@
 <?php
     require_once "../config.php";
-    require_once $php_path . "db-connection.php";
 
     if(session_status() == PHP_SESSION_NONE) {
         session_start();
@@ -29,7 +28,6 @@
     }
 
 
-    $mysqli->close(); //mysqli da db-connection.php
     require_once "modules-loader.php";
     echo $page;
 ?>

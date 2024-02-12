@@ -67,7 +67,7 @@ if ($connectionOk) {
             $imagesHtml .= "</div>";
         }
     } else {
-        $imagesHtml = "<p>L'artista non ha ancora caricato opere.</p>";
+        $imagesHtml = "<p> Non sono state caricate delle opere.</p>";
     }
     
 }

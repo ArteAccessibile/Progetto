@@ -13,7 +13,7 @@
     
     $logoutPath = $path_prefix . "logout.php";
     $accountPath = $path_prefix . "account.php";
-    $logout_ref = "<li class> <a href=\"" . $logoutPath . "\"> Logout </a> </li><li> <a href=\"" . $accountPath . "\" > Gestisci <span lang=\"en\"> Account</span> </a></li>";
+    $logout_ref = "<li> <a href=\"" . $logoutPath . "\"> <span lang=\"en\"> Logout</span> </a> </li><li> <a href=\"" . $accountPath . "\" > Gestisci <span lang=\"en\"> Account</span> </a></li>";
     
     $loginPath = $path_prefix . "login.php";
     $login_ref = "<li><a href=\"" . $loginPath . "\" >Accedi</a></li>";

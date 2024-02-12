@@ -21,7 +21,7 @@
     $page = file_get_contents($html_path . "login.html");
 
     if (isset($_SESSION["email"])) {
-        $message ="<div class=\"errors-forms\">Hai già eseguito l'accesso, clicca <a href=\"../index.php\">qui</a> per tornare alla home e mantenere l'accesso.<br/> Oppure clicca <a href=\"../php/logout.php\">qui</a> per effettuare il logout.</div>";
+        $message ="<div class=\"errors-forms\">Hai già eseguito l'accesso, clicca <a href=\"../index.php\">qui</a> per tornare alla home e mantenere l'accesso.<br/> Oppure clicca <a href=\"../php/logout.php\">qui</a> per effettuare il <span lang=\"en\"> logout </span> .</div>";
         $page = str_replace("<alredylogged/>", $message, $page);
         $page = str_replace("<visibility/>", "<div class=\"nascosto\">", $page);
         echo $page;
