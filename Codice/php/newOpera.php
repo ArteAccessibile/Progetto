@@ -106,12 +106,15 @@ if(isset($_POST['submit'])){
     //IMMAGINE
     if (isset($_FILES['immagine']) && $_FILES['immagine']['error'] == 0) {
         $uploadDir = "../../immagini/";
-        $fileName = basename($_FILES["immagine"]["name"]);
+        $fileName = $titolo . '.' . pathinfo($_FILES["immagine"]["name"], PATHINFO_EXTENSION);
         $targetFilePath = $uploadDir . $fileName;
         $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
 
-        $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
-        if (in_array($fileType, $allowTypes)) {
+        $allowTypes = array('jpg', 'png', 'jpeg');
+        if (file_exists($targetFilePath)) {
+            $messaggiPerForm .= "Il file con lo stesso titolo esiste già.";
+        }
+        else if (in_array($fileType, $allowTypes)) {
             if (move_uploaded_file($_FILES["immagine"]["tmp_name"], $targetFilePath)) {
                 // inserire il nome del file nel db
             } else {
