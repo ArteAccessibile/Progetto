@@ -23,6 +23,15 @@ if(!isset($_SESSION["email"])) {
     exit;
 }
 
+if($_SESSION["role"] != "artista" || $_SESSION["role"] != "admin") {
+    require_once "../config.php";
+    $page = str_replace("<error/>", "<div class=\"errors-forms\"><p> Devi essere un aritista per accedere a questo contenuto, clicca <a href=\"new_artist_form.php\">qui</a> per diventare un artista.</p></div>", $page); 
+    $page = str_replace("<visibility/>", "<div class=\"nascosto\">", $page);
+    require_once "modules-loader.php";
+    echo $page;
+    exit;
+}
+
 //TODO ADD CHECK SONO ARTISTA? ANCHE IN PAGINA OPERA UPLOAD MA IN OPERA UPLOAD SOLO SONO ADMIN ?
 
 $connection = new DBAccess();
