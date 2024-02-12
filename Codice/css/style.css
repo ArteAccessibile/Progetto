@@ -514,6 +514,7 @@ ul.no-bullets {
   gap: 1em;
   list-style-type: none;
   max-width: 1024px;
+  margin: 0 auto;
   margin-bottom: 1em;
 }
 
