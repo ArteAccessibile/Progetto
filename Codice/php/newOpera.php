@@ -122,7 +122,7 @@ if(isset($_POST['submit'])){
         $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
         if (in_array($fileType, $allowTypes)) {
             if (move_uploaded_file($_FILES["immagine"]["tmp_name"], $targetFilePath)) {
-                // File upload success
+                // inserire il nome del file nel db
             } else {
                 $messaggiPerForm .= "Errore nel caricamento del file.";
             }
