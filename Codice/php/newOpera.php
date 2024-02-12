@@ -88,7 +88,7 @@ if(isset($_POST['submit'])){
     }
     
 
-    $proprietario = $funzioniDB->pulisciInput($_POST['artista']);
+    $proprietario = $_SESSION["email"];
     if (strlen($proprietario) == 0){
         //$messaggiPerForm .= '<li>proprietario non inserito</li>';
         $proprietarioNULL = NULL;//se non c'è proprietario
