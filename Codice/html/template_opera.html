@@ -29,24 +29,25 @@
             <dt><strong>Descrizione</strong></dt>
             <dd>{opera_description}</dd> 
             <dt class="add_to_fav">Ti piace l'opera?</dt>
-            <dd class="add_to_fav"> <form action="../php/aggiuntaPreferiti.php" method="post">
-                    <fieldset>
+            <dd class="add_to_fav"> 
+                <form action="../php/aggiuntaPreferiti.php" method="post">
+                    <fieldset class="noBordo">
                         <legend>Salvala per dopo!</legend>
                         <input type="hidden" name="opera_id" value="{operaId}">
                         <input type="submit" value="Aggiungi ai preferiti" {valore}>
                     </fieldset>
-            </form>
+                </form>
             </dd>
+            <admin-visibility/>
             <dd>{MessaggiForm}</dd>
         </dl>
-
-       
      </main>
      
     <div class="bottonetop"> <img src="../../immagini/topArrow.png" alt="Torna su"></div>
     <mininavbar/>
     <footer/>  
 <script src="../js/bottonetop.js"></script>
+<script src="../js/admindeleteopera.js"></script>
 
 </body>
 </html>

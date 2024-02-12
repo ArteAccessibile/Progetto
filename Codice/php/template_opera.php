@@ -63,6 +63,23 @@ if ($connectionOk) {
  $page = str_replace("{valore}", $disable, $page);
  $page = str_replace("{MessaggiForm}", $textMessageForm, $page);
 
+ if(isset($_SESSION["role"]) && $_SESSION["role"] == "admin"){
+    $button = "
+                <dd>
+                <form action=\"../php/removeOperaAdmin.php\" method=\"post\">
+                    <fieldset class=\"noBordo\">
+                        <legend>Elimina l'opera</legend>
+                        <input type=\"hidden\" name=\"opera_id\" value=\"".$operaId."\">
+                        <input class=\"admin-remove-opera\" id=\"admindeleteopera".$operaId."\" type=\"submit\" value=\"Elimina opera\">
+                    </fieldset>
+                </form>
+                </dd>
+              ";
+    $page = str_replace("<admin-visibility/>", $button, $page);
+ }
+else
+    $page = str_replace("<admin-visibility/>", "", $page);
+
  require_once "../config.php";
  $_SESSION["nav_page"] = "gallery";
  require_once "modules-loader.php";
