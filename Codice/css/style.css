@@ -446,7 +446,7 @@ textarea {
   display: block;
   background-size: cover;
   background-position: center;
-  aspect-ratio: 1/1; /* Added aspect ratio */
+  aspect-ratio: 1/1;  
 }
 
 h1{
@@ -490,7 +490,7 @@ h1{
   margin: 0.5em;
   display: flex;
   justify-content: center;
-  white-space: nowrap; /* Prevent line break */
+  white-space: nowrap; /*  */
   overflow: hidden;
 }
 .card-body p{
@@ -500,9 +500,9 @@ h1{
 
 
 ul.no-bullets {
-    list-style-type: none; /* Remove bullets */
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margins */
+    list-style-type: none; /*  */
+    padding: 0; /*  */
+    margin: 0; /*  */
 }
 
 /****************************************************/
@@ -525,7 +525,7 @@ max-width: 100%;
 height: 15em;
 vertical-align: middle;
 border-radius: 5px;
-border: 12px solid transparent; /*blu fa schifo ma fa vedere che c'è il bordo*/
+border: 12px solid transparent; 
 
 }
 .opere li p {
@@ -568,7 +568,7 @@ object-fit: cover;
   height: 15em;
   vertical-align: middle;
   border-radius: 5px;
-  border: 12px solid transparent; /*blu fa schifo ma fa vedere che c'è il bordo*/
+  border: 12px solid transparent; 
 }
 
 
@@ -645,7 +645,7 @@ object-fit: cover;
 .bottoneindietro{
   margin: 1em 0 0 1em;
   cursor: pointer;
-  transition: transform .2s; /* Animation */
+  transition: transform .2s; 
   border-radius: 0.5em;
   height: 2.7em;
   width: 3em;
@@ -667,7 +667,7 @@ object-fit: cover;
 #sezioneaccount {
   list-style:   none;
   display: flex;
-  flex-direction: column; /* Set flex direction to column */
+  flex-direction: column; 
   align-self: center;
   max-width: 1024px;
   text-align: left;
@@ -691,7 +691,7 @@ object-fit: cover;
 }
 
 #sezioneaccount ul > li {
-  margin-bottom: 0.5em; /* Add margin-bottom to create space between list items */
+  margin-bottom: 0.5em; /* spazio tra elems*/
 }
 
 #sezioneaccount ul > li > a {
@@ -885,14 +885,13 @@ object-fit: cover;
 
 
 .logsection {
-  color: #679839; /* Replace with your desired color */
-
+  color: #679839; 
   list-style-type: none;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  transition: transform .2s; /* Animation */
+  transition: transform .2s; 
   margin-right: 1em;
 }
 
@@ -903,7 +902,7 @@ object-fit: cover;
 
 .logsection a{
   text-decoration: underline;
-  color: #679839; /* Replace with your desired color */
+  color: #679839; 
 }
 
 .logsection > li:hover{
@@ -948,7 +947,6 @@ input[type=submit] {
   padding: 20px;
 }
 
-/* Floating column for labels: 25% width */
 .col-25 {
   float: left;
   width: 25%;
@@ -968,14 +966,6 @@ input[type=submit] {
   display: table;
   clear: both;
 }
-
-/* Tooltip text */
-/* 
-   EXAMPLE
-   <div class="tooltip">Hover over me
-   <span class="tooltiptext">Tooltip text</span>
-   </div>
-*/
 
 .tooltip {
   position: relative;
@@ -1057,7 +1047,7 @@ input[type=submit] {
   border-radius: 1em;
   padding: 0.8em;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  transition: transform .2s; /* Animation */
+  transition: transform .2s; 
 }
 
 .rised_button:hover{
@@ -1149,19 +1139,6 @@ label {
   padding: 0.5em;
   margin: 1em;
   transition: transform .2s; 
-/* Floating column for labels: 25% width */
-}
-.col-25 {
-  float: left;
-  width: 25%;
-  margin-top: 6px;
-
-}
-
-.col-75 {
-  float: left;
-  width: 75%;
-  margin-top: 6px;
 }
 
 .row:after {
@@ -1251,7 +1228,7 @@ label {
   max-width: 300px;
   height: auto; 
   border-radius: 5%;
-  margin-right: 2em; /* Adjust margin as needed */
+  margin-right: 2em; 
 }
 
 
