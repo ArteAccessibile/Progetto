@@ -72,7 +72,7 @@ if ($connectionOk) {
                 $imagesHtml .= "<div class='opera_artista_card'>";
                 $imagesHtml .= "<img src='{$image}' alt='{$imageName}'>"; // uso il nome del file come attributo alt
                 $imagesHtml .= "<form method='POST' action='../php/deleteImage.php'>";  
-                $imagesHtml .= "<input type='hidden' name=$imageName value='{$image}'>";
+                $imagesHtml .= "<input type='hidden' name='nome_immagine' value='{$imageName}'>";
                 $imagesHtml .= "<button type='submit' name='deleteImage'>Elimina</button>";
                 $imagesHtml .= "</form>";
                 $imagesHtml .= "</div>";
