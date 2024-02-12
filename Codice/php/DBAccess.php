@@ -27,23 +27,33 @@ class DBAccess {
         }
 
         public function getOperas() {
-            $query = "SELECT id, titolo, desc_abbrev FROM opera"; 
+            $query = "SELECT id, titolo, desc_abbrev FROM opera";  
             $result = $this->connection->query($query);
-         
+             
             $operas = array();
-         
-            if ($result->num_rows > 0) {
+             
+            if ($result->num_rows >  0) {
                 while ($row = $result->fetch_assoc()) {
                     $id = $row['id'];
                     $name = $row['titolo'];
                     $shortdesc = $row['desc_abbrev'];
-                    $file_path = "../../immagini/" . str_replace(" ", "", strtolower($name)) . ".jpg"; // genera il percorso del file in base al nome dell'opera
-                    $operas[] = array('id' => $id, 'titolo' => $name, 'file_path' => $file_path, 'desc_abbrev'=>$shortdesc); // aggiunge i dettagli dell'opera all'array $operas
+                    $baseFileName = "../../immagini/" . str_replace(" ", "", strtolower($name));
+                    
+                    // controlla formato file
+                    $imagePathJpg = $baseFileName . ".jpg";
+                    $imagePathPng = $baseFileName . ".png";
+                    
+                    $file_path = file_exists($imagePathJpg) ? $imagePathJpg : (file_exists($imagePathPng) ? $imagePathPng : '');
+                    
+                    if ($file_path !== '') {
+                        $operas[] = array('id' => $id, 'titolo' => $name, 'file_path' => $file_path, 'desc_abbrev'=>$shortdesc);
+                    }
                 }
             }
-         
+             
             return $operas;
-         }
+        }
+        
          
     
          public function getOperaById($operaId) { //l'id è quello dell'artista
@@ -162,7 +172,7 @@ class DBAccess {
                     $title = $row['titolo'];
                     $basePath = "../../immagini/" . str_replace(" ", "", strtolower($title));
                     
-                    // Check if the file exists with .jpg or .png extension
+                    // controllo formato file, esiste in .jpg o .png ?
                     $imagePathJpg = $basePath . ".jpg";
                     $imagePathPng = $basePath . ".png";
                     
