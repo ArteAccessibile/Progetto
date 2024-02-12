@@ -50,6 +50,10 @@ $connection->closeConnection();
 
 // Redirect
 
+$page = file_get_contents("../html/account_artista.html");
+$page = str_replace("{messaggiForm}", $messaggiForm, $page);
+
+
 header("Location: " . $_SERVER['HTTP_REFERER'] . "?message=" . urlencode($echo));
 exit();
 ?>
