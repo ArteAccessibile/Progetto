@@ -71,11 +71,12 @@ if ($connectionOk) {
                 $imageName = str_replace(['.jpg', '.png'], '', $imageName); // Rimuovi l'estensione dal nome del file
                 $imagesHtml .= "<div class='opera_artista_card'>";
                 $imagesHtml .= "<img src='{$image}' alt='{$imageName}'>"; // uso il nome del file come attributo alt
-                $imagesHtml .= "<form method='POST' action='deleteImage.php'>";  
-                $imagesHtml .= "<input type='hidden' name='image_path' value='{$image}'>";
+                $imagesHtml .= "<form method='POST' action='../php/deleteImage.php'>";  
+                $imagesHtml .= "<input type='hidden' name=$imageName value='{$image}'>";
                 $imagesHtml .= "<button type='submit' name='deleteImage'>Elimina</button>";
                 $imagesHtml .= "</form>";
                 $imagesHtml .= "</div>";
+                
             }
         } else {
             $imagesHtml = "<p> Non sono state caricate delle opere.</p>";
@@ -94,6 +95,7 @@ $page = str_replace("{descrizione}", $descrizione, $page);
 $page = str_replace("{listaOpere}", $imagesHtml, $page);
 $page = str_replace("<visibility/>", "<div class=\"visibile\">", $page);
 $page = str_replace("<error/>", "", $page);
+$page = str_replace("{messaggiForm}", "", $page);
 
 require_once "../config.php";
 require_once "modules-loader.php";

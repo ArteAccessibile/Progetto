@@ -11,6 +11,7 @@ ini_set('display_errors',  1);
 ini_set('display_startup_errors',  1);
 error_reporting(E_ALL);
 
+$messaggiForm="";
 // Set locale
 setlocale(LC_ALL, 'it_IT');
 
@@ -32,25 +33,29 @@ if ($connectionOk) {
                     $result = $connection->deleteImageFromDatabase($userId, $imagePath);
                     if ($result) {
                         // Success message
-                        echo "Immagine eliminata con successo.";
+                        $messaggiForm= "Immagine eliminata con successo.";
                        
                     } else {
-                        echo "Errore nell'eliminazione dal database, ritenta.";
+                        $messaggiForm= "Errore nell'eliminazione dal database, ritenta.";
                     }
                 } else {
-                    echo "Errore nell'eliminazione del file, ritenta.";
+                    $messaggiForm= "Errore nell'eliminazione del file, ritenta.";
                 }
             } else {
-                echo "Il file specificato non esiste.";
+                $messaggiForm= "Il file specificato non esiste.";
             }
         } else {
-            echo "Il percorso dell'immagine non è stato fornito.";
+            $messaggiForm= "Il percorso dell'immagine non è stato fornito.";
         }
     }
 } else {
-    echo "Errore durante la connesione al database.";
+    $messaggiForm= "Errore durante la connesione al database.";
 }
 $connection->closeConnection();
+
+
+ $page= file_get_contents("../html/account_artista.html");
+ $page = str_replace("{messaggiForm}", "<div class=\"errors-forms\"><p>".$messaggiForm."</p></div>", $page);
  // Redirect to the previous page
  ob_end_clean(); // Clear any buffered output
  header("Location: " . $_SERVER['HTTP_REFERER']);

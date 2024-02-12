@@ -201,14 +201,22 @@ class DBAccess {
         }
         
          
-
-         public function deleteImageFromDatabase($artista, $nome) {
+        public function deleteImageFromDatabase($emailArtista, $titoloOpera) {
             $query = "DELETE FROM opera WHERE artista = ? AND titolo = ?";
             $stmt = $this->connection->prepare($query);
-            $stmt->bind_param('ss', $artista, $nome);
+            $stmt->bind_param('ss', $emailArtista, $titoloOpera);
             $stmt->execute();
-            return $stmt;
+        
+            // controllo se è stata cancellata almeno una riga
+            if ($stmt->affected_rows >  0) {
+                // Record cancellato
+                return true;
+            } else {
+                // Record non cancellato
+                return false;
+            }
         }
+        
          public function getFavourites() {
             $query = "SELECT opera.id as opera, pseudonimo, titolo, desc_abbrev FROM opera,preferito,artista WHERE preferito.utente=\"".$_SESSION["email"]."\" AND preferito.opera=opera.id AND opera.artista=artista.utente"; 
             $result = $this->connection->query($query);
