@@ -1050,11 +1050,12 @@ input[type=submit] {
 
 .opera_artista_card {
   list-style: none;
-  display: grid; /*flex to grid */
+  display: flex; /*flex to grid */
+  flex-wrap: wrap;
   align-items: center;
-  justify-items: center; 
+  justify-items: space-evenly; 
   margin-left:  1em;
-  width:  8em;
+  width: 10em;
   text-align: center;
   border-radius:  1em;
   box-shadow:  0  0.25em 0.5em  0 rgba(0,  0,  0,  0.2),  0  0.5em 1.25em  0 rgba(0,  0,  0,  0.19);
@@ -1196,8 +1197,8 @@ label {
 }
 
 .artist-container > dd img {
-  max-width: 18.75em; 
-  max-height: 18.75em; 
+  max-width: 11.75em; 
+  max-height: 13.75em; 
   width: auto;
   height: auto;
   float: left;

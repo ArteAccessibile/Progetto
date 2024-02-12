@@ -60,26 +60,35 @@ class DBAccess {
         
          
     
-         public function getOperaById($operaId) { //l'id è quello dell'artista
-            $query = "SELECT * FROM opera WHERE id = ?"; 
+        public function getOperaById($operaId) {
+            $query = "SELECT * FROM opera WHERE id = ?";
             $statement = $this->connection->prepare($query);
-            $statement->bind_param("i", $operaId); 
+            $statement->bind_param("i", $operaId);
             $statement->execute();
-            
+        
             $result = $statement->get_result();
-          
-            if ($result->num_rows > 0) {
-                $opera = $result->fetch_assoc(); 
+        
+            if ($result->num_rows >  0) {
+                $opera = $result->fetch_assoc();
                 $name = $opera['titolo'];
-                $file_path = "../../immagini/" . str_replace(" ", "", strtolower($name)) . ".jpg"; // genera il percorso del file in base al nome dell'opera
-                $opera['file_path'] = $file_path; // aggiunge il percorso del file all'array $opera
+                $baseFileName = "../../immagini/" . str_replace(" ", "", strtolower($name));
+        
+                // Check if the file exists with .jpg or .png extension
+                $imagePathJpg = $baseFileName . ".jpg";
+                $imagePathPng = $baseFileName . ".png";
+        
+                $file_path = file_exists($imagePathJpg) ? $imagePathJpg : (file_exists($imagePathPng) ? $imagePathPng : '');
+        
+                if ($file_path !== '') {
+                    $opera['file_path'] = $file_path; // Add the file path to the $opera array
+                }
             } else {
                 $opera = null;
             }
-          
+        
             return $opera;
-         }
-         
+        }
+        
      
          public function getArtists() {
             $query = "SELECT * FROM artista"; 

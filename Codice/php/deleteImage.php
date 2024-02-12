@@ -22,16 +22,18 @@ if ($connectionOk) {
         $imagePath = $_POST['image_path'];
         $userId = $_SESSION["email"];
 
-        // controlla se c'è l'immagine
+        // Check if the image path is set and not empty
         if (!empty($imagePath)) {
-            // e se esiste
+            // Check if the file exists before attempting to delete it
             if (file_exists($imagePath)) {
-                // cancella l'immagine
+                // Attempt to delete the file from the filesystem
                 if (unlink($imagePath)) {
-                    //  messaggio di successo e cancella l'immagine dal database
+                    // File deleted successfully, now delete the record from the database
                     $result = $connection->deleteImageFromDatabase($userId, $imagePath);
                     if ($result) {
+                        // Success message
                         echo "Immagine eliminata con successo.";
+                       
                     } else {
                         echo "Errore nell'eliminazione dal database, ritenta.";
                     }
@@ -48,6 +50,12 @@ if ($connectionOk) {
 } else {
     echo "Errore durante la connesione al database.";
 }
-
 $connection->closeConnection();
+ // Redirect to the previous page
+ ob_end_clean(); // Clear any buffered output
+ header("Location: " . $_SERVER['HTTP_REFERER']);
+
+ exit();
+
+
 ?>
