@@ -29,7 +29,7 @@ if ($connectionOk) {
            $imagesHtml .= "<img src=\"{$image}\" alt=\"\">";
        }
    } else {
-       $imagesHtml = "No images found.";
+       $imagesHtml = "Nessuna immagine trovata";
    }
    
    
@@ -45,6 +45,6 @@ if ($connectionOk) {
  
  $connection->closeConnection();
 } else {
- echo "Database connection error.";
+ echo "Errore di connessione al <span lang=\"en\">database</span>.;
 }
 ?>

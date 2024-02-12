@@ -21,11 +21,11 @@
 
     
     if (isset($_SESSION["role"]) && $_SESSION["role"] != "guest" && isset($_SESSION["email"])) {
-        $page = str_replace("<loggedhas/>", "<h2 class=\"logged_has\" tabindex='0'> Sei loggato come: <strong>".$_SESSION["email"]."</strong> </h2>" , $page);
-        $page = str_replace("<set-visibility/>", "<div class=\"visibile\" tabindex='0'>" , $page);
+        $page = str_replace("<loggedhas/>", "<h2 class=\"logged_has\"> Hai già eseguito l'accesso come: <strong>".$_SESSION["email"]."</strong> </h2>" , $page);
+        $page = str_replace("<set-visibility/>", "<div class=\"visibile\">" , $page);
     } else {
-        $page = str_replace("<loggedhas/>", "<h2 class=\"logged_has\" tabindex='0'> Devi loggarti per potere accedere ai contenuti di questa sezione </h2>" , $page);
-        $page = str_replace("<set-visibility/>", "<div class=\"nascosto\" tabindex='0'>" , $page);
+        $page = str_replace("<loggedhas/>", "<h2 class=\"logged_has\" > Devi eseguire l'accesso per potere accedere ai contenuti di questa sezione </h2>" , $page);
+        $page = str_replace("<set-visibility/>", "<div class=\"nascosto\">" , $page);
     }
 
     $connection = new DBAccess();
@@ -38,12 +38,12 @@
             foreach ($favs as $f) {
                 $opera = $connection->getOperaById($f['opera']);
                 if(empty($opera)) {
-                    echo "Failed to fetch favourites data.";
+                    echo "Errore nel caricamento dati.";
                     exit();
                 }
                 $file_path = isset($opera['file_path']) ? $opera['file_path'] : '';
                 if (!file_exists($file_path)) {
-                    echo "Error images not founded!.";
+                    echo "Errore immagine non trovata.";
                     echo $file_path;
                 }
             // Creating the list with opera names and respective image file paths

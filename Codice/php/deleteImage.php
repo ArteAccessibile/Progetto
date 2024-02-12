@@ -26,9 +26,9 @@ if ($connectionOk) {
             $result = $connection->deleteImageFromDatabase($userId, $imagePath);
 
             if ($result) {
-                echo "Image deleted successfully.";
+                echo "Immagine eliminata con successo.";
             } else {
-                echo "Error deleting image.";
+                echo "Errore nell'eliminazione, ritenta.";
             }
         } catch (Exception $e) {
             echo "Error: " . $e->getMessage();
@@ -39,7 +39,7 @@ if ($connectionOk) {
         exit();
     }
 } else {
-    echo "Database connection error.";
+    echo "Errore durante la connesione al <span lang=\"en\">database</span>.";
 }
 
 $connection->closeConnection();

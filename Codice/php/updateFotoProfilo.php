@@ -24,7 +24,7 @@ if ($connectionOk) {
         // Check if the file is an image
         $fileType = exif_imagetype($profileImage['tmp_name']);
         if ($fileType === false) {
-            echo "Invalid file format.";
+            echo "Formato non supportato. Perfavore inserisci una JPEG oPNG.";
             exit();
         }
 
@@ -60,7 +60,7 @@ if ($connectionOk) {
         $destinationPath = $profileImageDirectory . $profileImageFilename;
 
         if (!move_uploaded_file($profileImage['tmp_name'], $destinationPath)) {
-            echo "Error uploading image.";
+            echo "Errore durante il caricamento dell'immagine. Perfavore riprova.";
             exit();
         }
 
@@ -69,7 +69,7 @@ if ($connectionOk) {
         exit();
     }
 } else {
-    echo "Database connection error.";
+    echo "Errore di connessione al <span lang=\"en\">database</span>.";
 }
 
 $connection->closeConnection();
