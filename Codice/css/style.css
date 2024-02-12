@@ -1198,9 +1198,9 @@ label {
 
 .artist-container > dd img {
   max-width: 11.75em; 
-  max-height: 13.75em; 
+  max-height: 11.75em; 
   width: auto;
-  height: auto;
+  margin-bottom: 1em;
   float: left;
   margin-right: 1em;
   border: 1px solid rgb(255, 255, 255); 
