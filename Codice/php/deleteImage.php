@@ -35,15 +35,15 @@ if ($connectionOk) {
         $result = $connection->deleteImageFromDatabase($userId, $imageName);
         if ($result) {
             // Success message
-            $echo = "Immagine eliminata con successo.";
+            $messaggiForm = "Immagine eliminata con successo.";
         } else {
-            $echo = "Errore nell'eliminazione dal database, ritenta.";
+            $messaggiForm = "Errore nell'eliminazione dal database, ritenta.";
         }
     } else {
-        $echo = "Il percorso dell'immagine non è stato fornito.";
+        $messaggiForm = "Il percorso dell'immagine non è stato fornito.";
     }
 } else {
-    $echo = "Errore durante la connessione al database.";
+    $messaggiForm = "Errore durante la connessione al database.";
 }
 
 $connection->closeConnection();
