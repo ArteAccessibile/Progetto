@@ -526,7 +526,7 @@ border:  .7em solid transparent;
 }
 .containerOpere img{
 
-width: 12.5em;
+width: 12.5;
 height: 12.5em;
 object-fit: cover;
 
@@ -1049,7 +1049,7 @@ input[type=submit] {
   display: flex; /*flex to grid */
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-evenly; 
+  justify-items: space-evenly; 
   margin-left:  1em;
   width: 10em;
   text-align: center;
@@ -1286,7 +1286,7 @@ footer a {
   vertical-align: bottom;
 }
 
-  #selected footer a {
+footer a:selected {
   color: #DDE5FE; 
 }
 
