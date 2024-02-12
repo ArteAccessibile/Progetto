@@ -27,32 +27,36 @@ class DBAccess {
         }
 
         public function getOperas() {
-            $query = "SELECT id, titolo, desc_abbrev FROM opera";  
+            $query = "SELECT id, titolo, desc_abbrev FROM opera";   
             $result = $this->connection->query($query);
              
             $operas = array();
              
-            if ($result->num_rows >  0) {
+            if ($result->num_rows >   0) {
                 while ($row = $result->fetch_assoc()) {
                     $id = $row['id'];
                     $name = $row['titolo'];
                     $shortdesc = $row['desc_abbrev'];
                     $baseFileName = "../../immagini/" . str_replace(" ", "", strtolower($name));
                     
-                    // controlla formato file
+                    // Check if the file exists with .jpg or .png extension
                     $imagePathJpg = $baseFileName . ".jpg";
                     $imagePathPng = $baseFileName . ".png";
                     
                     $file_path = file_exists($imagePathJpg) ? $imagePathJpg : (file_exists($imagePathPng) ? $imagePathPng : '');
                     
                     if ($file_path !== '') {
-                        $operas[] = array('id' => $id, 'titolo' => $name, 'file_path' => $file_path, 'desc_abbrev'=>$shortdesc);
+                        // Set the alt attribute to the image name
+                        $altText = ucfirst(pathinfo($file_path, PATHINFO_FILENAME)); // Capitalize the first letter
+                        $operas[] = array('id' => $id, 'titolo' => $name, 'file_path' => $file_path, 'desc_abbrev'=>$shortdesc, 'alt' => $altText);
                     }
                 }
             }
              
             return $operas;
         }
+        
+        
         
          
     

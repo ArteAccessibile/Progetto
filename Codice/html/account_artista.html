@@ -46,16 +46,9 @@
             <loggedhas/>
             <div class="rounded_main_container">
                 <h2> Il tuo <span lang="en">account</span> </h2>
-              <!--  <section class="account_data_section"
-                    {potenzialmente da togliere }
-                    <img class="avatar_image" src="../../immagini/gattobaguette.jpg" width="300" height="300">
-                    <ul>
-                        <li id="pseudonimo_artista"><strong>Pseudonimo: </strong> {pseudonimo}</li>
-                        <li id="email_artista"><strong>Email di contatto: </strong> mail</li>
-                    </ul>
-                </section> -->
+             
                 <section class="account_data_section">
-                    <img class="avatar_image" id="currentProfileImage" src={FotoProfilo}>
+                    <img class="avatar_image" id="currentProfileImage" src={FotoProfilo} alt="profileImage">
                     <form method="POST" enctype="multipart/form-data" action="../php/updateFotoProfilo.php">
                         <label for="profileImage">Cambia immagine profilo:</label>
                         <input type="file" id="profileImage" name="profileImage"  accept="image/png , image/jpeg" required>

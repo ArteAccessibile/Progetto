@@ -64,19 +64,23 @@ if ($connectionOk) {
         $fotoProfilo = $fotoProfiloJPG;
     }
         $imagesHtml = "";
-    if (!empty($lista)) {
-        foreach ($lista as $image) {
-            $imagesHtml .= "<div class='opera_artista_card'>";
-            $imagesHtml .= "<img src='{$image}' alt=''>";
-            $imagesHtml .= "<form method='POST' action='deleteImage.php'>"; 
-            $imagesHtml .= "<input type='hidden' name='image_path' value='{$image}'>";
-            $imagesHtml .= "<button type='submit' name='delete_image'>Elimina</button>";
-            $imagesHtml .= "</form>";
-            $imagesHtml .= "</div>";
+        if (!empty($lista)) {
+            foreach ($lista as $image) {
+                // Extract the image name from the file path
+                $imageName = pathinfo($image, PATHINFO_BASENAME);
+                $imageName = str_replace(['.jpg', '.png'], '', $imageName); // Rimuovi l'estensione dal nome del file
+                $imagesHtml .= "<div class='opera_artista_card'>";
+                $imagesHtml .= "<img src='{$image}' alt='{$imageName}'>"; // uso il nome del file come attributo alt
+                $imagesHtml .= "<form method='POST' action='deleteImage.php'>";  
+                $imagesHtml .= "<input type='hidden' name='image_path' value='{$image}'>";
+                $imagesHtml .= "<button type='submit' name='deleteImage'>Elimina</button>";
+                $imagesHtml .= "</form>";
+                $imagesHtml .= "</div>";
+            }
+        } else {
+            $imagesHtml = "<p> Non sono state caricate delle opere.</p>";
         }
-    } else {
-        $imagesHtml = "<p> Non sono state caricate delle opere.</p>";
-    }
+        
     
 }
 

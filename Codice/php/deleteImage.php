@@ -3,15 +3,16 @@
 require_once "DBAccess.php";
 use DB\DBAccess;
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-setlocale(LC_ALL, 'it_IT');
-
+// Start session and set up error reporting
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+ini_set('display_errors',  1);
+ini_set('display_startup_errors',  1);
+error_reporting(E_ALL);
+
+// Set locale
+setlocale(LC_ALL, 'it_IT');
 
 $connection = new DBAccess();
 $connectionOk = $connection->openDBConnection();
@@ -21,24 +22,31 @@ if ($connectionOk) {
         $imagePath = $_POST['image_path'];
         $userId = $_SESSION["email"];
 
-        // Use try-catch block to handle exceptions
-        try {
-            $result = $connection->deleteImageFromDatabase($userId, $imagePath);
-
-            if ($result) {
-                echo "Immagine eliminata con successo.";
+        // controlla se c'è l'immagine
+        if (!empty($imagePath)) {
+            // e se esiste
+            if (file_exists($imagePath)) {
+                // cancella l'immagine
+                if (unlink($imagePath)) {
+                    //  messaggio di successo e cancella l'immagine dal database
+                    $result = $connection->deleteImageFromDatabase($userId, $imagePath);
+                    if ($result) {
+                        echo "Immagine eliminata con successo.";
+                    } else {
+                        echo "Errore nell'eliminazione dal database, ritenta.";
+                    }
+                } else {
+                    echo "Errore nell'eliminazione del file, ritenta.";
+                }
             } else {
-                echo "Errore nell'eliminazione, ritenta.";
+                echo "Il file specificato non esiste.";
             }
-        } catch (Exception $e) {
-            echo "Error: " . $e->getMessage();
+        } else {
+            echo "Il percorso dell'immagine non è stato fornito.";
         }
-        //redirect alla pagina precedente
-        header("Location: " . $_SERVER['HTTP_REFERER']);
-        exit();
     }
 } else {
-    echo "Errore durante la connesione al <span lang=\"en\">database</span>.";
+    echo "Errore durante la connesione al database.";
 }
 
 $connection->closeConnection();
