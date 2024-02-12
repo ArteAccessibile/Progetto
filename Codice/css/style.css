@@ -96,9 +96,7 @@ label{
 
 }
 
-#selected a{
-    color: black !important;
-}
+
 #container > nav > ul > .dropdown:hover {
   border-bottom:none;
 }
