@@ -46,7 +46,6 @@
                     echo "Errore immagine non trovata.";
                     echo $file_path;
                 }
-            // Creating the list with opera names and respective image file paths
                 $replace .= "
                             <div class=\"preferito-container\">
                                 <a class=\"go-to-opera\" href=\"template_opera.php?id=".$f['opera']."\">

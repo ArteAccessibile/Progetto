@@ -38,18 +38,17 @@ if ($connectionOk) {
 
     $lista = $connection->getImagesByArtist($_SESSION["email"]);
 
-    // Generate the HTML for the images 
     //crea alert per bottone elimina
     $fotoProfiloJPG = "../../immagini/artisti/" . $pseudonimo . ".jpg";
     
-    // If the JPG version is not found, try loading the PNG version
+    // se la versione JPG manca, cerco la versione PNG della foto profilo
     if (!file_exists($fotoProfiloJPG)) {
         $fotoProfiloPNG = "../../immagini/artisti/" . $pseudonimo . ".png";
-        // Check if the PNG version exists
+        // Check PNG 
         if (file_exists($fotoProfiloPNG)) {
             $fotoProfilo = $fotoProfiloPNG;
         } else {
-            // If neither JPG nor PNG is found, set a default profile image
+            // Metto una profile picture di default
             $fotoProfilo = "../../immagini/account_logo.png";
         }
     } else {
@@ -60,7 +59,7 @@ if ($connectionOk) {
         foreach ($lista as $image) {
             $imagesHtml .= "<div class='opera_artista_card'>";
             $imagesHtml .= "<img src='{$image}' alt=''>";
-            $imagesHtml .= "<form method='POST' action='deleteImage.php'>"; // Assuming you have a separate PHP file for handling the deletion
+            $imagesHtml .= "<form method='POST' action='deleteImage.php'>"; 
             $imagesHtml .= "<input type='hidden' name='image_path' value='{$image}'>";
             $imagesHtml .= "<button type='submit' name='delete_image'>Elimina</button>";
             $imagesHtml .= "</form>";

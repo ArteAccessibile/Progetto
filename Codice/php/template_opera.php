@@ -54,7 +54,6 @@ if ($connectionOk) {
 }
 
 
- // Pass the opera details to the template_opera.html file
  $page = file_get_contents("../html/template_opera.html");
  $page = str_replace("{cosa}", $opera_name, $page);
  $page = str_replace("{opera_image}", $file_path, $page);

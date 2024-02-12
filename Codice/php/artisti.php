@@ -15,7 +15,7 @@ if ($connectionOk) {
   $artists = $connection->getArtists();
   
   if (!empty($artists)) {
-      // Generate the list items
+      // genero la lista di artisti
       $artistaString = "";
       
       foreach ($artists as $listaArtisti) {
@@ -53,7 +53,7 @@ if ($connectionOk) {
 
        
       }
-      // Insert the list items into the <ul> tag
+      // inserisco la lista di artisti nella pagina in ul
       $page = str_replace("{artist-list}", $artistaString, file_get_contents("../html/artistitemplate.html"));
 
       $_SESSION["nav_page"] = "artists"; //importante definirlo in ogni pagina tra home | contatti ...

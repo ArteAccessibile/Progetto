@@ -169,7 +169,6 @@ nav {
   height:auto;
 }
 
-/* Place the navbar at the bottom of the page, and make it stick */
 .navbar {
   background-color: #333;
   overflow: hidden;
@@ -181,7 +180,6 @@ nav {
   
 }
 
-/* Style the links inside the navigation bar */
 .navbar li {
   float: left;
   display: flex;
@@ -196,12 +194,11 @@ nav {
   color: white;
 }
 
-/* Change the color of links on hover */
 .navbar li:hover {
   background-color: #2B007A;
 }
 
-/* Add a color to the active */
+/*mini selezinoato*/
 #selectedMini {
   background-color: #E29608;
   color: white;
@@ -211,7 +208,7 @@ nav {
 
 #sezioneaccount {
   display: flex;
-  flex-direction: column; /* Set flex direction to column */
+  flex-direction: column; 
   align-self: center;
   max-width: 1024px;
   text-align: left;

@@ -111,8 +111,8 @@ footer a:visited {
   max-width: 1024px;
   margin: auto;
   display: flex;
-  flex-wrap: wrap; /* Allows items to wrap to the next line */
-  justify-content: space-evenly; /* Adjust this based on your layout preference */
+  flex-wrap: wrap; 
+  justify-content: space-evenly; 
 }
 
 #artisti li {
@@ -126,7 +126,7 @@ footer a:visited {
   display: block;
   background-size: cover;
   background-position: center;
-  aspect-ratio: 1/1; /* Added aspect ratio */
+  aspect-ratio: 1/1; 
 }
 
 .card {
@@ -134,7 +134,7 @@ footer a:visited {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%; /* Adjust the width to 100% for full-width cards */
+  width: 100%; 
   border-radius: 5px;
   border: 1px solid #000000;
   margin: 10px;
@@ -185,13 +185,13 @@ footer a:visited {
 }
 
 .artist-container > dd img {
-  max-width: 300px; /* Adjust as needed */
-  max-height: 300px; /* Adjust as needed */
+  max-width: 300px; 
+  max-height: 300px; 
   width: auto;
   height: auto;
   float: left;
   margin-right: 1em;
-  border: 1px solid rgb(255, 255, 255); /* Apply the border directly to the image */
+  border: 1px solid rgb(255, 255, 255); 
 }
 
 .artist-container > dd:first-of-type {
@@ -204,15 +204,15 @@ footer a:visited {
 
 #artist-image {
   max-width: 300px;
-  height: auto; /* Allow the height to adjust according to the image */
+  height: auto; 
   border-radius: 5%;
-  margin-right: 2em; /* Adjust margin as needed */
+  margin-right: 2em; 
 }
 
 .artist-info {
   width: 60%;
 }
-/* Additional styles for artist-info */
+/*artist-info */
 .artist-info h3,
 .artist-info p,
 .artist-description p {

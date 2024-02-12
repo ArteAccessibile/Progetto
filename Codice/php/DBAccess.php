@@ -27,7 +27,7 @@ class DBAccess {
         }
 
         public function getOperas() {
-            $query = "SELECT id, titolo, desc_abbrev FROM opera"; // Selecting id and name of the opera from the 'opera' table
+            $query = "SELECT id, titolo, desc_abbrev FROM opera"; 
             $result = $this->connection->query($query);
          
             $operas = array();
@@ -37,8 +37,8 @@ class DBAccess {
                     $id = $row['id'];
                     $name = $row['titolo'];
                     $shortdesc = $row['desc_abbrev'];
-                    $file_path = "../../immagini/" . str_replace(" ", "", strtolower($name)) . ".jpg"; // Generating the file path based on the opera's name
-                    $operas[] = array('id' => $id, 'titolo' => $name, 'file_path' => $file_path, 'desc_abbrev'=>$shortdesc); // Adding each opera's id, name and file path to the $operas array
+                    $file_path = "../../immagini/" . str_replace(" ", "", strtolower($name)) . ".jpg"; // genera il percorso del file in base al nome dell'opera
+                    $operas[] = array('id' => $id, 'titolo' => $name, 'file_path' => $file_path, 'desc_abbrev'=>$shortdesc); // aggiunge i dettagli dell'opera all'array $operas
                 }
             }
          
@@ -47,18 +47,18 @@ class DBAccess {
          
     
          public function getOperaById($operaId) { //l'id è quello dell'artista
-            $query = "SELECT * FROM opera WHERE id = ?"; // Selecting all columns from the 'opera' table where the id matches the given id
+            $query = "SELECT * FROM opera WHERE id = ?"; 
             $statement = $this->connection->prepare($query);
-            $statement->bind_param("i", $operaId); // Binding the id parameter to the query
+            $statement->bind_param("i", $operaId); 
             $statement->execute();
             
             $result = $statement->get_result();
           
             if ($result->num_rows > 0) {
-                $opera = $result->fetch_assoc(); // Fetching the opera details as an associative array
+                $opera = $result->fetch_assoc(); 
                 $name = $opera['titolo'];
-                $file_path = "../../immagini/" . str_replace(" ", "", strtolower($name)) . ".jpg"; // Generating the file path based on the opera's name
-                $opera['file_path'] = $file_path; // Adding the file path to the $opera array
+                $file_path = "../../immagini/" . str_replace(" ", "", strtolower($name)) . ".jpg"; // genera il percorso del file in base al nome dell'opera
+                $opera['file_path'] = $file_path; // aggiunge il percorso del file all'array $opera
             } else {
                 $opera = null;
             }
@@ -68,35 +68,35 @@ class DBAccess {
          
      
          public function getArtists() {
-            $query = "SELECT * FROM artista"; // Selecting all columns from the 'artista' table
+            $query = "SELECT * FROM artista"; 
             $result = $this->connection->query($query);
            
             $artists = array();
            
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    $artists[] = $row; // Adding each artist's details to the $artists array
+                    $artists[] = $row; // aggiungi righe a $artists 
                 }
             }
            
             return $artists;
           }
           public function getArtistiPseudonimo() {
-            $query = "SELECT pseudonimo FROM artista"; // Selecting all columns from the 'artista' table
+            $query = "SELECT pseudonimo FROM artista"; 
             $result = $this->connection->query($query);
            
             $artists = array();
            
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    $artists[] = $row['pseudonimo']; // Adding each artist's details to the $artists array
+                    $artists[] = $row['pseudonimo']; 
                 }
             }
            
             return $artists;
           }
           public function getArtistaPseudonimoByUser($value) {
-            $query = "SELECT pseudonimo FROM artista WHERE utente = ?"; // Selecting all columns from the 'artista' table
+            $query = "SELECT pseudonimo FROM artista WHERE utente = ?"; 
             $statement = $this->connection->prepare($query);
             $statement->bind_param("s",$value);// questo fa in modo che il parametro sia una stringa
             $statement->execute();
@@ -113,7 +113,7 @@ class DBAccess {
             return $pseudonimo;
           }
           public function getArtistaDescByUser($value) {
-            $query = "SELECT descrizione FROM artista WHERE utente = ?"; // Selecting all columns from the 'artista' table
+            $query = "SELECT descrizione FROM artista WHERE utente = ?"; 
             $statement = $this->connection->prepare($query);
             $statement->bind_param("s",$value);// questo fa in modo che il parametro sia una stringa
             $statement->execute();
@@ -131,15 +131,15 @@ class DBAccess {
           }
           
           public function getArtistByUser($userEmail) {
-            $query = "SELECT * FROM artista WHERE utente = ?"; // Selecting all columns from the 'artista' table where the user email matches the given email
+            $query = "SELECT * FROM artista WHERE utente = ?"; 
             $statement = $this->connection->prepare($query);
-            $statement->bind_param("s", $userEmail); // Binding the user email parameter to the query
+            $statement->bind_param("s", $userEmail); 
             $statement->execute();
            
             $result = $statement->get_result();
            
             if ($result->num_rows > 0) {
-                $artist = $result->fetch_assoc(); // Fetching the artist details as an associative array
+                $artist = $result->fetch_assoc(); 
             } else {
                 $artist = null;
             }
@@ -148,9 +148,9 @@ class DBAccess {
           }
           
           public function getImagesByArtist($artistId) {
-            $query = "SELECT titolo FROM opera WHERE artista = ? LIMIT 3"; // Selecting only the opera titles from the 'opera' table where the artist matches the given id
+            $query = "SELECT titolo FROM opera WHERE artista = ? LIMIT 3"; 
             $statement = $this->connection->prepare($query);
-            $statement->bind_param("s", $artistId); // Binding the artist id parameter to the query
+            $statement->bind_param("s", $artistId); 
             $statement->execute();
             
             $result = $statement->get_result();
@@ -160,8 +160,8 @@ class DBAccess {
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     $title = $row['titolo'];
-                    $file_path = "../../immagini/" . str_replace(" ", "", strtolower($title)) . ".jpg"; // Generating the file path based on the opera's title
-                    $images[] = $file_path; // Adding each image's file path to the $images array
+                    $file_path = "../../immagini/" . str_replace(" ", "", strtolower($title)) . ".jpg"; 
+                    $images[] = $file_path; 
                 }
             }
             
@@ -177,7 +177,7 @@ class DBAccess {
             return $stmt;
         }
          public function getFavourites() {
-            $query = "SELECT opera.id as opera, pseudonimo, titolo, desc_abbrev FROM opera,preferito,artista WHERE preferito.utente=\"".$_SESSION["email"]."\" AND preferito.opera=opera.id AND opera.artista=artista.utente"; // Selecting id and name of the opera from the 'opera' table
+            $query = "SELECT opera.id as opera, pseudonimo, titolo, desc_abbrev FROM opera,preferito,artista WHERE preferito.utente=\"".$_SESSION["email"]."\" AND preferito.opera=opera.id AND opera.artista=artista.utente"; 
             $result = $this->connection->query($query);
          
             $fav = array();
@@ -227,23 +227,20 @@ class DBAccess {
                 return false;
             }
         
-            // 's' denotes the type of the parameters: 's' for string, 'i' for integer, 'd' for double, 'b' for blob
+            // 's' denota il tipo dei parametri passati: 's' string, 'i' integer, 'd'  double, 'b' for blob
             $bind = $stmt->bind_param("sssss", $artista, $titolo, $desc_abbrev, $descrizione, $data_creazione);
             if ($bind === false) {
-                // Handle error, bind_param failed
                 return false;
             }
         
             $execute = $stmt->execute();
             if ($execute === false) {
-                // Handle error, execute failed
                 return false;
             }
         
-            // Close the statement
             $stmt->close();
             
-            return true; // Return true on success
+            return true; 
         }
 
     
@@ -266,27 +263,22 @@ class DBAccess {
         $query = "INSERT INTO artista (utente, descrizione, pseudonimo, email_contatto) VALUES (?, ?, ?, ?)";
         $stmt = $this->connection->prepare($query);
         if ($stmt === false) {
-            // Handle error, prepare failed
             return false;
         }
     
-        // 's' denotes the type of the parameters: 's' for string, 'i' for integer, 'd' for double, 'b' for blob
         $bind = $stmt->bind_param("ssss", $utente, $desc, $pseudonimo, $email_contatto);
         if ($bind === false) {
-            // Handle error, bind_param failed
             return false;
         }
     
         $execute = $stmt->execute();
         if ($execute === false) {
-            // Handle error, execute failed
             return false;
         }
     
-        // Close the statement
         $stmt->close();
         
-        return true; // Return true on success
+        return true; 
     }
 
     public function checkEmail($email) {
@@ -309,30 +301,25 @@ class DBAccess {
         $query = "INSERT INTO utente (nome, cognome, email, psw, ruolo) VALUES (?, ?, ?, ?, ?)";
         $stmt = $this->connection->prepare($query);
         if ($stmt === false) {
-            // Handle error, prepare failed
             return false;
         }
     
-        // 's' denotes the type of the parameters: 's' for string, 'i' for integer, 'd' for double, 'b' for blob
         $bind = $stmt->bind_param("sssss", $name, $surname, $email, $password, $role);
         if ($bind === false) {
-            // Handle error, bind_param failed
             return false;
         }
     
         $execute = $stmt->execute();
         if ($execute === false) {
-            // Handle error, execute failed
             return false;
         }
     
-        // Close the statement
         $stmt->close();
         
-        return true; // Return true on success
+        return true; 
     }
   
-    public function removeUserAccount($email){ //return false in case of error
+    public function removeUserAccount($email){ 
         $query = "DELETE FROM utente WHERE email = ?";
         $stmt = $this->connection->prepare($query);
         $stmt->bind_param("s", $email);

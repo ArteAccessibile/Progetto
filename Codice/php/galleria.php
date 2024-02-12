@@ -31,7 +31,6 @@ if ($connectionOk) {
            $operaID = $opera['id'];
            $shortDesc = $opera['desc_abbrev'];
 
-           // Creating the list with opera names and respective image file paths
            $stringaOpere .= "
             
                 <li> <img src='$file_path' alt='$shortDesc'>

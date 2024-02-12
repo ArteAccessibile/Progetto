@@ -21,29 +21,29 @@ if ($connectionOk) {
         $userId = $_SESSION["email"];
         $profileImage = $_FILES['profileImage'];
 
-        // Check if the file is an image
+        //controllo se il file è un'immagine
         $fileType = exif_imagetype($profileImage['tmp_name']);
         if ($fileType === false) {
             echo "Formato non supportato. Perfavore inserisci una JPEG oPNG.";
             exit();
         }
 
-        // Define the allowed image types
+        // definisco i tipi di file supportati
         $allowedTypes = array(IMAGETYPE_JPEG, IMAGETYPE_PNG);
 
-        // Check if the uploaded image is of an allowed type
+        // controllo se il file è tra i tipi supportati
         if (!in_array($fileType, $allowedTypes)) {
             echo "Formato non supportato. Perfavore inserisci una JPEG oPNG.";
             exit();
         }
 
-        // Define the directory where the profile images will be stored
+        // directory dove verranno salvate le immagini
         $profileImageDirectory = '../../immagini/artisti/';
 
-        // Get the current pseudonimo
+        // pseudo nome dell'artista
         $artistName = $connection->getArtistaPseudonimoByUser($userId);
 
-        // Cancella il file esistente chiamato pseudonimo 
+        //rimuoivo l'immagine vecchia e la sostituisco con la nuova
         $existingFilePath = $profileImageDirectory . $artistName . '.jpg';
         if (file_exists($existingFilePath)) {
             unlink($existingFilePath);
@@ -53,10 +53,10 @@ if ($connectionOk) {
             unlink($existingFilePath);
         }
 
-        // Generate a unique filename for the profile image using the artist's name and the new file type
+        // la rinomina del file è fatta con il nome dell'artista
         $profileImageFilename = $artistName . '.' . pathinfo($profileImage['name'], PATHINFO_EXTENSION);
 
-        // Move the uploaded file to the profile image directory
+        // Metto il file nella cartella delle immagini
         $destinationPath = $profileImageDirectory . $profileImageFilename;
 
         if (!move_uploaded_file($profileImage['tmp_name'], $destinationPath)) {
@@ -64,7 +64,7 @@ if ($connectionOk) {
             exit();
         }
 
-        // Redirect back to the previous page
+        // redirect 
         header("Location: " . $_SERVER['HTTP_REFERER']);
         exit();
     }

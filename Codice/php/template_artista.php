@@ -12,17 +12,15 @@ if ($connectionOk) {
   $artist = $connection->getArtistByUser($userId);
  
  if (!empty($artist)) {
-   // Get the images of the artist
+   
    $images = $connection->getImagesByArtist($userId);
    
-   // Pass the artist details to the artistitemplate.html file
    $page = file_get_contents("../html/template_artista.html");
    $page = str_replace("{artista_image}", "../../immagini/artisti/{$artist['pseudonimo']}.jpg", $page);
    $page = str_replace("{name}", $artist['pseudonimo'], $page);
    $page = str_replace("{mail}", $artist['email_contatto'], $page);
    $page = str_replace("{descriptionArtist}", $artist['descrizione'], $page);
    
-   // Generate the HTML for the images
    $imagesHtml = "";
    if (!empty($images)) {
        foreach ($images as $image) {
@@ -33,7 +31,6 @@ if ($connectionOk) {
    }
    
    
-   // Replace the {listaOpere} placeholder with the generated HTML for the images
    $page = str_replace("{listaOpere}", $imagesHtml, $page);
    require_once "../config.php";
    $_SESSION["nav_page"] = "artists";

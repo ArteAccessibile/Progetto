@@ -431,8 +431,8 @@ textarea {
   max-width: 1024px;
   margin: auto;
   display: flex;
-  flex-wrap: wrap; /* Allows items to wrap to the next line */
-  justify-content: space-evenly; /* Adjust this based on your layout preference */
+  flex-wrap: wrap; 
+  justify-content: space-evenly; 
 }
 
 #artisti li{
@@ -607,13 +607,13 @@ object-fit: cover;
  }
  
  .opera-container dd img {
-  max-width: 300px; /* Adjust as needed */
-  max-height: 300px; /* Adjust as needed */
+  max-width: 300px; 
+  max-height: 300px; 
   width: auto;
   height: auto;
   float: left;
   margin-right: 1em;
-  border: 1px solid rgb(255, 255, 255); /* Apply the border directly to the image */
+  border: 1px solid rgb(255, 255, 255); 
  }
  
  .opera-container fieldset{
@@ -925,13 +925,13 @@ input[type=text], select, textarea{
   resize: vertical;
 }
 
-/* Style the label to display next to the inputs */
+/* label e inputs */
 label {
   padding: 12px 12px 12px 0;
   display: inline-block;
 }
 
-/* Style the submit button */
+/* submit button */
 input[type=submit] {
   background-color: #008554;
   color: white;
@@ -942,7 +942,7 @@ input[type=submit] {
   float: right;
 }
 
-/* Style the container */
+/*  container */
 .form-container {
   border-radius: 5px;
   padding: 20px;
@@ -955,14 +955,14 @@ input[type=submit] {
   margin-top: 6px;
 }
 
-/* Floating column for inputs: 75% width */
+
 .col-75 {
   float: left;
   width: 75%;
   margin-top: 6px;
 }
 
-/* Clear floats after the columns */
+
 .row:after {
   content: "";
   display: table;
@@ -1158,27 +1158,18 @@ label {
 
 }
 
-/* Floating column for inputs: 75% width */
 .col-75 {
   float: left;
   width: 75%;
   margin-top: 6px;
 }
 
-/* Clear floats after the columns */
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* Tooltip text */
-/* 
-   EXAMPLE
-   <div class="tooltip">Hover over me
-   <span class="tooltiptext">Tooltip text</span>
-   </div>
-*/
 
 .tooltip {
   position: relative;
@@ -1240,13 +1231,13 @@ label {
 }
 
 .artist-container > dd img {
-  max-width: 300px; /* Adjust as needed */
-  max-height: 300px; /* Adjust as needed */
+  max-width: 300px; 
+  max-height: 300px; 
   width: auto;
   height: auto;
   float: left;
   margin-right: 1em;
-  border: 1px solid rgb(255, 255, 255); /* Apply the border directly to the image */
+  border: 1px solid rgb(255, 255, 255); 
 }
 
 .artist-container > dd:first-of-type {
@@ -1258,25 +1249,16 @@ label {
 }
 #artist-image {
   max-width: 300px;
-  height: auto; /* Allow the height to adjust according to the image */
+  height: auto; 
   border-radius: 5%;
   margin-right: 2em; /* Adjust margin as needed */
 }
 
-
-
-
-#artist-image {
-  max-width: 300px;
-  height: auto; /* Allow the height to adjust according to the image */
-  border-radius: 5%;
-  margin-right: 2em; /* Adjust margin as needed */
-}
 
 .artist-info {
   width: 60%;
 }
-/* Additional styles for artist-info */
+/* Più  artist-info */
 .artist-info h3, .artist-info p,  .artist-description p {
   margin-bottom: 0.4em;
 }
@@ -1308,7 +1290,7 @@ ul.artist-works{
   display: block;
   background-size: cover;
   background-position: center;
-  aspect-ratio: 1/1; /* Added aspect ratio */
+  aspect-ratio: 1/1; 
 }
 
 
@@ -1337,22 +1319,22 @@ footer {
 }
 
 footer a {
-  color: #679839; /* Replace with your desired color */
-  text-decoration: underline; /* Add underline to highlight links */
+  color: #679839; 
+  text-decoration: underline; 
   vertical-align: bottom;
 }
 
 footer a:selected {
-  color: #DDE5FE; /* Change color when the link is selected */
+  color: #DDE5FE; 
 }
 
 
 #opera-image {
-  max-width: 100%; /* Set the maximum width to 100% of its container */
-  max-height: 600px;
-  height: auto; /* Allow the height to adjust according to the width */
-  display: block; /* Remove extra space below the image */
-  margin: auto; /* Center the image horizontally */
+  max-width: 100%; 
+  max-height: 37.5em;
+  height: auto; 
+  display: block; 
+  margin: auto; 
 }
 
 #opera-info{

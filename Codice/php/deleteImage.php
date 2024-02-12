@@ -33,8 +33,7 @@ if ($connectionOk) {
         } catch (Exception $e) {
             echo "Error: " . $e->getMessage();
         }
-
-        // Redirect back to the previous page
+        //redirect alla pagina precedente
         header("Location: " . $_SERVER['HTTP_REFERER']);
         exit();
     }

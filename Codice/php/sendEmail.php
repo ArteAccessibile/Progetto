@@ -11,19 +11,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email = $_SESSION["email"];
         $error = "";
 
-        // Email address where you want to receive the message
+        // Email dove ricevere i messaggi
         $to = "nacope5970@fkcod.com";
 
-        // Subject of the email
+        // oggetto della mail
         $subject = "Contatto da Arte Per Tutti: $object";
 
-        // Message body
+        // testo 
         $message = "Email: $email\nOggetto: $object\nDescrizione:\n$description";
 
-        // Additional headers
+        // intestazioni
         $headers = "From: $email";
 
-        // Attempt to send the email
+        // tentativo di invio della mail
         $success = mail($to, $subject, $message, $headers);
 
         if ($success) {

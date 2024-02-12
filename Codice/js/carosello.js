@@ -38,16 +38,16 @@ function addPrintClass() {
       image.style.display = 'none';
   });
 
-  // Trigger the print dialog
+  //   print dialog
   window.print();
 
-  // After printing, restore the display property
+   
   images.forEach(image => {
       image.style.display = '';
   });
 }
 
-// Add an event listener for the 'beforeprint' event
+// aggiunta eventlisterner per la stampa
 window.addEventListener('beforeprint', addPrintClass);
 
 function dotClicked(dot){
