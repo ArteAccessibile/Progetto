@@ -12,6 +12,11 @@
             header("Location: ../php/account.php");
             exit;
         }
+        if($_SESSION["role"] == "admin"){
+            $page = str_replace("<error/>", "<p> Sei autenticato come amministratore, per inserire opere accedi con un altro account.</p>", $page); 
+            $page = str_replace("<visibility/>", "<div class=\"nascosto\">", $page);
+            echo $page;
+        }
     }
 
     if(!isset($_SESSION["email"])) {
