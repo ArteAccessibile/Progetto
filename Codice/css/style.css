@@ -347,6 +347,7 @@ a:hover {
 }
 
 #breadcrumb p{
+  font-size: 1em;
   max-width: 1024px;
   margin: auto;
   color: black;
