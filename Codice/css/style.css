@@ -699,7 +699,7 @@ object-fit: cover;
 
 #delete-account-button {
   outline: none;
-  background-color: #C20000 !important;
+  background-color: brown;
   color: white;
   padding: 0.5em 1.25em;
   font-size: 1em;
@@ -707,14 +707,21 @@ object-fit: cover;
   cursor: pointer;
 }
 
+#delete-account-button:focus {
+border: 2px solid white;
+}
 .remove-favourite-button{
   outline: none;
-  background-color: #C20000 !important;
+  background-color: brown;
   color: white;
   padding: 0.5em 1.25em;
   font-size: 1em;
   border: none;
   cursor: pointer;
+}
+
+.remove-favourite-button:focus {
+border: 2px solid white;
 }
 
 /**preferiti**/
