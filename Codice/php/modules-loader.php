@@ -9,19 +9,19 @@ if(isset($page)){
         switch($_SESSION["nav_page"]){
             case "home":
                 $header = str_replace("<li id=\"home\"><a href=\"/gitprog/codice/index.php\"><span lang=\"en\">Home</span></a></li>", "<li id=\"selected\"><span lang=\"en\">Home</span></li>", $header);
-                $nav = str_replace("<li id=\"minihomeli\"><a href=\"/gitprog/codice/index.php\">", "<li id=\"selectedMini\" lang=\"en\">", $nav);
+                $nav = str_replace("<li id=\"minihomeli\"><a href=\"/gitprog/codice/index.php\"><span lang=\"en\">Home</span></a></li>", "<li id=\"selectedMini\"><span lang=\"en\">Home</span></li>", $nav);
                 break;
             case "gallery":
                 $header = str_replace("<li id=\"gallery\"><a href=\"/gitprog/codice/php/galleria.php\">Galleria</a></li>", "<li id=\"selected\">Galleria</li>", $header);
-                $nav = str_replace("<li id=\"minigalleryli\"><a href=\"/gitprog/codice/php/galleria.php\">", "<li id=\"selectedMini\" lang=\"en\">", $nav);
+                $nav = str_replace("<li id=\"minigalleryli\"><a href=\"/gitprog/codice/php/galleria.php\">Galleria</a></li>", "<li id=\"selectedMini\">Galleria</li>", $nav);
                 break;
             case "artists":
-                $header = str_replace("<<li id=\"artists\"><a href=\"/gitprog/codice/php/artisti.php\">Artisti</a></li>", "<li id=\"selected\">Artisti</li>", $header);
-                $nav = str_replace("<li id=\"miniartistsli\"><a href=\"/gitprog/codice/php/artisti.php\">", "<li id=\"selectedMini\" lang=\"en\">", $nav);
+                $header = str_replace("<li id=\"artists\"><a href=\"/gitprog/codice/php/artisti.php\">Artisti</a></li>", "<li id=\"selected\">Artisti</li>", $header);
+                $nav = str_replace("<li id=\"miniartistsli\"><a href=\"/gitprog/codice/php/artisti.php\">Artisti</a></li>","<li id=\"selectedMini\">Artisti</li>", $nav);
                 break;
             case "contacts":
                 $header = str_replace("<li id=\"contacts\"><a href=\"/gitprog/codice/php/contatti.php\">Contatti</a></li>", "<li id=\"selected\">Contatti</li>", $header);
-                $nav = str_replace("<li id=\"minicontactsli\"><a href=\"/gitprog/codice/php/contatti.php\">", "<li id=\"selectedMini\" lang=\"en\">", $nav);
+                $nav = str_replace("<li id=\"minicontactsli\"><a href=\"/gitprog/codice/php/contatti.php\">Contatti</a></li>", "<li id=\"selectedMini\">Contatti</li>", $nav);
                 break;     
         }
     } 
