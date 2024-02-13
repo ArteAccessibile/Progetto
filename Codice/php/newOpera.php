@@ -152,5 +152,7 @@ $page = str_replace("{nome_utente}", $_SESSION["email"], $page);
 $page = str_replace("{messaggiForm}", $messaggiPerForm, $page);
 $page = str_replace("{listaArtisti}", $opzioniArt, $page);
 
+require_once "../config.php";
+require_once "modules-loader.php";
 echo $page;
 ?>
