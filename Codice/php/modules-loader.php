@@ -8,19 +8,19 @@ if(isset($page)){
     if(isset($_SESSION["nav_page"])){
         switch($_SESSION["nav_page"]){
             case "home":
-                $header = str_replace("<li id=\"home\"><a href=\"/index.php\">", "<li lang=\"en\" id=\"selected\">", $header);
+                $header = str_replace("<li id=\"home\"><a href=\"/gitprog/codice/index.php\">", "<li lang=\"en\" id=\"selected\">", $header);
                 $nav = str_replace("<li id=\"minihomeli\">", "<li id=\"selectedMini\" lang=\"en\">", $nav);
                 break;
             case "gallery":
-                $header = str_replace("<li id=\"gallery\"><a href=\"/php/galleria.php\">", "<li lang=\"en\" id=\"selected\">", $header);
+                $header = str_replace("<li id=\"gallery\"><a href=\"/gitprog/codice/php/galleria.php\">", "<li lang=\"en\" id=\"selected\">", $header);
                 $nav = str_replace("<li id=\"minigalleryli\">", "<li id=\"selectedMini\" lang=\"en\">", $nav);
                 break;
             case "artists":
-                $header = str_replace("<li id=\"artists\"><a href=\"/php/artisti.php\">", "<li lang=\"en\" id=\"selected\">", $header);
+                $header = str_replace("<li id=\"artists\"><a href=\"/gitprog/codice/php/artisti.php\">", "<li lang=\"en\" id=\"selected\">", $header);
                 $nav = str_replace("<li id=\"miniartistsli\">", "<li id=\"selectedMini\" lang=\"en\">", $nav);
                 break;
             case "contacts":
-                $header = str_replace("<li id=\"contacts\"><a href=\"/php/contatti.php\">", "<li lang=\"en\" id=\"selected\">", $header);
+                $header = str_replace("<li id=\"contacts\"><a href=\"/gitprog/codice/php/contatti.php\">", "<li lang=\"en\" id=\"selected\">", $header);
                 $nav = str_replace("<li id=\"minicontactsli\">", "<li id=\"selectedMini\" lang=\"en\">", $nav);
                 break;     
         }
