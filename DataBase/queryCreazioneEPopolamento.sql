@@ -1,5 +1,5 @@
 
-USE arte_accessibile; 
+USE fgiacomu; 
 -- cambiare con il nome del database 
 
 DROP TABLE if EXISTS utente;
@@ -13,15 +13,14 @@ CREATE TABLE utente (
     psw char(64) NOT NULL,
     nome varchar(20) NOT NULL,
     cognome varchar(20) NOT NULL,
-    data_nascita date NOT NULL,
     ruolo ENUM('utente', 'admin') NOT NULL DEFAULT 'utente'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Inserisci valori nella tabella utente
-INSERT INTO utente (email, psw, nome, cognome, data_nascita) VALUES
-('email1@example.com', 'password1', 'Nome1', 'Cognome1', '1990-01-01'),
-('email2@example.com', 'password2', 'Nome2', 'Cognome2', '1995-02-02'),
-('admin@gmail.com','admin','admin','admin','2001-12-23');
+INSERT INTO utente (email, psw, nome, cognome) VALUES
+('email1@example.com', 'password1', 'Nome1', 'Cognome1'),
+('email2@example.com', 'password2', 'Nome2', 'Cognome2'),
+('admin@gmail.com','admin','admin','admin');
 
 -- Crea la tabella artista
 CREATE TABLE artista (
@@ -54,8 +53,8 @@ INSERT INTO opera (artista, titolo, desc_abbrev, descrizione, data_creazione) VA
 
 -- Crea la tabella preferito
 CREATE TABLE preferito (
-    utente varchar (40) REFERENCES utente(email) ON DELETE CASCADE,
-    opera BIGINT REFERENCES opera(id),
+    utente varchar(40) REFERENCES utente(email) ON DELETE CASCADE,
+    opera INT REFERENCES opera(id),
     PRIMARY KEY (utente, opera)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
