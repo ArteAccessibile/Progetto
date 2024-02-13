@@ -4,7 +4,7 @@
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
-    header("Location: " . $_SESSION["go_back_page"]);
-    session_destroy();    
+    header("Location: " . $_SERVER['HTTP_REFERER']);
+    session_destroy();
     exit();
 ?>
