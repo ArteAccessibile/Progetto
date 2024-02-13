@@ -33,11 +33,15 @@
             $page = str_replace("<now-artist-message/>", "<p class=\"ok-message\">".$message."</p>" , $page);
             $page = str_replace("<artist-visibility/>", "<li class=\"account_options_visible\">" , $page);
         }
+        else 
+        $page = str_replace("<now-artist-message/>", "" , $page);
+
     } else {
         $page = str_replace("<loggedhas/>", "<h2 class=\"logged_has\" > Devi eseguire l'accesso per potere accedere ai contenuti di questa sezione: <a href=\"login.php\" lang=\"en\"> Login </a></h2>" , $page);
         $page = str_replace("<account-options>", "<div class=\"account_options_invisible\">" , $page);
-    }
+        $page = str_replace("<now-artist-message/>", "" , $page);
 
+    } //TODO non deve rimpiazzare solo <li> ma tutto <li></li>
     require_once "modules-loader.php";
     echo $page;
 ?>
