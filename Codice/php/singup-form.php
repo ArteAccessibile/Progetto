@@ -16,6 +16,7 @@
     $page = str_replace("<error/>", "", $page); 
     $page = str_replace("<visibility/>", "<div>", $page);
  
-     echo $page;
+    require_once "modules-loader.php";
+    echo $page;
 ?>
  
