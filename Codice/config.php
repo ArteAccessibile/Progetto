@@ -5,7 +5,7 @@
     $php_path = $root . "php" . DIRECTORY_SEPARATOR;
     $index_page =  $root;
 
-    $php_pages = DIRECTORY_SEPARATOR . "php";
+    $php_pages = $root . "php";
     $account_page = $php_pages . DIRECTORY_SEPARATOR . "account.php";
     $favourite_page = $php_pages . DIRECTORY_SEPARATOR . "preferiti.php";
     $gallery_page = $php_pages . DIRECTORY_SEPARATOR . "galleria.php";
