@@ -7,10 +7,11 @@ use Exception;
 
 class DBAccess {
     
-       private const HOST_DB = "localhost";
-        private const DATABASE_NAME = "fgiacomu";
-        private const USERNAME = "fgiacomu"; // da cambiare alla consegna
-        private const PASSWORD = "iMaiDeiph7naiThu";
+    private const HOST_DB = "localhost";
+    private const DATABASE_NAME = "arte_accessibile";
+    private const USERNAME = "root"; // da cambiare alla consegna
+    private const PASSWORD = "";
+
 
         private $connection;
 
