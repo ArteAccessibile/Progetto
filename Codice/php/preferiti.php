@@ -68,7 +68,9 @@
                                 </a>                                   
                                 <form method=\"POST\" action=\"remove-favorite.php\">
                                 <fieldset class=\"noBordo\"> 
-                                  <legend>Rimuovi dai preferiti</legend>
+                                  <a href=\"#remove-favourite-".$f['opera'].$_SESSION['email']."\" class=\"skip-link\">
+                                      <legend>Rimuovi dai preferiti</legend>
+                                  </a>
                                   <input type=\"hidden\" name=\"opera_id\" value=\"".$f['opera']."\">
                                   <input id=\"remove-favourite-".$f['opera'].$_SESSION['email']."\" class=\"remove-favourite-button\" type=\"submit\" value=\"Rimuovi preferito\">
                                 </fieldset>
