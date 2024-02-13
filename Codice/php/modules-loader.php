@@ -16,9 +16,9 @@ if(isset($page)){
                 $nav = str_replace("<li id=\"minigalleryli\"><a href=\"/gitprog/codice/php/galleria.php\">", "<li id=\"selectedMini\" lang=\"en\">", $nav);
                 break;
             case "artists":
-                $header = str_replace("<<li id=\"artists\"><a href=\"/gitprog/codice/php/artisti.php\">Artisti</a></li>", "<li id=\"selected\">Artisti</li>", $header);
+                $header = str_replace("<li id=\"artists\"><a href=\"/gitprog/codice/php/artisti.php\">Artisti</a></li>", "<li id=\"selected\">Artisti</li>", $header);
                 $nav = str_replace("<li id=\"miniartistsli\"><a href=\"/gitprog/codice/php/artisti.php\">", "<li id=\"selectedMini\" lang=\"en\">", $nav);
-                break;
+                break;                           
             case "contacts":
                 $header = str_replace("<li id=\"contacts\"><a href=\"/gitprog/codice/php/contatti.php\">Contatti</a></li>", "<li id=\"selected\">Contatti</li>", $header);
                 $nav = str_replace("<li id=\"minicontactsli\"><a href=\"/gitprog/codice/php/contatti.php\">", "<li id=\"selectedMini\" lang=\"en\">", $nav);
