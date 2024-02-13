@@ -209,10 +209,11 @@ a:hover {
 
 
 .nascosto{
-  display: hidden;
+  display: none;
 }
 
 .visibile{
+  display: auto;
   visibility: visible;
 }
 
