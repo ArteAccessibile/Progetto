@@ -989,13 +989,14 @@ input[type=submit] {
 
 /* login */
 
-.login-error > strong{
-  color: red;
+.login-error {
+  color: #DDE5FE;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1em;
 }
+
 
 #form-login{
   display: flex;
