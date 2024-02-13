@@ -17,10 +17,11 @@ CREATE TABLE utente (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Inserisci valori nella tabella utente
-INSERT INTO utente (email, psw, nome, cognome) VALUES
-('email1@example.com', 'password1', 'Nome1', 'Cognome1'),
-('email2@example.com', 'password2', 'Nome2', 'Cognome2'),
-('admin@gmail.com','admin','admin','admin');
+INSERT INTO `utente` (`email`, `psw`, `nome`, `cognome`, `ruolo`) VALUES
+('admin@gmail.com', '0c3e748f8e81a1bacce40b099971ee9b', 'Admin', 'Admin', 'admin'),
+('artist@gmail.com', 'd06139ee930b89fd2a00bfa0a40831aa', 'Artist', 'Artist', 'utente'),
+('user@gmail.com', '3aa93b8f8e9e599c9c7d4240acba8696', 'user', 'user', 'utente');
+
 
 -- Crea la tabella artista
 CREATE TABLE artista (
@@ -31,9 +32,9 @@ CREATE TABLE artista (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Inserisci valori nella tabella artista
-INSERT INTO artista (utente, descrizione, pseudonimo, email_contatto) VALUES
-('email1@example.com', 'Descrizione artista 1', 'Pseudonimo1', 'email_artista1@example.com'),
-('email2@example.com', 'Descrizione artista 2', 'Pseudonimo2', 'email_artista2@example.com');
+INSERT INTO `artista` (`utente`, `descrizione`, `pseudonimo`, `email_contatto`) VALUES
+('artist@gmail.com', 'Il mio percorso per diventare artista inizi&ograve; con l&#039;avvento dell&#039;intelligenza artificiale nella creazione delle immagini. Da quel momento, &egrave; diventata la mia ragione di vita.', 'Artista con Pseudonimo', 'ArtistaPseudonimo@gmail.com');
+
 
 -- Crea la tabella opera
 CREATE TABLE opera (
@@ -47,9 +48,8 @@ CREATE TABLE opera (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Inserisci valori nella tabella opera
-INSERT INTO opera (artista, titolo, desc_abbrev, descrizione, data_creazione) VALUES
-('email1@example.com', 'gattobaguette ', 'Descrizione abbreviata opera 1', 'Descrizione opera 1', '2023-01-01'),
-('email2@example.com', 'gattomirtillo', 'Descrizione abbreviata opera 2', 'Descrizione opera 2', '2023-02-02');
+
+
 
 -- Crea la tabella preferito
 CREATE TABLE preferito (
@@ -59,6 +59,4 @@ CREATE TABLE preferito (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Inserisci valori nella tabella preferito
-INSERT INTO preferito (utente, opera) VALUES
-('email1@example.com', 1),
-('email2@example.com', 2);
+
