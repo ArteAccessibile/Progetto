@@ -4,6 +4,7 @@ if(isset($page)){
     $header = file_get_contents($modules_path . "header.html");
     $footer = file_get_contents($modules_path . "footer.html");
     $nav = file_get_contents($modules_path . "mininavbar.html");
+    $header = str_replace("{root}",$root, $header);
 
     if(isset($_SESSION["nav_page"])){
         switch($_SESSION["nav_page"]){
