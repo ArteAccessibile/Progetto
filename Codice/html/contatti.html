@@ -14,13 +14,18 @@
 
     </head>
     <body>
+        <a href="#maincontent" class="skip-link">Vai al contenuto</a>
     <header/>
-        <nav id="breadcrumb" aria-label="Percorso di navigazione">
+     <nav id="breadcrumb" aria-label="Percorso di navigazione">
             <p>Ti trovi in: <a href="../index.php"><span lang="en">Home</span></a>&gt; Contatti</p>
         </nav>
+    <main id="maincontent">
+       
         <div id="content">           
-            <div class="contact-form">
+            <div>
                 <h2>Contattaci</h2>
+                <p >Per qualsiasi dubbio, il nostro supporto saprà rispondere alle tue domande.</p>
+                <p> Invia la <span lang="en">mail</span> con i tuoi dubbi a: marko.peric@studenti.unipd.it</p>
                 <form action="../php/sendEmail.php" method="post">
                     {messaggiForm}
                    
@@ -38,6 +43,7 @@
                 </form>
             </div>
         </div>
+    </main>
         <div class="bottonetop" tabindex="0"> <img src="../../immagini/topArrow.png" alt="Torna su"></div>
         <script src="../js/bottonetop.js"></script>
     </body>

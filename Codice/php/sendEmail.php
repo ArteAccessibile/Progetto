@@ -3,27 +3,28 @@ require_once "../php/clean-input.php";
 
 session_start();
 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Verifica se l'utente è loggato
+    // Check if the user is logged in
     if (isset($_SESSION["email"])) {
+        // Validate and sanitize form inputs
         $object = clearInput($_POST["object"]);
         $description = clearInput($_POST["description"]);
         $email = $_SESSION["email"];
-        $error = "";
 
-        // Email dove ricevere i messaggi
-        $to = "nacope5970@fkcod.com";
+        // Email to receive messages
+        $to = "your_email@gmail.com"; // Replace with your actual email address
 
-        // oggetto della mail
+        // Subject of the email
         $subject = "Contatto da Arte Per Tutti: $object";
 
-        // testo 
+        // Message body
         $message = "Email: $email\nOggetto: $object\nDescrizione:\n$description";
 
-        // intestazioni
+        // Headers
         $headers = "From: $email";
 
-        // tentativo di invio della mail
+        // Attempt to send the email
         $success = mail($to, $subject, $message, $headers);
 
         if ($success) {
