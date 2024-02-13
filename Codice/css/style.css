@@ -1042,8 +1042,7 @@ input[type=submit] {
   transition: transform .2s; 
 }
 
-.rised_button:focus{
-  border: 2px solid white;
+.rised_button:hover{
   transform: scale(1.1);
 }
 
