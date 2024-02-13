@@ -13,7 +13,6 @@ CREATE TABLE utente (
     psw char(64) NOT NULL,
     nome varchar(20) NOT NULL,
     cognome varchar(20) NOT NULL,
-    data_nascita date NOT NULL,
     ruolo ENUM('utente', 'admin') NOT NULL DEFAULT 'utente'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -41,9 +40,7 @@ CREATE TABLE opera (
 
 -- Crea la tabella preferito
 CREATE TABLE preferito (
-    utente varchar (40) REFERENCES utente(email) ON DELETE CASCADE,
-    opera BIGINT REFERENCES opera(id),
+    utente varchar(40) REFERENCES utente(email) ON DELETE CASCADE,
+    opera INT REFERENCES opera(id),
     PRIMARY KEY (utente, opera)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-

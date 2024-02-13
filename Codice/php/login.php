@@ -43,7 +43,7 @@
             $isArtista = $connection->isArtista($email);
             
             if ($result->num_rows == 0) {       
-                $errorString = "<p class='login-error'><strong><span lang=\"en\">Username</span> o <span lang=\"en\">password</span> non corretti!</strong></p>";
+                $errorString = "<p class='login-error'><span lang=\"en\">Username</span> &nbsp o &nbsp <span lang=\"en\">password</span> &nbsp non corretti!</strong></p>";
                 $connection->closeConnection();
             } else {
                 while ($row = $result->fetch_assoc()) {
