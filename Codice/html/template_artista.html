@@ -23,16 +23,16 @@
     <main id="maincontent">
         
         <dl class="artist-container">
-            <dt> {name} </dt>
-                <dd><img id="artist-image" src="{artista_image}" alt=""></dd>
-            <dt><strong><span lang="en">Email</span></strong></dt>
-                <dd>{mail}</dd>
+            <dt tabindex="0"> Nome artista: {name} </dt>
+                <dd><img id="artist-image" tabindex="0" src="{artista_image}" alt="Immagine dell'artista"></dd>
+            <dt tabindex="0"><strong><span lang="en">Email</span></strong></dt>
+                <dd tabindex="0">{mail}</dd>
             
-            <dt><strong>Descrizione</strong> </dt>
+            <dt tabindex="0"><strong>Descrizione</strong> </dt>
                <dd>{descriptionArtist}</dd> 
             
-            <dt>Opere</dt>
-                <dd>
+            <dt tabindex="0">Opere</dt>
+                <dd tabindex="0">
                     {listaOpere}
                 </dd>
         </dl>  

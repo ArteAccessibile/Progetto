@@ -35,7 +35,7 @@ if ($connectionOk) {
             $imageName = pathinfo($image, PATHINFO_BASENAME);
                 $imageName = str_replace(['.jpg', '.png'], '', $imageName); // Rimuovi l'estensione dal nome del file
                 $imagesHtml .= "<div class='opera_artista_card'>";
-                $imagesHtml .= "<img src='{$image}' alt='{$imageName}'>"; // uso il nome del file come attributo alt
+                $imagesHtml .= "<img tabindex=\"0\" src='{$image}' alt='{$imageName}'>"; // uso il nome del file come attributo alt
        }
    } else {
        $imagesHtml = "Nessuna immagine trovata";
