@@ -3,7 +3,7 @@
     $html_path = $root . "html" . DIRECTORY_SEPARATOR;
     $modules_path = $html_path . "modules" . DIRECTORY_SEPARATOR;
     $php_path = $root . "php" . DIRECTORY_SEPARATOR;
-    $index_page =  DIRECTORY_SEPARATOR;
+    $index_page =  $root;
 
     $php_pages = DIRECTORY_SEPARATOR . "php";
     $account_page = $php_pages . DIRECTORY_SEPARATOR . "account.php";
