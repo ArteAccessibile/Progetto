@@ -17,10 +17,11 @@ CREATE TABLE utente (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Inserisci valori nella tabella utente
+
 INSERT INTO `utente` (`email`, `psw`, `nome`, `cognome`, `ruolo`) VALUES
-('admin@gmail.com', '0c3e748f8e81a1bacce40b099971ee9b', 'Admin', 'Admin', 'admin'),
-('artist@gmail.com', 'd06139ee930b89fd2a00bfa0a40831aa', 'Artist', 'Artist', 'utente'),
-('user@gmail.com', '3aa93b8f8e9e599c9c7d4240acba8696', 'user', 'user', 'utente');
+('admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', 'admin', 'utente'),
+('artist', '0441f9e2d94c39a70e21b83829259aa4', 'artist', 'artist', 'utente'),
+('user', 'ee11cbb19052e40b07aac0ca060c23ee', 'user', 'user', 'utente');
 
 
 -- Crea la tabella artista

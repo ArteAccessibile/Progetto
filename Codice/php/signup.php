@@ -57,8 +57,8 @@
         $error_messages .= '<li>La <span lang=\"en\">password</span> non può contenere spazi</li>';
     }
 
-    if (strlen($password) < 8 || strlen($password) > 20 || !preg_match('/[0-9]/', $password) || !preg_match('/[A-Z]/', $password)){
-        $error_messages .= '<li>La <span lang=\"en\">password</span> deve essere lunga almeno 8 caratteri e al massimo 20, deve contenere almeno un numero e una lettera maiuscola</li>';
+    if (strlen($password) < 3 || strlen($password) > 20){
+        $error_messages .= '<li>La <span lang=\"en\">password</span> deve essere lunga almeno 3 caratteri e al massimo 20</li>';
     }
 
     if (preg_match('/[0-9]/', $name) || preg_match('/[0-9]/', $surname)){
