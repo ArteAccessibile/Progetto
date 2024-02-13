@@ -54,11 +54,11 @@
                                     <li>
                                         <ul class=\"descrizione-preferito\">
                                             <li>
-                                                <h3>".$f['titolo']."</h2>
+                                                <h2>".$f['titolo']."</h2>
                                                 <p>".$f['desc_abbrev']."</p>
                                             </li>
                                             <li>
-                                                <h3> Autore </h2>
+                                                <h2> Autore </h2>
                                                 <p>".$f['artista']."</p>
                                             </li>
                                         </ul>
@@ -68,6 +68,7 @@
                                 </a>                                   
                                 <form method=\"POST\" action=\"remove-favorite.php\">
                                 <fieldset class=\"noBordo\"> 
+                                  <legend>Rimuovi dai preferiti</legend>
                                   <input type=\"hidden\" name=\"opera_id\" value=\"".$f['opera']."\">
                                   <input id=\"remove-favourite-".$f['opera'].$_SESSION['email']."\" class=\"remove-favourite-button\" type=\"submit\" value=\"Rimuovi preferito\">
                                 </fieldset>

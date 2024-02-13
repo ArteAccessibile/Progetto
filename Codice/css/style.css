@@ -152,27 +152,15 @@ a:hover {
   box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.2), 0 0.5em 1.25em 0 rgba(0, 0, 0, 0.19);
 }
 
-.homecontent > p > a{
-  text-decoration: underline;
-  color: #679839;
-}
-
 .homecontent > p{
   color: #DDE5FE;
+  margin-top: 0.5em;
 }
 
 .homecontent > h2{
   padding-bottom: 1em;
   color: #DDE5FE;
 }
-
-.homecontent > a > p{
-  padding-top: 1em;
-  text-decoration: underline;
-  color: #679839
-}
-
-
 
 #headerflexbox{
   width: 100%;
@@ -692,7 +680,6 @@ object-fit: cover;
 
 #sezioneaccount ul > li > a {
   margin-top: 1em;
-  text-decoration: underline;
   color: #679839;
 }
 

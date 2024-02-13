@@ -42,7 +42,7 @@ if ($connectionOk) {
           $artistaString .= "<li class=\"card\">
               <div class=\"card-body\">
                   <a href=\"{$artistaLink}\" id=\"Artista{$listaArtisti['utente']}\">
-                      <img src=\"$fotoProfilo\" alt=\"Immagine artista\">
+                      <img src=\"$fotoProfilo\" alt=\"Immagine di profilo di ".$artistaName."\">
                   </a>
                   <p class=\"pseudonimo\"><strong>{$artistaName}</strong></p>
               <p>{$artistaDescription}</p>
