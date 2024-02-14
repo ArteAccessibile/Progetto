@@ -84,12 +84,12 @@ label{
 }*/
 
 #container > nav > ul > li:hover {
-  border-bottom: 2px solid #7c7c8a;
-  background-color: #7c7c8a;
+  border-bottom: 2px solid #9D9DAA;
+  background-color: #9D9DAA;
 }
 
 #selected{
-  background-color: #7c7c8a;
+  background-color: #9D9DAA;
 
 }
 
@@ -106,7 +106,7 @@ label{
 }
 a {
   text-decoration: underline;
-  color: #679839 ;
+  color: #88CB48 ;
 }
 a:hover {
   color: #DDE5FE ;
@@ -194,7 +194,7 @@ a:hover {
   align-items: center;
   margin: 1em 2em 0 0;
   padding: 0.5em;
-  color: #679839; 
+  color: #88CB48; 
 
 }
 
@@ -328,7 +328,7 @@ a:hover {
   z-index: 1;
   top: 0;
   padding: 1em 0.5em;
-  background-color: #E29608; /* Cambiato il colore di sfondo breadcrumb  */
+  background-color: #FFBF47; /* Cambiato il colore di sfondo breadcrumb  */
   border-bottom: 2px solid #0b204c; /* Cambiato il colore del bordo inferiore */
   border-top: 2px solid #0b204c; /* Aggiunto il colore del bordo superiore */
   margin: 4em 0 1.25em 0;
@@ -345,7 +345,7 @@ a:hover {
 }
 
 #breadcrumb p > a{
-  color: #2B327B;
+  color: #1823A5;
 }
 
 #odd{
@@ -532,7 +532,7 @@ object-fit: cover;
 }
 
 .containerOpere > ul> li > a {
-  color: #679839;
+  color: #88CB48;
 }
 
 .containerMini{
@@ -682,7 +682,7 @@ object-fit: cover;
 
 #sezioneaccount ul > li > a {
   margin-top: 1em;
-  color: #679839;
+  color: #88CB48;
 }
 
 .noBordo{
@@ -825,7 +825,7 @@ border: 2px solid white;
 }
 
 .ok-message > a{
-  color: #679839;
+  color: #88CB48;
   text-decoration: underline;
 }
 
@@ -837,7 +837,7 @@ border: 2px solid white;
 }
 
 .errors-forms> a{
-  color: #679839;
+  color: #88CB48;
   text-decoration: underline;
 }
 
@@ -876,7 +876,7 @@ border: 2px solid white;
 
 
 .logsection {
-  color: #679839; 
+  color: #88CB48; 
   list-style-type: none;
   display: flex;
   flex-direction: row;
@@ -893,7 +893,7 @@ border: 2px solid white;
 
 .logsection a{
   text-decoration: underline;
-  color: #679839; 
+  color: #88CB48; 
 }
 
 .logsection > li:hover{
@@ -1284,7 +1284,7 @@ footer {
 }
 
 footer a {
-  color: #679839; 
+  color: #88CB48; 
   text-decoration: underline; 
   vertical-align: bottom;
 }
@@ -1340,7 +1340,7 @@ footer a {
 
 .error-404 > a {
   font-size: 1.3em;
-  color: #679839;
+  color: #88CB48;
 }
 
 
