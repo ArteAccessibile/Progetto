@@ -25,7 +25,6 @@
     <main id="maincontent">
         <dl class="opera-container">
             <dt tabindex="0">Titolo: {opera_name}</dt>
-            <dd tabindex="0">{opera_name}</dd> 
             <dd><img id="opera-image" src="{opera_image}" alt=""></dd>
             <dt tabindex="0"><strong>Descrizione</strong></dt>
             <dd tabindex="0">{opera_description}</dd> 
@@ -33,9 +32,6 @@
             <dd class="add_to_fav"> 
                 <form action="../php/aggiuntaPreferiti.php" method="post">
                     <fieldset class="noBordo">
-                        <a href="#id-opera-{operaId}" class="skip-link">
-                            <legend>Salvala per dopo!</legend>
-                        </a>
                         <input id="id-opera-{operaId}" type="hidden" name="opera_id" value="{operaId}">
                         <input tabindex="0" type="submit" value="Aggiungi ai preferiti" {valore}>
                     </fieldset>

@@ -214,7 +214,7 @@ a:hover {
 }
 
 .visibile{
-  display: auto;
+  display: block;
   visibility: visible;
 }
 
@@ -521,7 +521,7 @@ border: 0.7em solid transparent;
 }
 .containerOpere img{
 
-width: 12.5;
+width: 12.5em;
 height: 12.5em;
 object-fit: cover;
 
