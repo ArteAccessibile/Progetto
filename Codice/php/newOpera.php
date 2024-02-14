@@ -76,8 +76,9 @@ if(isset($_POST['submit'])){
     $messaggiPerForm="";
     $titolo = pulisciInput($_POST['titolo']); 
     if (strlen($titolo) == 0){
-        $messaggiPerForm .= '<li>titolo non inserito</li>';
-        echo "sei qui";
+        $messaggiPerForm .= '<li>Titolo non inserito</li>';
+    } elseif (strpos($titolo, ' ') !== false) {
+        $messaggiPerForm .= '<li>Il titolo non deve contenere spazi</li>';
     }
 
 

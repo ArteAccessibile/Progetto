@@ -50,14 +50,15 @@
                 <section class="account_data_section">
                     <img class="avatar_image" id="currentProfileImage" src={FotoProfilo} alt="profileImage">
                     <form method="POST" enctype="multipart/form-data" action="../php/updateFotoProfilo.php">
-                        <label for="profileImage">Cambia immagine profilo:</label>
+                        <label class="skip-link" for="profileImage">Cambia immagine profilo:</label>
                         <input type="file" id="profileImage" name="profileImage"  accept="image/png , image/jpeg" required>
                         <input type="submit" value="Carica immagine">
                     </form>
                 </section>
-                <h2> La tua descrizione </h2>
+                <h2> Cosa si dice di te: </h2>
                 <section class="account_desc_section">
-                    <form method="POST" action="../php/aggiornaDescrizione.php"> 
+                    <form  method="POST" action="../php/aggiornaDescrizione.php"> 
+                        <label for="descrizione">Descrizione</label>
                         <textarea id="descrizione_artista" name="descrizione" rows="10" cols="20">{descrizione}</textarea>
                         <input type="submit" value="Aggiorna descrizione">
                     </form>

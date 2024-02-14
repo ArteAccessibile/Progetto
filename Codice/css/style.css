@@ -17,7 +17,7 @@ label{
 /*link skip content*/
 .skip-link {
   position: absolute;
-  left: -9999px;
+  left: -9999em;
   top: auto;
   width: 1px;
   height: 1px;
@@ -1021,9 +1021,10 @@ input[type=submit] {
 }
 
 #opere_artista_section{
+  max-width: 1024px;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   margin: 0 2em 0 2em;
 }
 
@@ -1045,32 +1046,31 @@ input[type=submit] {
 .rised_button:hover{
   transform: scale(1.1);
 }
-
 .opera_artista_card {
-  list-style: none;
-  display: flex; /*flex to grid */
-  flex-wrap: wrap;
-  align-items: center;
-  justify-items: space-evenly; 
-  margin-left:  1em;
-  width: 10em;
+  display: flex;
+  flex-direction: column;
+  margin-left: 1em;
+  max-width: 100%; 
   text-align: center;
-  border-radius:  1em;
-  box-shadow:  0  0.25em 0.5em  0 rgba(0,  0,  0,  0.2),  0  0.5em 1.25em  0 rgba(0,  0,  0,  0.19);
-  padding:  1em; 
+  border-radius: 1em;
+  box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.2), 0 0.5em 1.25em 0 rgba(0, 0, 0, 0.19);
+  padding: 1em;
 }
+
+
 
 
 .opera_artista_card > p{
   margin-top: 0.2em;
 }
 
-.opera_artista_card > img{
-  height: 8em;
-  width: 8em;
+.opera_artista_card > img {
+  max-width: 100%; /* Ensure the image doesn't exceed the container width */
+  height: auto; /* Maintain the aspect ratio */
   border-radius: 1em;
   object-fit: cover;
 }
+
 
 /* Upload Opera */
 
@@ -1175,12 +1175,11 @@ label {
 
 
 .artist-container {
-  margin: auto;
-  width: 95%;
-  max-width: 1024px;
-  padding-top: 1em;
-  padding-bottom: 2em;
+  display: grid;
+  grid-template-columns:  1fr;
+  grid-gap:  10px; /* Optional: adds some space between the items */
 }
+
 
 .artist-container > dt {
   padding: 0.5em;
@@ -1188,14 +1187,22 @@ label {
 }
 
 .artist-container > dd {
+  max-width:  1024px;
   display: flex;
+  flex-direction: column; 
   border-top: none;
-  padding: 0.5em;
-  margin-bottom: 1em;
-  border: 1px solid rgb(255, 255, 255);
+  padding:  0.5em;
+  margin-bottom:  1em;
+  border:  1px solid rgb(255,  255,  255);
+}
+
+
+.artist-container > dd > div {
+  clear: both;
 }
 
 .artist-container > dd img {
+  display: flex;
   max-width: 11.75em; 
   max-height: 11.75em; 
   width: auto;
