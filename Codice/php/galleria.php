@@ -39,7 +39,7 @@ if ($connectionOk) {
                 </li> ";
        }
    } else {
-       $stringaOpere .= "<li>Non sono presenti opere</li>";
+       $stringaOpere .= "<li >Non sono presenti opere</li>";
    }
 
    $connection->closeConnection();

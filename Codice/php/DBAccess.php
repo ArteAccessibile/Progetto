@@ -8,9 +8,9 @@ use Exception;
 class DBAccess {
     
     private const HOST_DB = "localhost";
-    private const DATABASE_NAME = "arte_accessibile";
-    private const USERNAME = "root"; // da cambiare alla consegna
-    private const PASSWORD = "";
+    private const DATABASE_NAME = "fgiacomu";
+    private const USERNAME = "fgiacomu"; // da cambiare alla consegna
+    private const PASSWORD = "iMaiDeiph7naiThu";
 
 
         private $connection;
@@ -38,7 +38,7 @@ class DBAccess {
                     $id = $row['id'];
                     $name = $row['titolo'];
                     $shortdesc = $row['desc_abbrev'];
-                    $baseFileName = "../../immagini/" . str_replace(" ", "", strtolower($name));
+                    $baseFileName = "../../immagini/" . str_replace(" ", "", $name);
                     
                     // Check if the file exists with .jpg or .png extension
                     $imagePathJpg = $baseFileName . ".jpg";

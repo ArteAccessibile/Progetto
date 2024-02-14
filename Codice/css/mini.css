@@ -5,7 +5,7 @@
   }
 
   #container {
-      display: flex;
+      display: none;
       width: 90%; 
       margin: 10% auto; 
   }
