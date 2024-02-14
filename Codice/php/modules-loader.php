@@ -5,7 +5,7 @@ if(isset($page)){
     $footer = file_get_contents($modules_path . "footer.html");
     $nav = file_get_contents($modules_path . "mininavbar.html");
 
-    if(isset($_SESSION["nav_page"])){
+    if(isset($_SESSION["nav_page"])){ 
         switch($_SESSION["nav_page"]){
             case "home":
                 $header = str_replace("<li id=\"home\"><a href=\"/gitprog/codice/index.php\"><span lang=\"en\">Home</span></a></li>", "<li id=\"selected\"><span lang=\"en\">Home</span></li>", $header);
