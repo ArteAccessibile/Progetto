@@ -99,7 +99,7 @@
     if(strlen($error_messages) > 0){
         require_once "../config.php";
         $page = file_get_contents($html_path . "registrati.html");
-        $page = str_replace("<error/>", "<div class=\"errors-forms\"><ul>" . $error_messages . "</ul></div>", $page);
+        $page = str_replace("<error/>", "<ul class=\"errors-forms\"><ul>" . $error_messages . "</ul></div>", $page);
         $page = str_replace("<visibility/>", "<div>", $page);
         echo $page;
         exit;
